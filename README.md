@@ -1,4 +1,4 @@
-# Astro Shadcn UI Template
+# Astro portfolio
 
 This template helps you build portfolio with Astro, Tailwind CSS, and Shadcn UI.
 
