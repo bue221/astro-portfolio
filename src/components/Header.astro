@@ -1,7 +1,21 @@
 ---
 import { buttonVariants } from '../components/ui/button'
-import ThemeToggle from '../components/ThemeToggle.astro'
+import { ModeToggle } from '../components/ui/ThemeToggle'
 ---
+
+<script is:inline>
+  document.addEventListener('astro:after-swap', function () {
+    if (localStorage.getItem('theme') === 'dark')
+      document.documentElement.classList.toggle('dark', true)
+  })
+
+  const getThemePreference = () => {
+    return localStorage.getItem('theme')
+  }
+
+  const isDark = getThemePreference() === 'dark'
+  document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
+</script>
 
 <header
   class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
@@ -24,7 +38,7 @@ import ThemeToggle from '../components/ThemeToggle.astro'
         >
           GitHub
         </a>
-        <ThemeToggle />
+        <ModeToggle transition:persist client:load />
       </nav>
     </div>
   </div>

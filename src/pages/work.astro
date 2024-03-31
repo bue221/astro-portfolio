@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content'
 import { WORK } from '../lib/constants'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import TopLayout from '../layouts/TopLayout.astro'
@@ -25,9 +24,12 @@ import { EXPERIENCE } from '../lib/constants'
               <div class="mb-4 text-sm uppercase">
                 {entry.start} - {entry.end}
               </div>
-              <div class="font-semibold text-black dark:text-white">
+              <a
+                href={entry.link ?? ''}
+                class={`font-semibold ${entry?.link ? 'text-primary' : 'text-foreground'}`}
+              >
                 {entry.company}
-              </div>
+              </a>
               <div class="text-sm font-semibold">{entry.position}</div>
               <article class="prose dark:prose-invert">
                 {entry.tasks.map((i) => (

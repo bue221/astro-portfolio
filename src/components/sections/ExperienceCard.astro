@@ -10,7 +10,9 @@ import { EXPERIENCE } from '../../lib/constants'
       EXPERIENCE.slice(0, 3).map((exp) => (
         <div>
           <h3 class="text-lg font-semibold">{exp.position}</h3>
-          <p class="text-sm text-gray-600">{exp.company}</p>
+          <a class="text-sm text-primary" href={exp?.link ?? ''}>
+            {exp.company}
+          </a>
           <p class="text-sm text-gray-600">
             {exp.start} - {exp.end}
           </p>

@@ -1,5 +1,6 @@
 import { start } from 'repl'
 import type { Site, Page } from './types'
+import { link } from 'fs'
 
 export const LINKS = {
   github: 'https://github.com/bue221',
@@ -82,6 +83,7 @@ export const EXPERIENCE = [
     location: 'Bogotá D C, Colombia',
     position: 'Software Engineer',
     start: '2021',
+    link: 'https://straico.com/',
     end: 'Current',
     tasks: [
       'Integration IA services with react and tailwind css',
@@ -92,6 +94,7 @@ export const EXPERIENCE = [
     company: 'Spot2',
     location: 'Mexico City, Mexico',
     position: 'Software Engineer',
+    link: 'https://spot2.mx/',
     start: '2021',
     end: 'Current',
     tasks: [
@@ -103,6 +106,7 @@ export const EXPERIENCE = [
   },
   {
     company: 'Imaginamos',
+    link: 'https://imaginamos.com/',
     location: 'Bogotá D C, Colombia',
     position: 'Frontend developer',
     start: '2021',
@@ -117,6 +121,7 @@ export const EXPERIENCE = [
     location: 'Bogotá D C, Colombia',
     position: 'Frontend developer',
     start: '2021',
+    link: 'https://www.inetum.com/es',
     end: '2021',
     tasks: [
       'Support in the QA area and bug review',
