@@ -1,6 +1,10 @@
-import { start } from 'repl'
 import type { Site, Page } from './types'
-import { link } from 'fs'
+
+export const loaderAnimation = [
+  '.loader',
+  { opacity: [1, 0], pointerEvents: 'none' },
+  { easing: 'ease-out' },
+]
 
 export const LINKS = {
   github: 'https://github.com/bue221',

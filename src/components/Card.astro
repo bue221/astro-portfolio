@@ -16,7 +16,7 @@ const { title, body, colSpan, rowSpan, href, colorText } = Astro.props
 ---
 
 <ShadcnCard
-  className={`transfor-y-[-40%] align-start perspective-1200 group group relative col-span-1 h-auto w-full flex-none transform justify-start overflow-hidden p-6 shadow-lg transition duration-75 ease-in-out ${
+  className={`card-animate transfor-y-[-40%] align-start perspective-1200 group group relative col-span-1 h-auto w-full flex-none transform justify-start overflow-hidden p-6 shadow-lg transition duration-75 ease-in-out ${
     colSpan || 'md:col-span-2'
   } ${rowSpan || ''} ${href ? 'cursor-pointer hover:border-primary' : ''}`}
 >
