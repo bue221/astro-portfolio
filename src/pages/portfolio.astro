@@ -34,7 +34,7 @@ const entries = await contentfulClient.getEntries<Project>({})
         Projects and clone's
       </h2>
     </TopLayout>
-    <BottomLayout>
+    <BottomLayout size='xl'>
       <div class="flex w-full flex-wrap justify-center gap-2">
         {
           entries.items.map((entry: any) => (
