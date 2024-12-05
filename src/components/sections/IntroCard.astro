@@ -4,34 +4,29 @@ import { Button } from '../ui/button'
 import { LINKS } from '../../lib/constants'
 import { Linkedin, Github, Mail } from 'lucide-react'
 ---
-
 <Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
-  <div class="flex h-full w-full">
-    <div class="flex flex-col justify-between gap-4 md:max-h-[300px]">
+  <div class="flex h-full w-full items-center">
+    <div class="flex flex-col justify-between gap-4 md:max-h-[300px] md:w-3/5">
       <div class="flex h-full flex-col">
-        <h6 class="m-0 text-sm font-light text-gray-500">welcome</h6>
+        <h6 class="m-0 text-sm font-light text-gray-500">Welcome</h6>
         <p class="m-0 text-xl font-light">
-          Hi, I'm <b class="font-bold">Andrés Camilo Plaza</b>, a software
-          developer, systems engineer and tattoo artist with strong focus on the
-          user experience, animations and micro interactions. I love to create
-          beautiful and functional interfaces, I am passionate about technology
-          and I am always looking for new challenges.
+          Hi, I'm <b class="font-bold">Ayraf Raihan</b>, a dedicated AI wizard and software developer with a knack for solving complex problems. I thrive at the intersection of innovation and technology, crafting intelligent solutions to make an impact. With strong technical expertise and an insatiable curiosity, I am always ready for the next challenge.
         </p>
       </div>
       <div class="flex gap-4">
-        <a href={LINKS.github} aria-label="github profile" target="_blank">
-          <Button aria-label="github profile">
+        <a href={LINKS.github} aria-label="GitHub profile" target="_blank">
+          <Button aria-label="GitHub profile">
             <Github />
             <span class="sr-only">GitHub Profile</span>
           </Button>
         </a>
-        <a href={LINKS.linkedin} aria-label="linkeding profile" target="_blank">
-          <Button aria-label="linkedin profile">
+        <a href={LINKS.linkedin} aria-label="LinkedIn profile" target="_blank">
+          <Button aria-label="LinkedIn profile">
             <Linkedin />
-            <span class="sr-only">Linkedin Profile</span>
+            <span class="sr-only">LinkedIn Profile</span>
           </Button>
         </a>
-        <a href={LINKS.mail} aria-label="mail profile" target="_blank">
+        <a href={LINKS.mail} aria-label="Email contact" target="_blank">
           <Button>
             <Mail />
             <span class="sr-only">Email contact</span>
@@ -43,8 +38,10 @@ import { Linkedin, Github, Mail } from 'lucide-react'
       width="300"
       height="300"
       src="/me.png"
-      class="pointer-events-none absolute bottom-[-20px] right-[-110px] z-[-1] max-h-[300px] w-auto select-none opacity-50 md:relative md:bottom-auto md:right-auto md:z-auto md:opacity-100"
-      alt="memoji of andres plaza"
+      class="pointer-events-none ml-auto max-h-[300px] w-auto select-none md:relative md:ml-0"
+      alt="Memoji of Ayraf Raihan"
     />
   </div>
 </Card>
+</Concise>
+
