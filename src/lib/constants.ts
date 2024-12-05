@@ -49,10 +49,10 @@ export const SEARCH: Page = {
 // Study Page
 export const STUDIES = [
   {
-    title: 'Computer Science',
-    institution: 'Universidad Central',
-    link: 'https://www.ucentral.edu.co/',
-    date: '2019 - 2027',
+    title: 'Computer Science with AI',
+    institution: 'Manipal Institute of Technology,Bengaluru',
+    link: 'https://www.manipal.edu/mu/campuses/mahe-bengaluru/academics/institution-list/mitblr.html',
+    date: '2022 - 2026',
   },
   {
     title: '...',
