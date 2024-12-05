@@ -49,16 +49,22 @@ export const SEARCH: Page = {
 // Study Page
 export const STUDIES = [
   {
-    title: 'Computer Science with AI',
-    institution: 'Manipal Institute of Technology,Bengaluru',
+    title: 'Btech-CS(AI)',
+    institution: 'MITB',
     link: 'https://www.manipal.edu/mu/campuses/mahe-bengaluru/academics/institution-list/mitblr.html',
     date: '2022 - 2026',
   },
   {
-    title: '...',
-    institution: 'Platzi',
-    link: 'https://platzi.com/',
-    date: '2018 - 2022',
+    title: 'Secondary High School',
+    institution: 'DAV Kharghar',
+    link: 'https://davkharghar.org.in/',
+    date: '2020 - 2022',
+  },
+  {
+    title: 'High School',
+    institution: 'Ryan International School',
+    link: 'https://www.ryangroup.org/',
+    date: '2018 - 2020',
   },
   {
     title: '...',
@@ -68,16 +74,17 @@ export const STUDIES = [
   },
   {
     title: '...',
-    institution: 'Youtube',
-    link: 'https://www.youtube.com/@midulive',
-    date: '2018 - 2022',
+    institution: 'Buildspace',
+    link: 'https://buildspace.so/',
+    date: '2024 - 2024',
   },
   {
-    title: 'Tattoo Artist',
-    institution: 'Tattoo Academy',
-    link: 'https://www.instagram.com/tattoodcacademy/',
-    date: '2024 - 2025',
+    title: '...',
+    institution: 'Coursera',
+    link: 'courser.org',
+    date: '2022 - 2026',
   },
+ 
 ]
 export const EXPERIENCE = [
   {
