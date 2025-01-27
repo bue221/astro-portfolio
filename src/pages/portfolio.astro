@@ -1,54 +1,81 @@
 ---
-import { WORK } from '../lib/constants'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import TopLayout from '../layouts/TopLayout.astro'
 import BottomLayout from '../layouts/BottomLayout.astro'
-import ProjectCard from '../components/ProjectCard.astro'
 
-import { contentfulClient } from '../lib/contentful'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-import type { EntryFieldTypes } from 'contentful'
-
-interface Project {
-  contentTypeId: 'Projects'
-  fields: {
-    name: EntryFieldTypes.Text
-    img: EntryFieldTypes.AssetLink
-    website: EntryFieldTypes.EntryResourceLink<any>
-    repositorio: EntryFieldTypes.EntryResourceLink<any>
-  }
-}
-
-const entries = await contentfulClient.getEntries<Project>({})
+// Define your projects here
+const projects = [
+  {
+    name: "Shell Sort",
+    img: "/images/shell-sort.png", // Replace with your image paths
+    website: "https://shell-sort.example.com",
+    description: "An interactive Shell Sort visualization.",
+  },
+  {
+    name: "Vue Mapbox",
+    img: "/images/vue-mapbox.png",
+    website: "https://vue-mapbox.example.com",
+    description: "A map application built with Vue and Mapbox.",
+  },
+  {
+    name: "Casa-Fest",
+    img: "/images/casa-fest.png",
+    website: "https://casa-fest.example.com",
+    description: "A real-estate clone showcasing various properties.",
+  },
+  {
+    name: "Minecraft Clone",
+    img: "/images/minecraft-clone.png",
+    website: "https://minecraft-clone.example.com",
+    description: "A 3D Minecraft-inspired game built with WebGL.",
+  },
+  {
+    name: "Game of Life",
+    img: "/images/game-of-life.png",
+    website: "https://game-of-life.example.com",
+    description: "A simulation of Conway's Game of Life.",
+  },
+  {
+    name: "Rave Club",
+    img: "/images/rave-club.png",
+    website: "https://rave-club.example.com",
+    description: "An event management system for nightlife.",
+  },
+];
 ---
 
-<BaseLayout
-  title="Portfolio"
-  description="Projects and some clone's that I did"
->
+<BaseLayout title="Portfolio" description="Projects and clones">
   <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="slide">
     <TopLayout>
-      <h2
-        class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
-      >
-        Projects and clone's
+      <h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        Projects and Clones
       </h2>
     </TopLayout>
     <BottomLayout size="xl">
-      <div class="flex w-full flex-wrap justify-center gap-2">
-        {
-          entries.items.map((entry: any) => (
-            <ProjectCard
-              key={entry?.sys?.id}
-              href={entry?.fields?.website}
-              heading={entry?.fields?.name}
-              subheading={entry?.fields?.description}
-              imagePath={entry?.fields?.img?.fields?.file.url}
-              altText={entry?.fields?.img?.fields.title}
-              class="w-full sm:w-2/5"
+      <div class="flex w-full flex-wrap justify-center gap-6">
+        {projects.map((project) => (
+          <a
+            href={project.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={project.name}
+            class="group w-full sm:w-2/5 border rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:border-orange-500 transition-transform transform hover:scale-105"
+          >
+            <img
+              src={project.img}
+              alt={project.name}
+              class="w-full h-48 object-cover"
             />
-          ))
-        }
+            <div class="p-4 bg-gray-900 group-hover:bg-orange-500 transition-colors">
+              <h3 class="text-lg font-bold text-white group-hover:text-black">
+                {project.name}
+              </h3>
+              <p class="text-sm text-gray-300 group-hover:text-black">
+                {project.description}
+              </p>
+            </div>
+          </a>
+        ))}
       </div>
     </BottomLayout>
   </main>

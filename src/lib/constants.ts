@@ -7,7 +7,7 @@ export const loaderAnimation = [
 ]
 
 export const LINKS = {
-  github: 'https://github.com/bue221',
+  github: 'https://github.com/ShiroYasha18',
   linkedin: 'https://www.linkedin.com/in/bue221/',
   mail: 'mailto:camiloplaza3@gmail.com',
   instagram: 'https://www.instagram.com/caj_ink/',
@@ -34,7 +34,6 @@ export const BLOG: Page = {
   TITLE: 'Blog',
   DESCRIPTION: 'Writing on topics I am passionate about.',
 }
-
 // Projects Page
 export const PROJECTS: Page = {
   TITLE: 'Projects',
@@ -50,16 +49,22 @@ export const SEARCH: Page = {
 // Study Page
 export const STUDIES = [
   {
-    title: 'Computer Science',
-    institution: 'Universidad Central',
-    link: 'https://www.ucentral.edu.co/',
-    date: '2019 - 2027',
+    title: 'Btech-CS(AI)',
+    institution: 'MITB',
+    link: 'https://www.manipal.edu/mu/campuses/mahe-bengaluru/academics/institution-list/mitblr.html',
+    date: '2022 - 2026',
   },
   {
-    title: '...',
-    institution: 'Platzi',
-    link: 'https://platzi.com/',
-    date: '2018 - 2022',
+    title: 'Secondary High School',
+    institution: 'DAV Kharghar',
+    link: 'https://davkharghar.org.in/',
+    date: '2020 - 2022',
+  },
+  {
+    title: 'High School',
+    institution: 'Ryan International School',
+    link: 'https://www.ryangroup.org/',
+    date: '2018 - 2020',
   },
   {
     title: '...',
@@ -69,92 +74,62 @@ export const STUDIES = [
   },
   {
     title: '...',
-    institution: 'Youtube',
-    link: 'https://www.youtube.com/@midulive',
-    date: '2018 - 2022',
+    institution: 'Buildspace',
+    link: 'https://buildspace.so/',
+    date: '2024 - 2024',
   },
   {
-    title: 'Tattoo Artist',
-    institution: 'Tattoo Academy',
-    link: 'https://www.instagram.com/tattoodcacademy/',
-    date: '2024 - 2025',
+    title: '...',
+    institution: 'Coursera',
+    link: 'courser.org',
+    date: '2022 - 2026',
   },
+ 
 ]
-
 export const EXPERIENCE = [
   {
-    company: 'Straico',
-    location: 'Bogotá D C, Colombia',
-    position: 'Software Engineer',
-    start: '2021',
-    link: 'https://straico.com/',
-    end: 'Current',
+    company: 'Intel Technologies Pvt. Ltd.',
+    location: 'Bengaluru, India',
+    position: 'Project Intern',
+    start: 'March 2024',
+    end: 'September 2024',
     tasks: [
-      'Integration IA services with react and tailwind css',
-      'Development and build of DB with mongoDB',
+      'Created multiple AI-powered internal tools to optimize data processing and model performance.',
+      'Gained hands-on experience with LLM fine-tuning techniques.',
+      'Explored Graph Retrieval-Augmented Generation (RAG) for enhanced data retrieval and understanding.',
     ],
   },
   {
-    company: 'Spot2',
-    location: 'Mexico City, Mexico',
-    position: 'Software Engineer',
-    link: 'https://spot2.mx/',
-    start: '2021',
-    end: 'Current',
+    company: 'Omdena',
+    location: 'Remote',
+    position: 'Generative AI Engineer',
+    start: 'January 2024',
+    end: 'May 2024',
     tasks: [
-      'Development of the Spot2 platform with the use of React, Redux, and Material UI',
-      'Development map with the use of Google Maps API',
-      'Development internal platform with the use of React, Redux, and Material UI',
-      'Testing and debugging',
+      'Led the LLM team of 30 engineers for a mental health support chatbot.',
+      'Implemented RAG architecture to enhance chatbot performance.',
     ],
   },
   {
-    company: 'Imaginamos',
-    link: 'https://imaginamos.com/',
-    location: 'Bogotá D C, Colombia',
-    position: 'Frontend developer',
-    start: '2021',
-    end: '2021',
+    company: 'Optimum AI',
+    location: 'Remote',
+    position: 'AI Researcher',
+    start: 'February 2024',
+    end: 'May 2024',
     tasks: [
-      'Development of the Imaginamos platform with the use of React, Redux, and Material UI',
-      'Work in ETB project with the use of React, Redux, and Material UI',
+      'Contributed to a hierarchical multi-agent AI finance planner project.',
+      'Deployed solutions on AWS for scalability and performance.',
     ],
   },
   {
-    company: 'INETUM',
-    location: 'Bogotá D C, Colombia',
-    position: 'Frontend developer',
-    start: '2021',
-    link: 'https://www.inetum.com/es',
-    end: '2021',
+    company: 'IEEE EPICS',
+    location: 'Bengaluru, India',
+    position: 'IEEE Research Intern',
+    start: 'September 2023',
+    end: '2024',
     tasks: [
-      'Support in the QA area and bug review',
-      'Use of SCRUM methodology',
-      'Claro projects with the use of frameworks and libraries such as react and angular',
-      'Use of redux toolkit as aproposal which allowed a shorter development time when using this tool',
+      'Led a team of 20+ members in designing and developing a multi-terrain autonomous rover.',
+      'Utilized LiDARs, sensors, edge computing, and machine learning technologies.',
     ],
   },
-  {
-    company: 'S I G',
-    location: 'Bogotá D C, Colombia',
-    position: 'Software developer',
-    start: '2021',
-    end: '2021',
-    tasks: [
-      'Development of a dashboard with react admin and chartjs for managing and entering information',
-    ],
-  },
-  {
-    company: 'BOOKII',
-    location: 'Bogotá D C, Colombia',
-    position: 'Software developer',
-    start: '2019',
-    end: '2021',
-    tasks: [
-      'Productive collaborationwiththebackendteamforthecreationofthe conversationalclubs',
-      'Effective coding of conversational clubs following design guide lines and using the Redux statemanager',
-      'Creation of the Bookii page in Spanish and change of texts in cms',
-      'Generation of static posts using Gatsby and the Contentful cms for the Bookii blog',
-    ],
-  },
-]
+];
