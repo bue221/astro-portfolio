@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Container from '../components/Container.astro'
+
+const links = [
+  {
+    title: "Link 1",
+    url: "#",
+  },
+  {
+    title: "Link 2",
+    url: "#",
+  },
+  {
+    title: "Link 3",
+    url: "#",
+  },
+]
+---
+
+<BaseLayout
+  title="Links - Brodie Helms"
+  description="Quick links and resources"
+>
+  <div slot="loader" class="loader bg-darkslate-700 fixed bottom-0 left-0 right-0 top-0 z-50 flex h-screen w-screen items-center justify-center text-3xl font-black uppercase text-neutral-50">
+  </div>
+  
+  <main class="min-h-screen w-full max-w-lg mx-auto px-4 py-8">
+    <div class="flex flex-col items-center mb-8">
+      <div class="w-32 h-32 rounded-full bg-gray-200 mb-4 overflow-hidden">
+        <img src="/me2.png" alt="Profile" class="w-full h-full object-cover" />
+      </div>
+      <h1 class="text-2xl font-bold text-center mb-2">Welcome! Quick links below!</h1>
+    </div>
+
+    <div class="space-y-4 card-animate">
+      {links.map((link) => (
+        <a
+          href={link.url}
+          class="block w-full p-4 text-center rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors duration-200"
+        >
+          {link.title}
+        </a>
+      ))}
+    </div>
+
+    <footer class="mt-12 text-center text-sm text-gray-500">
+      Built by Redmont digital with ❤️
+    </footer>
+  </main>
+</BaseLayout>
+
+<script>
+  import { stagger, spring, timeline, type TimelineDefinition } from 'motion'
+  import { loaderAnimation } from '../lib/constants'
+
+  const cards = document.querySelectorAll('.card-animate')
+
+  const sequence = [
+    loaderAnimation,
+    [
+      cards,
+      { y: ['40%', '0%'], opacity: [0, 1] },
+      {
+        at: '-0.1',
+        duration: 0.4,
+        delay: stagger(0.3),
+        easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+      },
+    ],
+  ]
+
+  timeline(sequence as TimelineDefinition)
+</script> 
