@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopLayout from '../layouts/TopLayout.astro';
+import BottomLayout from '../layouts/BottomLayout.astro';
+import Card from '../components/Card.astro';
+---
+
+<script>
+  import { stagger, spring, timeline, type TimelineDefinition } from 'motion';
+  import { loaderAnimation } from '../lib/constants';
+
+  const cards = document.querySelectorAll('.card-animate');
+
+  const sequence = [
+    loaderAnimation,
+    [
+      cards,
+      { y: ['40%', '0%'], opacity: [0, 1] },
+      {
+        at: '-0.1',
+        duration: 0.4,
+        delay: stagger(0.3),
+        easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+      },
+    ],
+  ];
+
+  timeline(sequence as TimelineDefinition);
+</script>
+
+<BaseLayout 
+  title="Portfolio | Hunter Brodie Helms" 
+  description="Portfolio and projects by Hunter Brodie Helms, Product Manager at FIXD and Founder of Redmont Digital"
+>
+  <div
+    slot="loader"
+    class="loader bg-darkslate-700 fixed bottom-0 left-0 right-0 top-0 z-50 flex h-screen w-screen items-center justify-center text-3xl font-black uppercase text-neutral-50"
+  >
+  </div>
+  <main class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-2 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:grid-rows-8 lg:gap-4">
+    <Card colSpan="md:col-span-2 lg:col-span-4" rowSpan="md:row-span-1" title="My Projects">
+      <p class="text-sm font-light">
+        Here are some of the projects I've worked on throughout my career. Each project represents a unique challenge and learning experience.
+      </p>
+    </Card>
+
+    <Card colSpan="md:col-span-1 lg:col-span-2" rowSpan="md:row-span-2" title="FIXD Automotive App">
+      <div class="flex flex-col gap-2">
+        <p class="text-sm font-light">
+          <strong>Product Management & Growth</strong>
+          <br />
+          Led product strategy and growth initiatives for the FIXD automotive app, helping car owners understand and maintain their vehicles.
+        </p>
+        <p class="text-sm font-light">
+          Key achievements:
+          <ul class="list-inside list-disc">
+            <li>Increased user retention by 35% through feature optimization</li>
+            <li>Launched premium subscription service with 20K+ subscribers</li>
+            <li>Coordinated cross-functional teams to deliver major app updates</li>
+          </ul>
+        </p>
+      </div>
+    </Card>
+
+    <Card colSpan="md:col-span-1 lg:col-span-2" rowSpan="md:row-span-2" title="Redmont Digital">
+      <div class="flex flex-col gap-2">
+        <p class="text-sm font-light">
+          <strong>Founder & Digital Strategist</strong>
+          <br />
+          Founded a digital agency specializing in product strategy, UX design, and digital marketing for startups and small businesses.
+        </p>
+        <p class="text-sm font-light">
+          Key achievements:
+          <ul class="list-inside list-disc">
+            <li>Developed comprehensive digital strategies for 15+ clients</li>
+            <li>Created user-centered design systems that increased conversion rates</li>
+            <li>Implemented analytics frameworks to measure and optimize performance</li>
+          </ul>
+        </p>
+      </div>
+    </Card>
+    
+    <Card colSpan="md:col-span-1 lg:col-span-2" rowSpan="md:row-span-2" title="Rewardzilla">
+      <div class="flex flex-col gap-2">
+        <p class="text-sm font-light">
+          <strong>Side Project - Rewards Platform</strong>
+          <br />
+          Developed a gamified rewards platform that helps users earn free meals and other rewards through completing simple tasks.
+        </p>
+        <p class="text-sm font-light">
+          Key achievements:
+          <ul class="list-inside list-disc">
+            <li>Built MVP using modern web technologies</li>
+            <li>Designed engaging user experience with game mechanics</li>
+            <li>Established partnerships with local restaurants for rewards</li>
+          </ul>
+        </p>
+      </div>
+    </Card>
+    
+    <Card colSpan="md:col-span-1 lg:col-span-2" rowSpan="md:row-span-2" title="Personal Website">
+      <div class="flex flex-col gap-2">
+        <p class="text-sm font-light">
+          <strong>Web Development</strong>
+          <br />
+          Designed and developed this personal website using Astro, Tailwind CSS, and modern web development practices.
+        </p>
+        <p class="text-sm font-light">
+          Key achievements:
+          <ul class="list-inside list-disc">
+            <li>Created responsive design that works across all devices</li>
+            <li>Implemented smooth animations and transitions</li>
+            <li>Optimized for performance and accessibility</li>
+          </ul>
+        </p>
+      </div>
+    </Card>
+  </main>
+</BaseLayout> 
