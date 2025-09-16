@@ -2,6 +2,7 @@
 import { File } from 'lucide-react'
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
+import { CVDownloadButton } from '../ui/CVDownloadButton'
 
 const PDF = '/HBH.pdf'
 ---
@@ -19,12 +20,7 @@ const PDF = '/HBH.pdf'
           View and download my resume by clicking on the button below
         </p>
         <div class="card-actions mt-2 flex w-full items-center justify-center">
-          <a target="_blank" href={PDF}>
-            <Button>
-              Download resume
-              <File />
-            </Button>
-          </a>
+          <CVDownloadButton client:load pdfUrl={PDF} />
         </div>
       </div>
     </div>

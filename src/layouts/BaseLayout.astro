@@ -3,6 +3,7 @@ import { ViewTransitions } from 'astro:transitions'
 import HeadSEO from '../components/HeadSEO.astro'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
+import NetlifyFormsDetector from '../components/NetlifyFormsDetector.astro'
 
 interface Props {
   title?: string | undefined
@@ -33,6 +34,7 @@ const { title, description, ogImage } = Astro.props
       <slot />
       <Footer />
     </div>
+    <NetlifyFormsDetector />
   </body>
 </html>
 
