@@ -1,16 +1,12 @@
 ---
-import { useTranslations } from '../../i18n'
 import Card from '../Card.astro'
 import { LINKS } from '../../lib/constants'
-
-const { currentLocale } = Astro
-const t = useTranslations(currentLocale as string)
 ---
 
 <Card
   colSpan="md:col-span-1"
   rowSpan="md:row-span-2"
-  title={t('tattooCard.title')}
+  title="Instagram tattoo"
   href={LINKS.instagram}
 >
   <div class="flex h-full w-full flex-col">
@@ -25,7 +21,7 @@ const t = useTranslations(currentLocale as string)
     </div>
     <div>
       <p class="mt-2 text-sm text-muted-foreground">
-        {t('tattooCard.p')}
+        If you want to see my tattoo's, you can follow me on Instagram.
       </p>
     </div>
   </div>

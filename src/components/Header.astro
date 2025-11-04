@@ -1,12 +1,6 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n'
-import { useTranslations } from '../i18n'
-import LanguageSwitcher from './LanguageSwitcher.astro'
-import { buttonVariants } from './ui/button'
-import { ModeToggle } from './ui/ThemeToggle'
-
-const { currentLocale } = Astro
-const t = useTranslations(currentLocale as string)
+import { buttonVariants } from '../components/ui/button'
+import { ModeToggle } from '../components/ui/ThemeToggle'
 ---
 
 <script is:inline>
@@ -30,28 +24,20 @@ const t = useTranslations(currentLocale as string)
     class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0"
   >
     <div class="flex gap-6 md:gap-10">
-      <a
-        href={getRelativeLocaleUrl(currentLocale as string, '/')}
-        class="flex items-center space-x-2"
-      >
+      <a href="/" class="flex items-center space-x-2">
         <span class="inline-block font-bold">Bue221</span>
       </a>
     </div>
     <div class="flex flex-1 items-center justify-end space-x-4">
       <nav class="flex items-center space-x-1">
         <a
-          href={getRelativeLocaleUrl(currentLocale as string, 'work')}
+          href="https://github.com/bue221"
+          target="_blank"
+          rel="noreferrer"
           class={buttonVariants({ variant: 'ghost' })}
         >
-          {t('nav.work')}
+          GitHub
         </a>
-        <a
-          href={getRelativeLocaleUrl(currentLocale as string, 'portfolio')}
-          class={buttonVariants({ variant: 'ghost' })}
-        >
-          {t('nav.projects')}
-        </a>
-        <LanguageSwitcher />
         <ModeToggle transition:persist client:load />
       </nav>
     </div>

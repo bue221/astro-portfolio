@@ -13,8 +13,4 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
-  i18n: {
-    locales: ['es', 'en', 'pt'],
-    defaultLocale: 'en',
-  },
 })

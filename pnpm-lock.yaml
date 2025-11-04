@@ -32,9 +32,6 @@ dependencies:
   contentful:
     specifier: ^10.8.6
     version: 10.8.6
-  flag-icons:
-    specifier: ^7.5.0
-    version: 7.5.0
   lucide-react:
     specifier: ^0.363.0
     version: 0.363.0(react@18.2.0)
@@ -2698,10 +2695,6 @@ packages:
     dependencies:
       micromatch: 4.0.5
       pkg-dir: 4.2.0
-    dev: false
-
-  /flag-icons@7.5.0:
-    resolution: {integrity: sha512-kd+MNXviFIg5hijH766tt+3x76ele1AXlo4zDdCxIvqWZhKt4T83bOtxUOOMlTx/EcFdUMH5yvQgYlFh1EqqFg==}
     dev: false
 
   /flattie@1.1.0:
