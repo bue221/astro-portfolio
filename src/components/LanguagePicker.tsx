@@ -52,7 +52,7 @@ export function LanguagePicker({
           <DropdownMenuItem
             key={l}
             onClick={() => handleLanguageChange(l)}
-            className={`flex items-center gap-2 cursor-pointer ${
+            className={`flex cursor-pointer items-center gap-2 ${
               currentLang === l ? 'bg-accent font-semibold' : ''
             }`}
           >
@@ -60,13 +60,10 @@ export function LanguagePicker({
               {languageFlags[l as keyof typeof languageFlags]}
             </span>
             <span>{label}</span>
-            {currentLang === l && (
-              <span className="ml-auto text-xs">✓</span>
-            )}
+            {currentLang === l && <span className="ml-auto text-xs">✓</span>}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
   )
 }
-

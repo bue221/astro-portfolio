@@ -16,10 +16,14 @@ export function ModeToggle() {
 
   React.useEffect(() => {
     // Initialize theme from localStorage or system preference
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | 'system' | null
+    const savedTheme = localStorage.getItem('theme') as
+      | 'light'
+      | 'dark'
+      | 'system'
+      | null
     const initialTheme = savedTheme || 'system'
     setThemeState(initialTheme)
-    
+
     // Apply initial theme
     const isDark =
       initialTheme === 'dark' ||
@@ -31,7 +35,7 @@ export function ModeToggle() {
   React.useEffect(() => {
     // Skip if theme hasn't been initialized yet
     if (theme === 'light' && !localStorage.getItem('theme')) return
-    
+
     const isDark =
       theme === 'dark' ||
       (theme === 'system' &&

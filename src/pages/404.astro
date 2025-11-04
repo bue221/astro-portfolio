@@ -1,17 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import { buttonVariants } from '../components/ui/button'
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils'
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from '../i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const translatePath = useTranslatedPath(lang)
 ---
 
-<BaseLayout
-  title={t('404.title')}
-  description={t('404.description')}
->
+<BaseLayout title={t('404.title')} description={t('404.description')}>
   <main class="flex h-[80vh] flex-auto">
     <div class="flex flex-col items-center justify-center px-8">
       <img src="/me_hello.png" alt="404" class="mb-8 size-64" />
@@ -22,7 +23,9 @@ const translatePath = useTranslatedPath(lang)
       <p class="mb-4 leading-7 [&:not(:first-child)]:mt-6">
         {t('404.message')}
       </p>
-      <a href={translatePath('/')} rel="noreferrer" class={buttonVariants()}>{t('404.goHome')}</a>
+      <a href={translatePath('/')} rel="noreferrer" class={buttonVariants()}
+        >{t('404.goHome')}</a
+      >
     </div>
   </main>
 </BaseLayout>

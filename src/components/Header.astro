@@ -2,7 +2,11 @@
 import { buttonVariants } from '../components/ui/button'
 import { ModeToggle } from '../components/ui/ThemeToggle'
 import { LanguagePicker } from './LanguagePicker'
-import { getLangFromUrl, useTranslatedPath, getRouteFromUrl } from '../i18n/utils'
+import {
+  getLangFromUrl,
+  useTranslatedPath,
+  getRouteFromUrl,
+} from '../i18n/utils'
 import { languages } from '../i18n/ui'
 
 const lang = getLangFromUrl(Astro.url)
@@ -19,7 +23,7 @@ Object.keys(languages).forEach((l) => {
 <script is:inline>
   // Apply theme immediately on page load (before React components mount)
   // This prevents flash of wrong theme
-  (function() {
+  ;(function () {
     const theme = localStorage.getItem('theme') || 'system'
     const isDark =
       theme === 'dark' ||

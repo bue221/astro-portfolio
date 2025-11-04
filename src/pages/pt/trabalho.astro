@@ -3,7 +3,11 @@ import { WORK } from '../../lib/constants'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import TopLayout from '../../layouts/TopLayout.astro'
 import BottomLayout from '../../layouts/BottomLayout.astro'
-import { getLangFromUrl, useTranslations, useTranslatedExperience } from '../../i18n/utils'
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedExperience,
+} from '../../i18n/utils'
 
 import { EXPERIENCE } from '../../lib/constants'
 
@@ -30,7 +34,8 @@ const getExperience = useTranslatedExperience(lang)
             return (
               <li class="animate mt-4 border-b border-black/10 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none dark:border-white/25">
                 <div class="mb-4 text-sm uppercase">
-                  {entry.start} - {entry.end === 'Current' ? translatedExp.current : entry.end}
+                  {entry.start} -{' '}
+                  {entry.end === 'Current' ? translatedExp.current : entry.end}
                 </div>
                 <a
                   href={entry.link ?? ''}
@@ -38,7 +43,9 @@ const getExperience = useTranslatedExperience(lang)
                 >
                   {translatedExp.company}
                 </a>
-                <div class="text-sm font-semibold">{translatedExp.position}</div>
+                <div class="text-sm font-semibold">
+                  {translatedExp.position}
+                </div>
                 <article class="prose dark:prose-invert">
                   {translatedExp.tasks.map((task) => (
                     <p>{task}</p>
@@ -52,4 +59,3 @@ const getExperience = useTranslatedExperience(lang)
     </BottomLayout>
   </main>
 </BaseLayout>
-

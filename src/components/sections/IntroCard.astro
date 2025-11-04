@@ -13,8 +13,10 @@ const t = useTranslations(lang)
   <div class="flex h-full w-full">
     <div class="flex flex-col justify-between gap-4 md:max-h-[300px]">
       <div class="flex h-full flex-col">
-        <h6 class="m-0 text-sm font-light text-gray-500">{t('intro.welcome')}</h6>
-        <p class="m-0 text-xl font-light" set:html={t('intro.title')}></p>
+        <h6 class="m-0 text-sm font-light text-gray-500">
+          {t('intro.welcome')}
+        </h6>
+        <p class="m-0 text-xl font-light" set:html={t('intro.title')} />
       </div>
       <div class="flex gap-4">
         <a href={LINKS.github} aria-label="github profile" target="_blank">

@@ -7,7 +7,7 @@ export function getLangFromUrl(url: URL) {
 }
 
 export function useTranslations(lang: keyof typeof ui) {
-  return function t(key: keyof typeof ui[typeof defaultLang]) {
+  return function t(key: keyof (typeof ui)[typeof defaultLang]) {
     return ui[lang][key] || ui[defaultLang][key]
   }
 }
@@ -50,7 +50,8 @@ export function useTranslatedExperience(lang: keyof typeof ui) {
     let taskIndex = 0
     const maxTasks = 10 // Safety limit to prevent infinite loops
     while (taskIndex < maxTasks) {
-      const taskKey = `experience.${expId}.tasks.${taskIndex}` as keyof typeof ui[typeof defaultLang]
+      const taskKey =
+        `experience.${expId}.tasks.${taskIndex}` as keyof (typeof ui)[typeof defaultLang]
       const task = t(taskKey)
       if (task === taskKey) break // No more tasks
       tasks.push(task)
@@ -58,11 +59,17 @@ export function useTranslatedExperience(lang: keyof typeof ui) {
     }
 
     return {
-      company: t(`experience.${expId}.company` as keyof typeof ui[typeof defaultLang]),
-      position: t(`experience.${expId}.position` as keyof typeof ui[typeof defaultLang]),
-      location: t(`experience.${expId}.location` as keyof typeof ui[typeof defaultLang]),
+      company: t(
+        `experience.${expId}.company` as keyof (typeof ui)[typeof defaultLang],
+      ),
+      position: t(
+        `experience.${expId}.position` as keyof (typeof ui)[typeof defaultLang],
+      ),
+      location: t(
+        `experience.${expId}.location` as keyof (typeof ui)[typeof defaultLang],
+      ),
       tasks,
-      current: t('experience.current' as keyof typeof ui[typeof defaultLang]),
+      current: t('experience.current' as keyof (typeof ui)[typeof defaultLang]),
     }
   }
 }
@@ -98,7 +105,7 @@ export function getRouteFromUrl(url: URL): string | undefined {
   if (routes && routes[currentLang]) {
     const getKeyByValue = (
       obj: Record<string, string>,
-      value: string
+      value: string,
     ): string | undefined => {
       return Object.keys(obj).find((key) => obj[key] === value)
     }
@@ -111,4 +118,3 @@ export function getRouteFromUrl(url: URL): string | undefined {
 
   return path
 }
-

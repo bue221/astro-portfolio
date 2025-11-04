@@ -2,7 +2,12 @@
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
 import { EXPERIENCE } from '../../lib/constants'
-import { getLangFromUrl, useTranslations, useTranslatedPath, useTranslatedExperience } from '../../i18n/utils'
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+  useTranslatedExperience,
+} from '../../i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -10,7 +15,11 @@ const translatePath = useTranslatedPath(lang)
 const getExperience = useTranslatedExperience(lang)
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-2" title={t('experience.title')}>
+<Card
+  colSpan="md:col-span-1"
+  rowSpan="md:row-span-2"
+  title={t('experience.title')}
+>
   <div class="mt-2 space-y-4">
     {
       EXPERIENCE.slice(0, 3).map((exp) => {
@@ -23,14 +32,16 @@ const getExperience = useTranslatedExperience(lang)
               {translatedExp.company}
             </a>
             <p class="text-sm text-gray-600">
-              {exp.start} - {exp.end === 'Current' ? translatedExp.current : exp.end}
+              {exp.start} -{' '}
+              {exp.end === 'Current' ? translatedExp.current : exp.end}
             </p>
           </div>
         )
       })
     }
     <a href={translatePath('/work')}>
-      <Button variant="link" className="pl-0">{t('experience.viewMore')}</Button>
+      <Button variant="link" className="pl-0">{t('experience.viewMore')}</Button
+      >
     </a>
   </div>
 </Card>
