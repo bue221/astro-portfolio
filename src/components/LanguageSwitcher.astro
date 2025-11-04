@@ -1,0 +1,26 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
+const { currentLocale } = Astro
+
+const flags: Record<string, string> = {
+  en: 'us',
+  es: 'es',
+  pt: 'br',
+}
+---
+
+<div class="flex gap-2">
+  {
+    Object.keys(flags).map((locale) => {
+      if (locale === currentLocale) {
+        return <span class:list={['fi', `fi-${flags[locale]}`, 'fis']} />
+      }
+      return (
+        <a href={getRelativeLocaleUrl(locale)}>
+          <span class:list={['fi', `fi-${flags[locale]}`, 'fis']} />
+        </a>
+      )
+    })
+  }
+</div>
