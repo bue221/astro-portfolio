@@ -1,0 +1,119 @@
+{
+  "site": {
+    "title": "Astro Esfera",
+    "description": "Bem-vindo à Astro Esfera, um portfólio e blog para designers e desenvolvedores."
+  },
+  "introCard": {
+    "welcome": "bem-vindo",
+    "p": "Olá, eu sou <b class=\"font-bold\">Andrés Camilo Plaza</b>, um desenvolvedor de software, engenheiro de sistemas e tatuador com forte foco na experiência do usuário, animações e microinterações. Adoro criar interfaces bonitas e funcionais, sou apaixonado por tecnologia e estou sempre em busca de novos desafios."
+  },
+  "aboutMe": {
+    "title": "Sobre mim",
+    "p1": "Olá, eu sou o Andrés, um desenvolvedor de software fullstack da Colômbia 🇨🇴.",
+    "p2": "Minhas principais ferramentas de escolha incluem:",
+    "p3": "Além da codificação, sou apaixonado por tatuagem, futebol e viagens. Um hobby incomum meu é tocar música clássica no violão ou ukulele."
+  },
+  "portfolio": {
+    "title": "Portfólio",
+    "description": "Projetos e alguns clones que eu fiz",
+    "heading": "Projetos e clones"
+  },
+  "cvCard": {
+    "title": "CV",
+    "p": "Veja e baixe meu currículo clicando no botão abaixo",
+    "button": "Baixar currículo"
+  },
+  "contactsCard": {
+    "title": "Vamos começar a trabalhar juntos!",
+    "contactDetails": "Detalhes de contato",
+    "socials": "Redes sociais"
+  },
+  "now": {
+    "title": "Agora",
+    "p": "Atualmente trabalhando como freelancer"
+  },
+  "studyCard": {
+    "title": "Estudo"
+  },
+  "tattooCard": {
+    "title": "Tatuagens no Instagram",
+    "p": "Se você quiser ver minhas tatuagens, pode me seguir no Instagram."
+  },
+  "404": {
+    "title": "404 - Não Encontrado",
+    "description": "Erro 404 — esta página não foi encontrada",
+    "heading": "Página não encontrada",
+    "p": "Desculpe, não conseguimos encontrar a página que você está procurando.",
+    "button": "Voltar ao início"
+  },
+  "nav": {
+    "home": "Início",
+    "work": "Trabalho",
+    "blog": "Blog",
+    "projects": "Projetos"
+  },
+  "experience": {
+    "straico": {
+      "company": "Straico",
+      "position": "Engenheiro de Software",
+      "tasks": [
+        "Integração de serviços de IA com React e Tailwind CSS",
+        "Desenvolvimento e construção de bancos de dados com MongoDB"
+      ]
+    },
+    "spot2": {
+      "company": "Spot2",
+      "position": "Engenheiro de Software",
+      "tasks": [
+        "Desenvolvimento da plataforma Spot2 usando React, Redux e Material UI",
+        "Desenvolvimento de mapas usando a API do Google Maps",
+        "Desenvolvimento de plataforma interna usando React, Redux e Material UI",
+        "Testes e depuração"
+      ]
+    },
+    "imaginamos": {
+      "company": "Imaginamos",
+      "position": "Desenvolvedor Frontend",
+      "tasks": [
+        "Desenvolvimento da plataforma Imaginamos usando React, Redux e Material UI",
+        "Trabalho no projeto ETB usando React, Redux e Material UI"
+      ]
+    },
+    "inetum": {
+      "company": "INETUM",
+      "position": "Desenvolvedor Frontend",
+      "tasks": [
+        "Suporte na área de QA e revisão de bugs",
+        "Uso da metodologia SCRUM",
+        "Projetos da Claro usando frameworks e bibliotecas como React e Angular",
+        "Uso do Redux Toolkit como proposta, o que permitiu um tempo de desenvolvimento menor ao usar esta ferramenta"
+      ]
+    },
+    "sig": {
+      "company": "S I G",
+      "position": "Desenvolvedor de Software",
+      "tasks": [
+        "Desenvolvimento de um dashboard com React Admin e Chart.js para gerenciamento e entrada de informações"
+      ]
+    },
+    "bookii": {
+      "company": "BOOKII",
+      "position": "Desenvolvedor de Software",
+      "tasks": [
+        "Colaboração produtiva com a equipe de backend para a criação dos clubes de conversação",
+        "Codificação eficaz dos clubes de conversação seguindo as diretrizes de design e usando o gerenciador de estado Redux",
+        "Criação da página da Bookii em espanhol e alteração de textos no CMS",
+        "Geração de posts estáticos usando Gatsby e o CMS Contentful para o blog da Bookii"
+      ]
+    },
+    "mercadoLibre": {
+      "company": "Mercado Livre",
+      "position": "Engenheiro de Software",
+      "tasks": [
+        "Desenvolvimento e manutenção da plataforma Mercado Livre",
+        "Colaboração com equipes multidisciplinares para criar produtos de alta qualidade",
+        "Implementação de novas funcionalidades e serviços"
+      ]
+    }
+  }
+}
