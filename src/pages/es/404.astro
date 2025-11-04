@@ -7,10 +7,7 @@ const { currentLocale } = Astro
 const t = useTranslations(currentLocale as string)
 ---
 
-<BaseLayout
-  title={t('404.title')}
-  description={t('404.description')}
->
+<BaseLayout title={t('404.title')} description={t('404.description')}>
   <main class="flex h-[80vh] flex-auto">
     <div class="flex flex-col items-center justify-center px-8">
       <img src="/me_hello.png" alt="404" class="mb-8 size-64" />
@@ -21,7 +18,9 @@ const t = useTranslations(currentLocale as string)
       <p class="mb-4 leading-7 [&:not(:first-child)]:mt-6">
         {t('404.p')}
       </p>
-      <a href="/" rel="noreferrer" class={buttonVariants()}> {t('404.button')}</a>
+      <a href="/" rel="noreferrer" class={buttonVariants()}>
+        {t('404.button')}</a
+      >
     </div>
   </main>
 </BaseLayout>

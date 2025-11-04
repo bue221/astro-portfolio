@@ -30,7 +30,10 @@ const t = useTranslations(currentLocale as string)
     class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0"
   >
     <div class="flex gap-6 md:gap-10">
-      <a href={getRelativeLocaleUrl(currentLocale as string, '/')} class="flex items-center space-x-2">
+      <a
+        href={getRelativeLocaleUrl(currentLocale as string, '/')}
+        class="flex items-center space-x-2"
+      >
         <span class="inline-block font-bold">Bue221</span>
       </a>
     </div>

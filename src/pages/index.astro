@@ -4,11 +4,13 @@ import { getRelativeLocaleUrl } from 'astro:i18n'
 const { currentLocale } = Astro
 ---
 
-<script define:vars={{
-  defaultLocale: 'en',
-  targetUrl: getRelativeLocaleUrl('en')
-}}>
-  window.location.href = targetUrl;
+<script
+  define:vars={{
+    defaultLocale: 'en',
+    targetUrl: getRelativeLocaleUrl('en'),
+  }}
+>
+  window.location.href = targetUrl
 </script>
 
 <div class="h-screen w-screen bg-black"></div>
