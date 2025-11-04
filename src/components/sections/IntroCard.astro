@@ -1,22 +1,22 @@
 ---
-import { useTranslations } from '../../i18n'
-import { LINKS } from '../../lib/constants'
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
-import { Github, Linkedin, Mail } from 'lucide-react'
-
-const { currentLocale } = Astro
-const t = useTranslations(currentLocale as string)
+import { LINKS } from '../../lib/constants'
+import { Linkedin, Github, Mail } from 'lucide-react'
 ---
 
 <Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
   <div class="flex h-full w-full">
     <div class="flex flex-col justify-between gap-4 md:max-h-[300px]">
       <div class="flex h-full flex-col">
-        <h6 class="m-0 text-sm font-light text-gray-500">
-          {t('introCard.welcome')}
-        </h6>
-        <p class="m-0 text-xl font-light" set:html={t('introCard.p')} />
+        <h6 class="m-0 text-sm font-light text-gray-500">welcome</h6>
+        <p class="m-0 text-xl font-light">
+          Hi, I'm <b class="font-bold">Andrés Camilo Plaza</b>, a software
+          developer, systems engineer and tattoo artist with strong focus on the
+          user experience, animations and micro interactions. I love to create
+          beautiful and functional interfaces, I am passionate about technology
+          and I am always looking for new challenges.
+        </p>
       </div>
       <div class="flex gap-4">
         <a href={LINKS.github} aria-label="github profile" target="_blank">

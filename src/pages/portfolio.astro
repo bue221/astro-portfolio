@@ -1,16 +1,13 @@
 ---
-import { useTranslations } from '../../i18n'
-import BaseLayout from '../../layouts/BaseLayout.astro'
-import TopLayout from '../../layouts/TopLayout.astro'
-import BottomLayout from '../../layouts/BottomLayout.astro'
-import ProjectCard from '../../components/ProjectCard.astro'
+import { WORK } from '../lib/constants'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import TopLayout from '../layouts/TopLayout.astro'
+import BottomLayout from '../layouts/BottomLayout.astro'
+import ProjectCard from '../components/ProjectCard.astro'
 
-import { contentfulClient } from '../../lib/contentful'
+import { contentfulClient } from '../lib/contentful'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import type { EntryFieldTypes } from 'contentful'
-
-const { currentLocale } = Astro
-const t = useTranslations(currentLocale as string)
 
 interface Project {
   contentTypeId: 'Projects'
@@ -26,15 +23,15 @@ const entries = await contentfulClient.getEntries<Project>({})
 ---
 
 <BaseLayout
-  title={t('portfolio.title')}
-  description={t('portfolio.description')}
+  title="Portfolio"
+  description="Projects and some clone's that I did"
 >
   <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="slide">
     <TopLayout>
       <h2
         class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
       >
-        {t('portfolio.heading')}
+        Projects and clone's
       </h2>
     </TopLayout>
     <BottomLayout size="xl">

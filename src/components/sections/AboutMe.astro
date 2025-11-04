@@ -1,22 +1,14 @@
 ---
-import { useTranslations } from '../../i18n'
 import Card from '../Card.astro'
-
-const { currentLocale } = Astro
-const t = useTranslations(currentLocale as string)
 ---
 
-<Card
-  colSpan="md:col-span-1"
-  rowSpan="md:row-span-6"
-  title={t('aboutMe.title')}
->
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-6" title="About me">
   <div class="flex flex-col gap-2">
     <p class="text-sm font-light">
-      {t('aboutMe.p1')}
+      Hi, I'm Andrés, a fullstack software developer from Colombia 🇨🇴.
       <br />
       <br />
-      {t('aboutMe.p2')}
+      My primary tools of choice includes:
       <ul class="list-inside list-disc">
         <li>JavaScript</li>
         <li>React</li>
@@ -29,7 +21,8 @@ const t = useTranslations(currentLocale as string)
       </ul>
     </p>
     <p class="text-sm font-light">
-      {t('aboutMe.p3')}
+      Beyond coding, I'm passionate about tattoo, soccer and traveling. An
+      unusual hobby of mine is play classical music in the guitar or ukulele.
     </p>
   </div>
 </Card>

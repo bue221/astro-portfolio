@@ -1,21 +1,19 @@
 ---
-import { useTranslations } from '../../i18n'
-import BaseLayout from '../../layouts/BaseLayout.astro'
-import TopLayout from '../../layouts/TopLayout.astro'
-import BottomLayout from '../../layouts/BottomLayout.astro'
-import { EXPERIENCE } from '../../lib/constants'
+import { WORK } from '../lib/constants'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import TopLayout from '../layouts/TopLayout.astro'
+import BottomLayout from '../layouts/BottomLayout.astro'
 
-const { currentLocale } = Astro
-const t = useTranslations(currentLocale as string)
+import { EXPERIENCE } from '../lib/constants'
 ---
 
-<BaseLayout title={t('nav.work')} description={t('nav.work')}>
+<BaseLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
   <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="fade">
     <TopLayout>
       <h2
         class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
       >
-        {t('nav.work')}
+        {WORK.TITLE}
       </h2>
     </TopLayout>
     <BottomLayout>
@@ -30,12 +28,12 @@ const t = useTranslations(currentLocale as string)
                 href={entry.link ?? ''}
                 class={`font-semibold ${entry?.link ? 'text-primary' : 'text-foreground'}`}
               >
-                {t(entry.company)}
+                {entry.company}
               </a>
-              <div class="text-sm font-semibold">{t(entry.position)}</div>
+              <div class="text-sm font-semibold">{entry.position}</div>
               <article class="prose dark:prose-invert">
                 {entry.tasks.map((i) => (
-                  <p>{t(i)}</p>
+                  <>{i}</>
                 ))}
               </article>
             </li>
