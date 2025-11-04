@@ -1,20 +1,20 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import IntroCard from '../components/sections/IntroCard.astro'
-import AboutMe from '../components/sections/AboutMe.astro'
-import Card from '../components/Card.astro'
-import TimeZoneCard from '../components/sections/TimeZoneCard.astro'
-import ContactsCard from '../components/sections/ContactsCard.astro'
-import Now from '../components/sections/Now.astro'
-import CVCard from '../components/sections/CVCard.astro'
-import ExperienceCard from '../components/sections/ExperienceCard.astro'
-import TattooCard from '../components/sections/TattooCard.astro'
-import StudyCard from '../components/sections/StudyCard.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import IntroCard from '../../components/sections/IntroCard.astro'
+import AboutMe from '../../components/sections/AboutMe.astro'
+import Card from '../../components/Card.astro'
+import TimeZoneCard from '../../components/sections/TimeZoneCard.astro'
+import ContactsCard from '../../components/sections/ContactsCard.astro'
+import Now from '../../components/sections/Now.astro'
+import CVCard from '../../components/sections/CVCard.astro'
+import ExperienceCard from '../../components/sections/ExperienceCard.astro'
+import TattooCard from '../../components/sections/TattooCard.astro'
+import StudyCard from '../../components/sections/StudyCard.astro'
 import {
   getLangFromUrl,
   useTranslations,
   useTranslatedPath,
-} from '../i18n/utils'
+} from '../../i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -23,7 +23,7 @@ const translatePath = useTranslatedPath(lang)
 
 <script>
   import { spring, stagger, timeline, type TimelineDefinition } from 'motion'
-  import { loaderAnimation } from '../lib/constants'
+  import { loaderAnimation } from '../../lib/constants'
 
   let animationRunning = false
   let animationTimeout: ReturnType<typeof setTimeout> | null = null

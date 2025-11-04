@@ -1,20 +1,32 @@
 ---
 import { buttonVariants } from '../components/ui/button'
 import { ModeToggle } from '../components/ui/ThemeToggle'
+import { LanguagePicker } from './LanguagePicker'
+import { getLangFromUrl, useTranslatedPath, getRouteFromUrl } from '../i18n/utils'
+import { languages } from '../i18n/ui'
+
+const lang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(lang)
+const route = getRouteFromUrl(Astro.url) || ''
+
+// Generate paths for all languages
+const languagePaths: Record<string, string> = {}
+Object.keys(languages).forEach((l) => {
+  languagePaths[l] = translatePath(route ? `/${route}` : '/', l)
+})
 ---
 
 <script is:inline>
-  document.addEventListener('astro:after-swap', function () {
-    if (localStorage.getItem('theme') === 'dark')
-      document.documentElement.classList.toggle('dark', true)
-  })
-
-  const getThemePreference = () => {
-    return localStorage.getItem('theme')
-  }
-
-  const isDark = getThemePreference() === 'dark'
-  document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
+  // Apply theme immediately on page load (before React components mount)
+  // This prevents flash of wrong theme
+  (function() {
+    const theme = localStorage.getItem('theme') || 'system'
+    const isDark =
+      theme === 'dark' ||
+      (theme === 'system' &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
+  })()
 </script>
 
 <header
@@ -24,12 +36,18 @@ import { ModeToggle } from '../components/ui/ThemeToggle'
     class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0"
   >
     <div class="flex gap-6 md:gap-10">
-      <a href="/" class="flex items-center space-x-2">
+      <a href={translatePath('/')} class="flex items-center space-x-2">
         <span class="inline-block font-bold">Bue221</span>
       </a>
     </div>
     <div class="flex flex-1 items-center justify-end space-x-4">
       <nav class="flex items-center space-x-1">
+        <LanguagePicker
+          currentLang={lang}
+          currentRoute={route}
+          languagePaths={languagePaths}
+          client:load
+        />
         <a
           href="https://github.com/bue221"
           target="_blank"

@@ -1,14 +1,12 @@
 ---
-import { WORK } from '../lib/constants'
-import BaseLayout from '../layouts/BaseLayout.astro'
-import TopLayout from '../layouts/TopLayout.astro'
-import BottomLayout from '../layouts/BottomLayout.astro'
-import ProjectCard from '../components/ProjectCard.astro'
-import { getLangFromUrl, useTranslations } from '../i18n/utils'
+import ProjectCard from '../../components/ProjectCard.astro'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import BottomLayout from '../../layouts/BottomLayout.astro'
+import TopLayout from '../../layouts/TopLayout.astro'
 
-import { contentfulClient } from '../lib/contentful'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import type { EntryFieldTypes } from 'contentful'
+import { contentfulClient } from '../../lib/contentful'
 
 interface Project {
   contentTypeId: 'Projects'

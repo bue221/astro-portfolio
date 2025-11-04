@@ -1,12 +1,12 @@
 ---
-import { WORK } from '../lib/constants'
-import BaseLayout from '../layouts/BaseLayout.astro'
-import TopLayout from '../layouts/TopLayout.astro'
-import BottomLayout from '../layouts/BottomLayout.astro'
-import ProjectCard from '../components/ProjectCard.astro'
-import { getLangFromUrl, useTranslations } from '../i18n/utils'
+import { WORK } from '../../lib/constants'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import TopLayout from '../../layouts/TopLayout.astro'
+import BottomLayout from '../../layouts/BottomLayout.astro'
+import ProjectCard from '../../components/ProjectCard.astro'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
 
-import { contentfulClient } from '../lib/contentful'
+import { contentfulClient } from '../../lib/contentful'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import type { EntryFieldTypes } from 'contentful'
 
@@ -65,3 +65,4 @@ const t = useTranslations(lang)
     </BottomLayout>
   </main>
 </BaseLayout>
+
