@@ -1,15 +1,15 @@
 ---
-import { WORK } from '../lib/constants'
-import BaseLayout from '../layouts/BaseLayout.astro'
-import TopLayout from '../layouts/TopLayout.astro'
-import BottomLayout from '../layouts/BottomLayout.astro'
+import { WORK } from '../../lib/constants'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import TopLayout from '../../layouts/TopLayout.astro'
+import BottomLayout from '../../layouts/BottomLayout.astro'
 import {
   getLangFromUrl,
   useTranslations,
   useTranslatedExperience,
-} from '../i18n/utils'
+} from '../../i18n/utils'
 
-import { EXPERIENCE } from '../lib/constants'
+import { EXPERIENCE } from '../../lib/constants'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)

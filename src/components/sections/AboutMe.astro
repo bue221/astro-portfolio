@@ -1,14 +1,18 @@
 ---
 import Card from '../Card.astro'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-6" title="About me">
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-6" title={t('about.title')}>
   <div class="flex flex-col gap-2">
     <p class="text-sm font-light">
-      Hi, I'm Andrés, a fullstack software developer from Colombia 🇨🇴.
+      {t('about.description')}
       <br />
       <br />
-      My primary tools of choice includes:
+      {t('about.tools')}
       <ul class="list-inside list-disc">
         <li>JavaScript</li>
         <li>React</li>
@@ -21,8 +25,7 @@ import Card from '../Card.astro'
       </ul>
     </p>
     <p class="text-sm font-light">
-      Beyond coding, I'm passionate about tattoo, soccer and traveling. An
-      unusual hobby of mine is play classical music in the guitar or ukulele.
+      {t('about.hobbies')}
     </p>
   </div>
 </Card>

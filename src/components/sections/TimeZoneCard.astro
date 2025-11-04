@@ -1,8 +1,16 @@
 ---
 import Card from '../Card.astro'
 import TimeZoneV2 from './TimeZoneCardV2'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<Card colSpan="lg:col-span-2" rowSpan="md:row-span-2" title="Time zone">
+<Card
+  colSpan="lg:col-span-2"
+  rowSpan="md:row-span-2"
+  title={t('timezone.title')}
+>
   <TimeZoneV2 timezone="America/Bogota" client:load />
 </Card>

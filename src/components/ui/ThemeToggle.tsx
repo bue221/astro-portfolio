@@ -15,11 +15,27 @@ export function ModeToggle() {
   )
 
   React.useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains('dark')
-    setThemeState(isDarkMode ? 'dark' : 'light')
+    // Initialize theme from localStorage or system preference
+    const savedTheme = localStorage.getItem('theme') as
+      | 'light'
+      | 'dark'
+      | 'system'
+      | null
+    const initialTheme = savedTheme || 'system'
+    setThemeState(initialTheme)
+
+    // Apply initial theme
+    const isDark =
+      initialTheme === 'dark' ||
+      (initialTheme === 'system' &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
   }, [])
 
   React.useEffect(() => {
+    // Skip if theme hasn't been initialized yet
+    if (theme === 'light' && !localStorage.getItem('theme')) return
+
     const isDark =
       theme === 'dark' ||
       (theme === 'system' &&
@@ -27,9 +43,23 @@ export function ModeToggle() {
     document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
   }, [theme])
 
-  const onChangeTheme = (theme: any) => {
-    setThemeState(theme)
-    localStorage.setItem('theme', theme)
+  const onChangeTheme = (newTheme: 'light' | 'dark' | 'system') => {
+    // Use ViewTransition API for smoother theme changes
+    const applyTheme = () => {
+      setThemeState(newTheme)
+      localStorage.setItem('theme', newTheme)
+      const isDark =
+        newTheme === 'dark' ||
+        (newTheme === 'system' &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
+    }
+
+    if (document.startViewTransition) {
+      document.startViewTransition(applyTheme)
+    } else {
+      applyTheme()
+    }
   }
 
   return (
