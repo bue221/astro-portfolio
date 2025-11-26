@@ -3,6 +3,7 @@ import { ViewTransitions } from 'astro:transitions'
 import HeadSEO from '../components/HeadSEO.astro'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
+import BackgroundGradient from "../components/BackgroundGradient.astro";
 import { getLangFromUrl } from '../i18n/utils'
 
 interface Props {
@@ -20,10 +21,13 @@ const lang = getLangFromUrl(Astro.url)
     <HeadSEO title={title} description={description} ogImage={ogImage} />
     <ViewTransitions />
   </head>
-  <body class="min-h-screen bg-background font-sans antialiased">
-    <div class="flex flex-col items-center justify-center">
+  <body class="min-h-screen font-sans antialiased">
+    <BackgroundGradient />
+    <div class="relative flex min-h-screen flex-col">
       <Header />
-      <slot />
+      <main class="flex-1">
+        <slot />
+      </main>
       <Footer />
     </div>
   </body>
