@@ -1,13 +1,16 @@
-<canvas id="background-canvas" class="fixed inset-0 -z-10 h-full w-full"></canvas>
+<canvas id="background-canvas" class="fixed inset-0 -z-10 h-full w-full"
+></canvas>
 
 <script>
-  const canvas = document.getElementById('background-canvas') as HTMLCanvasElement;
-  const ctx = canvas.getContext('2d');
+  const canvas = document.getElementById(
+    'background-canvas',
+  ) as HTMLCanvasElement
+  const ctx = canvas.getContext('2d')
 
-  let particles: Particle[] = [];
-  let animationId: number;
-  let mouse = { x: -1000, y: -1000, isActive: false };
-  let idleTimer: number;
+  let particles: Particle[] = []
+  let animationId: number
+  let mouse = { x: -1000, y: -1000, isActive: false }
+  let idleTimer: number
 
   // Colors will be fetched from CSS variables
   // primary: Orange (usually)
@@ -15,198 +18,201 @@
   const colors = {
     primary: '0 0% 100%',
     foreground: '0 0% 100%',
-  };
-
-  function updateColors() {
-    const style = getComputedStyle(document.documentElement);
-    const getVar = (name: string) => style.getPropertyValue(name).trim();
-    
-    colors.primary = getVar('--primary');
-    colors.foreground = getVar('--foreground');
-    
-    particles.forEach(p => p.updateColor());
   }
 
-  type ShapeType = 'blade' | 'triangle' | 'cross' | 'circle';
+  function updateColors() {
+    const style = getComputedStyle(document.documentElement)
+    const getVar = (name: string) => style.getPropertyValue(name).trim()
+
+    colors.primary = getVar('--primary')
+    colors.foreground = getVar('--foreground')
+
+    particles.forEach((p) => p.updateColor())
+  }
+
+  type ShapeType = 'blade' | 'triangle' | 'cross' | 'circle'
 
   class Particle {
-    x: number;
-    y: number;
-    size: number;
-    length: number;
-    speedX: number;
-    speedY: number;
-    angle: number;
-    swing: number;
-    swingSpeed: number;
-    color: string;
-    colorType: 'primary' | 'foreground';
-    shape: ShapeType;
-    rotation: number;
-    rotationSpeed: number;
+    x: number
+    y: number
+    size: number
+    length: number
+    speedX: number
+    speedY: number
+    angle: number
+    swing: number
+    swingSpeed: number
+    color: string
+    colorType: 'primary' | 'foreground'
+    shape: ShapeType
+    rotation: number
+    rotationSpeed: number
 
     constructor() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      
+      this.x = Math.random() * canvas.width
+      this.y = Math.random() * canvas.height
+
       // Dimensions
-      this.size = Math.random() * 3 + 1; 
-      this.length = Math.random() * 10 + 5; 
-      
+      this.size = Math.random() * 3 + 1
+      this.length = Math.random() * 10 + 5
+
       // Physics
-      this.speedY = Math.random() * 1 + 0.5;
-      this.speedX = 0;
-      
-      this.angle = Math.random() * 360;
-      this.swing = Math.random() * 1.5 + 0.5;
-      this.swingSpeed = Math.random() * 0.05 + 0.01;
-      
-      this.rotation = Math.random() * 360;
-      this.rotationSpeed = (Math.random() - 0.5) * 0.05;
-      
+      this.speedY = Math.random() * 1 + 0.5
+      this.speedX = 0
+
+      this.angle = Math.random() * 360
+      this.swing = Math.random() * 1.5 + 0.5
+      this.swingSpeed = Math.random() * 0.05 + 0.01
+
+      this.rotation = Math.random() * 360
+      this.rotationSpeed = (Math.random() - 0.5) * 0.05
+
       // Shape: Always Cross
-      this.shape = 'cross';
+      this.shape = 'cross'
 
       // Random Color
       // 30% Primary (Orange), 70% Foreground (Black/White) for minimalist feel
-      const colorRand = Math.random();
+      const colorRand = Math.random()
       if (colorRand < 0.3) {
-        this.colorType = 'primary';
+        this.colorType = 'primary'
       } else {
-        this.colorType = 'foreground';
+        this.colorType = 'foreground'
       }
-      this.updateColor();
+      this.updateColor()
     }
 
     updateColor() {
-        let val = '';
-        if (this.colorType === 'primary') val = colors.primary;
-        else val = colors.foreground;
-        
-        // Fallback
-        if (!val) val = '0 0% 100%';
-        
-        this.color = `hsl(${val})`;
+      let val = ''
+      if (this.colorType === 'primary') val = colors.primary
+      else val = colors.foreground
+
+      // Fallback
+      if (!val) val = '0 0% 100%'
+
+      this.color = `hsl(${val})`
     }
 
     update() {
-      this.y += this.speedY;
-      this.angle += this.swingSpeed;
-      this.x += Math.cos(this.angle) * this.swing;
-      this.rotation += this.rotationSpeed;
+      this.y += this.speedY
+      this.angle += this.swingSpeed
+      this.x += Math.cos(this.angle) * this.swing
+      this.rotation += this.rotationSpeed
 
       if (mouse.isActive) {
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
+        let dx = mouse.x - this.x
+        let dy = mouse.y - this.y
+        let distance = Math.sqrt(dx * dx + dy * dy)
         if (distance < 150) {
-            const force = (150 - distance) / 150;
-            const angle = Math.atan2(dy, dx);
-            this.x -= Math.cos(angle) * force * 5;
-            this.y -= Math.sin(angle) * force * 5;
+          const force = (150 - distance) / 150
+          const angle = Math.atan2(dy, dx)
+          this.x -= Math.cos(angle) * force * 5
+          this.y -= Math.sin(angle) * force * 5
         }
       }
-      
+
       if (this.y > canvas.height + 20) {
-          this.y = -20;
-          this.x = Math.random() * canvas.width;
+        this.y = -20
+        this.x = Math.random() * canvas.width
       }
-      if (this.x > canvas.width + 20) this.x = -20;
-      if (this.x < -20) this.x = canvas.width + 20;
+      if (this.x > canvas.width + 20) this.x = -20
+      if (this.x < -20) this.x = canvas.width + 20
     }
 
     draw() {
-      if (!ctx) return;
-      ctx.fillStyle = this.color;
-      
-      ctx.save();
-      ctx.translate(this.x, this.y);
-      ctx.rotate(this.rotation);
-      ctx.beginPath();
+      if (!ctx) return
+      ctx.fillStyle = this.color
+
+      ctx.save()
+      ctx.translate(this.x, this.y)
+      ctx.rotate(this.rotation)
+      ctx.beginPath()
 
       if (this.shape === 'blade') {
-          ctx.ellipse(0, 0, this.size, this.length, 0, 0, Math.PI * 2);
+        ctx.ellipse(0, 0, this.size, this.length, 0, 0, Math.PI * 2)
       } else if (this.shape === 'circle') {
-          ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+        ctx.arc(0, 0, this.size, 0, Math.PI * 2)
       } else if (this.shape === 'triangle') {
-          const s = this.size * 2;
-          ctx.moveTo(0, -s);
-          ctx.lineTo(s, s);
-          ctx.lineTo(-s, s);
-          ctx.closePath();
+        const s = this.size * 2
+        ctx.moveTo(0, -s)
+        ctx.lineTo(s, s)
+        ctx.lineTo(-s, s)
+        ctx.closePath()
       } else if (this.shape === 'cross') {
-          const w = this.size;
-          const l = this.length * 0.6;
-          ctx.rect(-w/2, -l/2, w, l);
-          ctx.rect(-l/2, -w/2, l, w);
+        const w = this.size
+        const l = this.length * 0.6
+        ctx.rect(-w / 2, -l / 2, w, l)
+        ctx.rect(-l / 2, -w / 2, l, w)
       }
 
-      ctx.fill();
-      ctx.restore();
+      ctx.fill()
+      ctx.restore()
     }
   }
 
   function init() {
-    if (!canvas) return;
-    updateColors();
-    resize();
-    
+    if (!canvas) return
+    updateColors()
+    resize()
+
     window.addEventListener('mousemove', (e) => {
-      mouse.x = e.x;
-      mouse.y = e.y;
-      mouse.isActive = true;
-      clearTimeout(idleTimer);
+      mouse.x = e.x
+      mouse.y = e.y
+      mouse.isActive = true
+      clearTimeout(idleTimer)
       idleTimer = window.setTimeout(() => {
-        mouse.isActive = false;
-      }, 2000);
-    });
+        mouse.isActive = false
+      }, 2000)
+    })
 
     window.addEventListener('mouseleave', () => {
-      mouse.isActive = false;
-    });
-    
+      mouse.isActive = false
+    })
+
     const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                updateColors();
-            }
-        });
-    });
-    observer.observe(document.documentElement, { attributes: true });
-    
-    animate();
+      mutations.forEach((mutation) => {
+        if (
+          mutation.type === 'attributes' &&
+          mutation.attributeName === 'class'
+        ) {
+          updateColors()
+        }
+      })
+    })
+    observer.observe(document.documentElement, { attributes: true })
+
+    animate()
   }
 
   function createParticles() {
-    particles = [];
+    particles = []
     // Minimalist density
-    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 15000); 
+    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 15000)
     for (let i = 0; i < numberOfParticles; i++) {
-      particles.push(new Particle());
+      particles.push(new Particle())
     }
   }
 
   function animate() {
-    if (!ctx) return;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (!ctx) return
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
+      particles[i].update()
+      particles[i].draw()
     }
-    animationId = requestAnimationFrame(animate);
+    animationId = requestAnimationFrame(animate)
   }
 
   function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    createParticles();
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    createParticles()
   }
 
-  window.addEventListener('resize', resize);
-  
+  window.addEventListener('resize', resize)
+
   if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', init)
   } else {
-      init();
+    init()
   }
 </script>
