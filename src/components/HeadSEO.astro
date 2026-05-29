@@ -1,6 +1,7 @@
 ---
 import '@/styles/globals.css'
 import '@/styles/fonts.css'
+import { LINKS } from '@/lib/constants'
 
 interface Props {
   title?: string | undefined
@@ -11,10 +12,35 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
 if (Astro.props.ogImage === undefined) {
-  Astro.props.ogImage = new URL('View1.png', canonicalURL)
+  Astro.props.ogImage = new URL('View1.png', Astro.site)
 }
 
 const { title, description, ogImage } = Astro.props
+
+// Person structured data — helps search engines connect name queries to you
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Hunter Brodie Helms',
+  alternateName: ['Brodie Helms', 'Hunter Helms'],
+  jobTitle: 'Product Manager',
+  url: Astro.site?.href,
+  image: new URL('me.png', Astro.site).href,
+  email: 'bhelms@redmontdigital.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Fairhope',
+    addressRegion: 'AL',
+    addressCountry: 'US',
+  },
+  worksFor: {
+    '@type': 'Organization',
+    name: 'FIXD Automotive',
+  },
+  sameAs: [LINKS.linkedin, LINKS.github, LINKS.instagram, LINKS.medium].filter(
+    Boolean,
+  ),
+}
 ---
 
 <meta charset="utf-8" />
@@ -37,9 +63,17 @@ const { title, description, ogImage } = Astro.props
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Hunter Brodie Helms" />
 
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={ogImage} />
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(personSchema)}
+/>

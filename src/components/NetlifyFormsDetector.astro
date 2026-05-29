@@ -3,11 +3,28 @@
 // This component should be included in the site layout so Netlify can detect the form during build
 ---
 
-<!-- Hidden form for Netlify Forms detection -->
-<form name="resume-download" data-netlify="true" netlify-honeypot="bot-field" style="display: none;">
+<!-- Hidden forms for Netlify Forms detection -->
+<form
+  name="resume-download"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  style="display: none;"
+>
   <input type="hidden" name="form-name" value="resume-download" />
   <input type="text" name="name" />
   <input type="email" name="email" />
   <input type="text" name="timestamp" />
+  <input type="text" name="bot-field" />
+</form>
+<form
+  name="contact"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  style="display: none;"
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <textarea name="message"></textarea>
   <input type="text" name="bot-field" />
 </form>

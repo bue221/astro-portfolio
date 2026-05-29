@@ -15,11 +15,12 @@ export const LINKS = {
   substack: 'https://pmbrodie.substack.com/',
   discord: 'https://discordapp.com/users/163300027618295808',
   rewardzilla: 'https://www.rewardzilla.net/',
+  booking: 'https://calendar.app.google/1RgGcSPRMjPVzF4Y9',
 }
 
 // Global
 export const SITE: Site = {
-  TITLE: 'bhelms.com',
+  TITLE: 'brodieh.com',
   DESCRIPTION:
     'Welcome to brodieh.com, a product enthusiast and software developer portfolio and blog.',
   AUTHOR: 'Brodie Helms',
@@ -28,7 +29,8 @@ export const SITE: Site = {
 // Work Page
 export const WORK: Page = {
   TITLE: 'Work',
-  DESCRIPTION: 'Places I have worked.',
+  DESCRIPTION:
+    "Hunter Brodie Helms's professional experience as a product manager, including roles at FIXD Automotive and LinkedIn.",
 }
 
 // Blog Page
@@ -76,7 +78,7 @@ export const STUDIES = [
     date: '2018 - 2022',
   },
   {
-    title: 'Tattoo Artist',
+    title: 'Principles',
     institution: 'Principles',
     link: 'https://www.amazon.com/Principles-Ray-Dalio-audiobook/dp/B074B2CZJG/ref=sr_1_1?crid=2U2271YGDRA3J&dib=eyJ2IjoiMSJ9.Ti85k-rZTJGLsj1n76lvI8y8N3bMqzmf-ISlcprcXCz8BRv8XlEUQZLyPyOju9n3g1NL9AafD4Jfp_3JJh0jQ4h3I9pRUDdixZ2ysP2J03ttbmorzdtypdnS7wohKFjXins7RwODWyIVJ5_uNBGuTt3wWtj2zwgg43-W4EJhilI.mZrafgPCdGhrbxORp8kykFCSVO8AEYp-EKw5Wx_pGLk&dib_tag=se&keywords=Principles+by+ray+dalio&qid=1741314479&s=audible&sprefix=principles+by+ray+dalio+%2Caudible%2C120&sr=1-1',
     date: '2024 - 2025',
@@ -85,55 +87,34 @@ export const STUDIES = [
 
 export const EXPERIENCE = [
   {
-    company: 'FIXD',
-    location: 'Atlanta, GA (Remote)',
+    company: 'FIXD Automotive',
+    location: 'Atlanta, GA — Remote',
     position: 'Product Manager',
-    start: '2022',
+    start: 'May 2022',
     link: 'https://fixdapp.com/',
-    end: 'Current',
+    end: 'Present',
+    summary:
+      'FIXD Automotive simplifies car maintenance with an OBD2 sensor and mobile app, delivering personalized insights powered by data from over 3 million drivers.',
     tasks: [
-      'Integration IA services with react and tailwind css',
-      'Development and build of DB with mongoDB',
+      'Spearheaded user research leading to the development of an in-app AI-powered repair assistant that provided instant repair insights, increasing weekly user retention by 10%.',
+      'Directed a B2B product serving 450 franchise car dealerships, achieving $1M in annual recurring revenue within 12 months and leading to a 5× ARR acquisition.',
+      'Collaborated with engineering to design and implement AI integrations into the flagship product, reducing monthly vendor costs by $50K while expanding coverage for an international user base.',
+      'Developed and integrated an upsell feature on the checkout page, driving an additional $40K in monthly premium revenue.',
     ],
   },
   {
     company: 'LinkedIn',
-    location: 'San Francisco, CA',
+    location: 'San Francisco, CA — Remote',
     position: 'Technical Program Manager',
     link: 'https://linkedin.com/',
-    start: '2018',
-    end: '2021',
+    start: 'May 2017',
+    end: 'March 2021',
+    summary:
+      "Led cross-functional teams to drive the development and launch of consumer-facing features on LinkedIn's platform, from conception to completion — coordinating engineering, product, design, and marketing to ship high-quality products on schedule.",
     tasks: [
-      'Development of the Spot2 platform with the use of React, Redux, and Material UI',
-      'Development map with the use of Google Maps API',
-      'Development internal platform with the use of React, Redux, and Material UI',
-      'Testing and debugging',
-    ],
-  },
-  {
-    company: 'VynlMnky',
-    link: 'https://www.vinylmnky.com/?srsltid=AfmBOoodTIt1wPYINyslQBeVnlqlYCLlRbOYM0NKz8ijFmv1X8-V0YxK',
-    location: 'Austin, TX',
-    position: 'Frontend Developer',
-    start: '2017',
-    end: '2017',
-    tasks: [
-      'Development of the VynlMnkt platform with the use of React, Redux, and Material UI',
-      'Work in VynlMnky e-commerce site with the use of Shopify, Liquid, and React',
-    ],
-  },
-  {
-    company: 'LinkedIn',
-    location: 'San Francisco, CA',
-    position: 'Technical Program Manager Intern',
-    link: 'https://linkedin.com/',
-    start: '2017',
-    end: '2017',
-    tasks: [
-      'Development of the Spot2 platform with the use of React, Redux, and Material UI',
-      'Development map with the use of Google Maps API',
-      'Development internal platform with the use of React, Redux, and Material UI',
-      'Testing and debugging',
+      'Directed a cross-functional team of 12 to develop and launch LinkedIn\'s "Open to" feature, a user-centric tool that increased job application activity by 3%.',
+      'Led the "DependIn" project, streamlining developer dependencies and cutting planning time by 30%, speeding up product delivery.',
+      "Championed the Project Honeycomb initiative, enabling LinkedIn's notification system to deliver 900M+ daily messages and boosting daily user engagement by 5% through reliable, timely alerts.",
     ],
   },
 ]

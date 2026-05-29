@@ -41,9 +41,6 @@ export const CVDownloadButton: React.FC<CVDownloadButtonProps> = ({
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
-
-      // Optional: Show a success message
-      alert('Thank you! Your download will begin shortly.')
     } catch (error) {
       console.error('Error capturing lead:', error)
       // Still allow download even if lead capture fails
