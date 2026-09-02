@@ -23,9 +23,5 @@ const { class: className = '', showWordmark = true } = Astro.props
       </span>
     )
   }
-  {
-    !showWordmark && (
-      <span class="sr-only">Bue221</span>
-    )
-  }
+  {!showWordmark && <span class="sr-only">Bue221</span>}
 </span>

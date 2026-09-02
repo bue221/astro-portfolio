@@ -51,7 +51,7 @@ export function PortfolioFilter({ projects, tags, labels }: Props) {
         ))}
       </div>
 
-      <p className="text-sm text-muted-foreground" aria-live="polite">
+      <p className="text-muted-foreground text-sm" aria-live="polite">
         {labels.results.replace('{count}', String(filtered.length))}
       </p>
 
@@ -62,7 +62,7 @@ export function PortfolioFilter({ projects, tags, labels }: Props) {
         )}
       >
         {filtered.length === 0 ? (
-          <p className="col-span-full py-16 text-center text-muted-foreground">
+          <p className="text-muted-foreground col-span-full py-16 text-center">
             {labels.empty}
           </p>
         ) : (
@@ -113,7 +113,7 @@ function ProjectFilterCard({
   repoLabel: string
 }) {
   const card = (
-    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-lg transition duration-200 hover:border-primary">
+    <article className="group bg-card text-card-foreground hover:border-primary flex h-full flex-col overflow-hidden rounded-2xl border shadow-lg transition duration-200">
       {project.imagePath ? (
         <img
           src={project.imagePath}
@@ -122,8 +122,8 @@ function ProjectFilterCard({
           loading="lazy"
         />
       ) : (
-        <div className="flex h-48 w-full items-center justify-center bg-linear-to-br from-orange-500/20 via-background to-orange-700/10">
-          <span className="text-3xl font-black tracking-tight text-primary/70">
+        <div className="via-background flex h-48 w-full items-center justify-center bg-linear-to-br from-orange-500/20 to-orange-700/10">
+          <span className="text-primary/70 text-3xl font-black tracking-tight">
             {project.name.slice(0, 2).toUpperCase()}
           </span>
         </div>
@@ -132,7 +132,7 @@ function ProjectFilterCard({
         <div>
           <h3 className="text-lg font-medium">{project.name}</h3>
           {project.description ? (
-            <p className="mt-0.5 line-clamp-2 text-sm text-muted-foreground">
+            <p className="text-muted-foreground mt-0.5 line-clamp-2 text-sm">
               {project.description}
             </p>
           ) : null}
@@ -151,7 +151,7 @@ function ProjectFilterCard({
           </div>
         ) : null}
         {project.repository ? (
-          <span className="text-xs text-muted-foreground underline-offset-2 group-hover:underline">
+          <span className="text-muted-foreground text-xs underline-offset-2 group-hover:underline">
             {repoLabel}
           </span>
         ) : null}

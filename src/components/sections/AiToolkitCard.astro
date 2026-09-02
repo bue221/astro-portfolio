@@ -10,20 +10,20 @@ const tools = ['Cursor', 'Claude Code', 'Codex', 'MCP', 'Skills', 'Context']
 
 <Card colSpan="md:col-span-2" title={t('ai.title')}>
   <div class="mt-2 flex flex-col gap-3">
-    <p class="text-sm font-light leading-relaxed text-muted-foreground">
+    <p class="text-muted-foreground text-sm leading-relaxed font-light">
       {t('ai.description')}
     </p>
     <div class="flex flex-wrap gap-1.5">
       {
         tools.map((tool) => (
-          <span class="rounded-full border border-border/70 bg-orange-500/5 px-2.5 py-0.5 text-xs font-medium text-foreground">
+          <span class="border-border/70 text-foreground rounded-full border bg-orange-500/5 px-2.5 py-0.5 text-xs font-medium">
             {tool}
           </span>
         ))
       }
     </div>
     <p
-      class="mt-1 border-t border-border/60 pt-3 text-xs font-medium uppercase tracking-wide text-primary"
+      class="border-border/60 text-primary mt-1 border-t pt-3 text-xs font-medium tracking-wide uppercase"
     >
       {t('ai.footer')}
     </p>

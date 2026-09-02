@@ -122,8 +122,7 @@ export const ui = {
       'Autonomous task runs, repo exploration and parallel experiments.',
     'ai.tools.mcp':
       'Model Context Protocol to connect editors with real project tools.',
-    'ai.tools.skills':
-      'Reusable skills that encode how I want agents to work.',
+    'ai.tools.skills': 'Reusable skills that encode how I want agents to work.',
     'ai.tools.context':
       'Context engineering so answers stay grounded in the codebase.',
 

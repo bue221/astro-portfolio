@@ -125,7 +125,8 @@ export const LOCAL_PROJECTS: ProjectItem[] = [
   {
     id: 'netflix-clone',
     name: 'Netflix clone',
-    description: 'UI clone focused on layout, media cards and browsing patterns.',
+    description:
+      'UI clone focused on layout, media cards and browsing patterns.',
     tags: ['React', 'Clone', 'UI'],
   },
   {
@@ -179,7 +180,8 @@ export const LOCAL_PROJECTS: ProjectItem[] = [
   {
     id: 'portfolio-astro',
     name: 'Portfolio',
-    description: 'Personal portfolio built with Astro, React islands and Tailwind.',
+    description:
+      'Personal portfolio built with Astro, React islands and Tailwind.',
     website: 'https://portafolio.bue221.xyz/',
     repository: 'https://github.com/bue221/astro-portfolio',
     tags: ['Astro', 'Frontend'],

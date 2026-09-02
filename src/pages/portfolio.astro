@@ -17,14 +17,17 @@ const tags = collectProjectTags(projects)
   title={t('portfolio.title')}
   description={t('portfolio.description')}
 >
-  <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate={fade()}>
+  <main
+    class="flex min-h-[80vh] flex-auto flex-col"
+    transition:animate={fade()}
+  >
     <TopLayout>
       <h2
         class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
       >
         {t('portfolio.heading')}
       </h2>
-      <p class="mt-3 max-w-2xl text-sm text-muted-foreground">
+      <p class="text-muted-foreground mt-3 max-w-2xl text-sm">
         {t('portfolio.description')}
       </p>
     </TopLayout>

@@ -1,9 +1,6 @@
 import type { EntryFieldTypes } from 'contentful'
 import { contentfulClient } from './contentful'
-import {
-  LOCAL_PROJECTS,
-  getProjectCoverPath,
-} from './project-catalog'
+import { LOCAL_PROJECTS, getProjectCoverPath } from './project-catalog'
 
 export type ProjectItem = {
   id: string
@@ -108,7 +105,11 @@ function unwrapLocalizedField<T>(value: T): unknown {
 function richTextToPlain(value: unknown): string {
   if (!value || typeof value !== 'object') return ''
 
-  const node = value as { nodeType?: string; value?: string; content?: unknown[] }
+  const node = value as {
+    nodeType?: string
+    value?: string
+    content?: unknown[]
+  }
   if (node.nodeType === 'text' && typeof node.value === 'string') {
     return node.value
   }

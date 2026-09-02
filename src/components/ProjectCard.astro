@@ -38,19 +38,19 @@ const Wrapper = href ? 'a' : Tag
   data-tags={tags.join(',')}
 >
   <ShadcnCard
-    className={`group relative flex h-full flex-none transform flex-col justify-start overflow-hidden shadow-lg transition duration-200 ease-in-out ${href ? 'cursor-pointer hover:border-primary' : ''}`}
+    className={`group relative flex h-full flex-none transform flex-col justify-start overflow-hidden shadow-lg transition duration-200 ease-in-out ${href ? 'hover:border-primary cursor-pointer' : ''}`}
   >
     {
       imagePath ? (
         <img
           src={imagePath}
           alt={altText}
-          class="h-48 w-full rounded-2xl rounded-bl-none rounded-br-none object-cover transition duration-300 group-hover:scale-[1.02]"
+          class="h-48 w-full rounded-2xl rounded-br-none rounded-bl-none object-cover transition duration-300 group-hover:scale-[1.02]"
           loading="lazy"
         />
       ) : (
-        <div class="flex h-48 w-full items-center justify-center bg-linear-to-br from-orange-500/20 via-background to-orange-700/10">
-          <span class="text-3xl font-black tracking-tight text-primary/70">
+        <div class="via-background flex h-48 w-full items-center justify-center bg-linear-to-br from-orange-500/20 to-orange-700/10">
+          <span class="text-primary/70 text-3xl font-black tracking-tight">
             {heading.slice(0, 2).toUpperCase()}
           </span>
         </div>
@@ -61,7 +61,9 @@ const Wrapper = href ? 'a' : Tag
         <h3 class="text-lg font-medium">{heading}</h3>
         {
           subheading && (
-            <p class="line-clamp-2 text-sm text-muted-foreground">{subheading}</p>
+            <p class="text-muted-foreground line-clamp-2 text-sm">
+              {subheading}
+            </p>
           )
         }
       </div>
@@ -78,7 +80,7 @@ const Wrapper = href ? 'a' : Tag
       }
       {
         repository && (
-          <span class="text-xs text-muted-foreground underline-offset-2 group-hover:underline">
+          <span class="text-muted-foreground text-xs underline-offset-2 group-hover:underline">
             Repo available
           </span>
         )
