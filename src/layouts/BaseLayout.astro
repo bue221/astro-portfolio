@@ -1,9 +1,8 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
 import HeadSEO from '../components/HeadSEO.astro'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
-import BackgroundGradient from '../components/BackgroundGradient.astro'
 import { getLangFromUrl } from '../i18n/utils'
 
 interface Props {
@@ -19,10 +18,15 @@ const lang = getLangFromUrl(Astro.url)
 <html lang={lang}>
   <head>
     <HeadSEO title={title} description={description} ogImage={ogImage} />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="min-h-screen font-sans antialiased">
-    <BackgroundGradient />
+    <canvas
+      id="background-canvas"
+      transition:persist
+      transition:name="particle-background"
+      class="pointer-events-none fixed inset-0 -z-10 h-full w-full"
+    ></canvas>
     <div class="relative flex min-h-screen flex-col">
       <Header />
       <main class="flex-1">
@@ -30,5 +34,6 @@ const lang = getLangFromUrl(Astro.url)
       </main>
       <Footer />
     </div>
+    <script src="../scripts/particle-background.ts"></script>
   </body>
 </html>

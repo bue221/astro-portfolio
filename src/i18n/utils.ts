@@ -53,7 +53,7 @@ export function useTranslatedExperience(lang: keyof typeof ui) {
       const taskKey =
         `experience.${expId}.tasks.${taskIndex}` as keyof (typeof ui)[typeof defaultLang]
       const task = t(taskKey)
-      if (task === taskKey) break // No more tasks
+      if (!task || task === taskKey) break // No more tasks
       tasks.push(task)
       taskIndex++
     }

@@ -2,6 +2,7 @@
 import { buttonVariants } from '../components/ui/button'
 import { ModeToggle } from '../components/ui/ThemeToggle'
 import { LanguagePicker } from './LanguagePicker'
+import BrandLogo from './BrandLogo.astro'
 import {
   getLangFromUrl,
   useTranslatedPath,
@@ -40,8 +41,12 @@ Object.keys(languages).forEach((l) => {
     class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0"
   >
     <div class="flex gap-6 md:gap-10">
-      <a href={translatePath('/')} class="flex items-center space-x-2">
-        <span class="inline-block font-bold">Bue221</span>
+      <a
+        href={translatePath('/')}
+        class="flex items-center space-x-2 transition-opacity hover:opacity-90"
+        aria-label="Bue221 home"
+      >
+        <BrandLogo />
       </a>
     </div>
     <div class="flex flex-1 items-center justify-end space-x-4">

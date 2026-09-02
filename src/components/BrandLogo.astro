@@ -1,0 +1,31 @@
+---
+interface Props {
+  class?: string
+  showWordmark?: boolean
+}
+
+const { class: className = '', showWordmark = true } = Astro.props
+---
+
+<span class={`inline-flex items-center gap-2 ${className}`}>
+  <img
+    src="/logo-mark.svg"
+    alt=""
+    width="32"
+    height="32"
+    class="h-8 w-8 shrink-0"
+    aria-hidden={showWordmark ? true : undefined}
+  />
+  {
+    showWordmark && (
+      <span class="text-base font-bold tracking-tight">
+        Bue<span class="text-primary">221</span>
+      </span>
+    )
+  }
+  {
+    !showWordmark && (
+      <span class="sr-only">Bue221</span>
+    )
+  }
+</span>

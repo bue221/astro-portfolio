@@ -53,7 +53,7 @@ export const ui = {
     // Now Card
     'now.title': 'Now',
     'now.whatsThat': "what's that ?",
-    'now.description': 'Currently working as freelancer',
+    'now.description': 'Software Engineer at Mercado Libre',
 
     // Experience Card
     'experience.title': 'Experience',
@@ -83,12 +83,18 @@ export const ui = {
 
     // Portfolio Page
     'portfolio.title': 'Portfolio',
-    'portfolio.description': "Projects and some clone's that I did",
-    'portfolio.heading': "Projects and clone's",
+    'portfolio.description':
+      'Selected projects, clones and experiments by Andrés Plaza — filter by stack and role.',
+    'portfolio.heading': 'Projects & experiments',
+    'portfolio.filter.all': 'All',
+    'portfolio.filter.empty': 'No projects match this filter.',
+    'portfolio.filter.results': '{count} projects',
+    'portfolio.repo': 'Repository available',
 
     // Work Page
     'work.title': 'Work',
-    'work.description': 'Places I have worked.',
+    'work.description':
+      'Professional experience of Andrés Plaza across product, AI and frontend teams.',
 
     // 404 Page
     '404.title': '404 - Not Found',
@@ -100,8 +106,26 @@ export const ui = {
     // Home Page
     'home.title': 'Andrés Plaza - Full Stack Developer',
     'home.description':
-      'Andrés Plaza - Full Stack Developer - Portfolio, Projects, CV, About Me, Contact, Timezone, Now, Experience, Tattoo, Study',
+      'Andrés Plaza (Bue221) — Full Stack Developer from Colombia. Portfolio, AI-assisted engineering with Cursor, Claude Code, Codex and MCP, work experience and projects.',
     'home.portfolio': 'Portfolio & Projects',
+
+    // AI toolkit
+    'ai.title': 'AI-native workflow',
+    'ai.description':
+      'I treat AI as part of the engineering stack: agents, tools and context that help me ship faster without lowering the quality bar.',
+    'ai.footer': 'Human judgment in the loop',
+    'ai.tools.cursor':
+      'Daily IDE for multi-file refactors, reviews and design iteration.',
+    'ai.tools.claude':
+      'Deep coding sessions, long-context reasoning and careful edits.',
+    'ai.tools.codex':
+      'Autonomous task runs, repo exploration and parallel experiments.',
+    'ai.tools.mcp':
+      'Model Context Protocol to connect editors with real project tools.',
+    'ai.tools.skills':
+      'Reusable skills that encode how I want agents to work.',
+    'ai.tools.context':
+      'Context engineering so answers stay grounded in the codebase.',
 
     // Quote
     'quote.text': 'Anything one man can imagine, other men can make real.',
@@ -224,7 +248,7 @@ export const ui = {
     // Now Card
     'now.title': 'Ahora',
     'now.whatsThat': '¿qué es eso?',
-    'now.description': 'Actualmente trabajando como freelancer',
+    'now.description': 'Ingeniero de Software en Mercado Libre',
 
     // Experience Card
     'experience.title': 'Experiencia',
@@ -254,12 +278,18 @@ export const ui = {
 
     // Portfolio Page
     'portfolio.title': 'Portafolio',
-    'portfolio.description': 'Proyectos y algunos clones que he hecho',
-    'portfolio.heading': 'Proyectos y clones',
+    'portfolio.description':
+      'Proyectos, clones y experimentos de Andrés Plaza — filtra por stack y rol.',
+    'portfolio.heading': 'Proyectos y experimentos',
+    'portfolio.filter.all': 'Todos',
+    'portfolio.filter.empty': 'Ningún proyecto coincide con este filtro.',
+    'portfolio.filter.results': '{count} proyectos',
+    'portfolio.repo': 'Repositorio disponible',
 
     // Work Page
     'work.title': 'Trabajo',
-    'work.description': 'Lugares donde he trabajado.',
+    'work.description':
+      'Experiencia profesional de Andrés Plaza en producto, IA y frontend.',
 
     // 404 Page
     '404.title': '404 - No encontrado',
@@ -271,8 +301,26 @@ export const ui = {
     // Home Page
     'home.title': 'Andrés Plaza - Desarrollador Full Stack',
     'home.description':
-      'Andrés Plaza - Desarrollador Full Stack - Portafolio, Proyectos, CV, Acerca de Mí, Contacto, Zona Horaria, Ahora, Experiencia, Tatuajes, Estudios',
+      'Andrés Plaza (Bue221) — Desarrollador Full Stack de Colombia. Portafolio, ingeniería asistida por IA con Cursor, Claude Code, Codex y MCP, experiencia y proyectos.',
     'home.portfolio': 'Portafolio y Proyectos',
+
+    // AI toolkit
+    'ai.title': 'Flujo de trabajo con IA',
+    'ai.description':
+      'Trato la IA como parte del stack de ingeniería: agentes, herramientas y contexto para entregar más rápido sin bajar la calidad.',
+    'ai.footer': 'Criterio humano en el loop',
+    'ai.tools.cursor':
+      'IDE diario para refactors multi-archivo, reviews e iteración de diseño.',
+    'ai.tools.claude':
+      'Sesiones profundas de código, razonamiento con mucho contexto y edits cuidadosos.',
+    'ai.tools.codex':
+      'Tareas autónomas, exploración de repos y experimentos en paralelo.',
+    'ai.tools.mcp':
+      'Model Context Protocol para conectar editores con herramientas reales del proyecto.',
+    'ai.tools.skills':
+      'Skills reutilizables que definen cómo quiero que trabajen los agentes.',
+    'ai.tools.context':
+      'Ingeniería de contexto para respuestas ancladas al código.',
 
     // Quote
     'quote.text':
@@ -396,7 +444,7 @@ export const ui = {
     // Now Card
     'now.title': 'Agora',
     'now.whatsThat': 'o que é isso?',
-    'now.description': 'Atualmente trabalhando como freelancer',
+    'now.description': 'Engenheiro de Software no Mercado Livre',
 
     // Experience Card
     'experience.title': 'Experiência',
@@ -426,12 +474,18 @@ export const ui = {
 
     // Portfolio Page
     'portfolio.title': 'Portfólio',
-    'portfolio.description': 'Projetos e alguns clones que fiz',
-    'portfolio.heading': 'Projetos e clones',
+    'portfolio.description':
+      'Projetos, clones e experimentos de Andrés Plaza — filtre por stack e papel.',
+    'portfolio.heading': 'Projetos e experimentos',
+    'portfolio.filter.all': 'Todos',
+    'portfolio.filter.empty': 'Nenhum projeto corresponde a este filtro.',
+    'portfolio.filter.results': '{count} projetos',
+    'portfolio.repo': 'Repositório disponível',
 
     // Work Page
     'work.title': 'Trabalho',
-    'work.description': 'Lugares onde trabalhei.',
+    'work.description':
+      'Experiência profissional de Andrés Plaza em produto, IA e frontend.',
 
     // 404 Page
     '404.title': '404 - Não encontrado',
@@ -444,8 +498,26 @@ export const ui = {
     // Home Page
     'home.title': 'Andrés Plaza - Desenvolvedor Full Stack',
     'home.description':
-      'Andrés Plaza - Desenvolvedor Full Stack - Portfólio, Projetos, CV, Sobre Mim, Contato, Fuso Horário, Agora, Experiência, Tatuagens, Estudos',
+      'Andrés Plaza (Bue221) — Desenvolvedor Full Stack da Colômbia. Portfólio, engenharia assistida por IA com Cursor, Claude Code, Codex e MCP, experiência e projetos.',
     'home.portfolio': 'Portfólio e Projetos',
+
+    // AI toolkit
+    'ai.title': 'Fluxo de trabalho com IA',
+    'ai.description':
+      'Trato a IA como parte do stack de engenharia: agentes, ferramentas e contexto para entregar mais rápido sem baixar a qualidade.',
+    'ai.footer': 'Julgamento humano no loop',
+    'ai.tools.cursor':
+      'IDE diário para refactors multiarquivo, reviews e iteração de design.',
+    'ai.tools.claude':
+      'Sessões profundas de código, raciocínio com muito contexto e edits cuidadosos.',
+    'ai.tools.codex':
+      'Tarefas autônomas, exploração de repos e experimentos em paralelo.',
+    'ai.tools.mcp':
+      'Model Context Protocol para conectar editores com ferramentas reais do projeto.',
+    'ai.tools.skills':
+      'Skills reutilizáveis que definem como quero que os agentes trabalhem.',
+    'ai.tools.context':
+      'Engenharia de contexto para respostas ancoradas no código.',
 
     // Quote
     'quote.text':

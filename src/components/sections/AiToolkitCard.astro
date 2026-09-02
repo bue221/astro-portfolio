@@ -1,0 +1,31 @@
+---
+import Card from '../Card.astro'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const tools = ['Cursor', 'Claude Code', 'Codex', 'MCP', 'Skills', 'Context']
+---
+
+<Card colSpan="md:col-span-2" title={t('ai.title')}>
+  <div class="mt-2 flex flex-col gap-3">
+    <p class="text-sm font-light leading-relaxed text-muted-foreground">
+      {t('ai.description')}
+    </p>
+    <div class="flex flex-wrap gap-1.5">
+      {
+        tools.map((tool) => (
+          <span class="rounded-full border border-border/70 bg-orange-500/5 px-2.5 py-0.5 text-xs font-medium text-foreground">
+            {tool}
+          </span>
+        ))
+      }
+    </div>
+    <p
+      class="mt-1 border-t border-border/60 pt-3 text-xs font-medium uppercase tracking-wide text-primary"
+    >
+      {t('ai.footer')}
+    </p>
+  </div>
+</Card>

@@ -1,6 +1,13 @@
 ---
 import '@/styles/globals.css'
 import '@/styles/fonts.css'
+import {
+  getLangFromUrl,
+  useTranslatedPath,
+  getRouteFromUrl,
+} from '../i18n/utils'
+import { languages } from '../i18n/ui'
+import { SITE } from '../lib/constants'
 
 interface Props {
   title?: string | undefined
@@ -8,36 +15,108 @@ interface Props {
   ogImage?: URL | undefined
 }
 
+const lang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(lang)
+const route = getRouteFromUrl(Astro.url) || ''
+const pathForTranslate = route ? `/${route}` : '/'
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
 if (Astro.props.ogImage === undefined) {
-  Astro.props.ogImage = new URL('View1.png', canonicalURL)
+  Astro.props.ogImage = new URL('/View1.png', Astro.site)
 }
 
 const { title, description, ogImage } = Astro.props
+
+const localeMap: Record<string, string> = {
+  en: 'en_US',
+  es: 'es_CO',
+  pt: 'pt_BR',
+}
+
+const ogLocale = localeMap[lang] ?? 'en_US'
+const pageTitle = title || SITE.TITLE
+const pageDescription = description || SITE.DESCRIPTION
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${Astro.site}#website`,
+      url: Astro.site?.toString(),
+      name: SITE.TITLE,
+      description: SITE.DESCRIPTION,
+      inLanguage: Object.keys(languages),
+      publisher: { '@id': `${Astro.site}#person` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${Astro.site}#person`,
+      name: SITE.AUTHOR,
+      url: Astro.site?.toString(),
+      jobTitle: 'Full Stack Developer',
+      sameAs: [
+        'https://github.com/bue221',
+        'https://www.linkedin.com/in/bue221/',
+        'https://www.instagram.com/caj_ink/',
+      ],
+      email: 'mailto:camiloplaza3@gmail.com',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Bogotá',
+        addressCountry: 'CO',
+      },
+    },
+  ],
+}
 ---
 
 <meta charset="utf-8" />
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="googlebot" content="index, follow, max-image-preview:large" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
+<meta name="author" content={SITE.AUTHOR} />
+<meta
+  name="keywords"
+  content="Andrés Plaza, Bue221, Full Stack Developer, React, Astro, AI, MCP, Cursor, Claude Code, Codex, Colombia"
+/>
 <link rel="canonical" href={canonicalURL} />
-<link rel="icon" type="image/svg+xml" href={`${Astro.site}favicon.svg`} />
-<link rel="apple-touch-icon" href={`${Astro.site}favicon.svg`} />
-<meta name="theme-color" content="#000000" />
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+{
+  Object.keys(languages).map((locale) => (
+    <link
+      rel="alternate"
+      hreflang={locale}
+      href={new URL(translatePath(pathForTranslate, locale), Astro.site)}
+    />
+  ))
+}
+<link
+  rel="alternate"
+  hreflang="x-default"
+  href={new URL(translatePath(pathForTranslate, 'en'), Astro.site)}
+/>
+<link rel="icon" type="image/svg+xml" href="/logo-mark.svg?v=2" />
+<link rel="apple-touch-icon" href="/logo-mark.svg?v=2" />
+<meta name="theme-color" content="#EA580C" />
+<title>{pageTitle}</title>
+<meta name="title" content={pageTitle} />
+<meta name="description" content={pageDescription} />
 
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content={SITE.TITLE} />
+<meta property="og:locale" content={ogLocale} />
 <meta property="og:url" content={canonicalURL} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={pageDescription} />
 <meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content={`${SITE.AUTHOR} portfolio preview`} />
 
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={ogImage} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={pageDescription} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={`${SITE.AUTHOR} portfolio preview`} />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

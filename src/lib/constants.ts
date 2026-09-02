@@ -17,10 +17,10 @@ export const LINKS = {
 
 // Global
 export const SITE: Site = {
-  TITLE: 'Astro Sphere',
+  TITLE: 'Andrés Plaza | Bue221',
   DESCRIPTION:
-    'Welcome to Astro Sphere, a portfolio and blog for designers and developers.',
-  AUTHOR: 'Mark Horn',
+    'Full Stack Developer from Colombia building product UIs, AI-augmented workflows, and polished web experiences.',
+  AUTHOR: 'Andrés Camilo Plaza',
 }
 
 // Work Page
@@ -90,9 +90,9 @@ export const EXPERIENCE = [
   },
   {
     id: 'straico',
-    start: '2021',
+    start: '2023',
     link: 'https://straico.com/',
-    end: 'Current',
+    end: '2026',
   },
   {
     id: 'spot2',

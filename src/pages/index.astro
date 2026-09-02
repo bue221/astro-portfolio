@@ -10,6 +10,7 @@ import CVCard from '../components/sections/CVCard.astro'
 import ExperienceCard from '../components/sections/ExperienceCard.astro'
 import TattooCard from '../components/sections/TattooCard.astro'
 import StudyCard from '../components/sections/StudyCard.astro'
+import AiToolkitCard from '../components/sections/AiToolkitCard.astro'
 import {
   getLangFromUrl,
   useTranslations,
@@ -58,7 +59,7 @@ const translatePath = useTranslatedPath(lang)
       ],
     ]
 
-    timeline(sequence as TimelineDefinition).then(() => {
+    timeline(sequence as TimelineDefinition).finished.then(() => {
       animationRunning = false
     })
   }
@@ -104,6 +105,7 @@ const translatePath = useTranslatedPath(lang)
     <TimeZoneCard />
     <ContactsCard />
     <ExperienceCard />
+    <AiToolkitCard />
     <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
       <div class="flex h-full flex-col justify-between">
         <blockquote class="mt-6 border-l-2 pl-6 italic">

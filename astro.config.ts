@@ -1,16 +1,25 @@
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
-import tailwind from '@astrojs/tailwind'
+import sitemap from '@astrojs/sitemap'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.CI
-    ? 'https://astro-shadcn-ui-template.vercel.app'
-    : 'http://localhost:4321',
+  site: 'https://portafolio.bue221.xyz',
   integrations: [
     react(),
-    tailwind({
-      applyBaseStyles: false,
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en-US',
+          es: 'es-CO',
+          pt: 'pt-BR',
+        },
+      },
     }),
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 })

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Shell sort">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3f1d0f" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" />
+  <polygon points="126,216 136,226 126,236 116,226" fill="#fcd34d" opacity="0.18" /><rect x="214" y="270" width="18" height="18" fill="none" stroke="#fcd34d" stroke-width="3" opacity="0.29000000000000004" /><line x1="214" y1="279" x2="232" y2="279" stroke="#fcd34d" stroke-width="2" opacity="0.29000000000000004" /><line x1="223" y1="270" x2="223" y2="288" stroke="#fcd34d" stroke-width="2" opacity="0.29000000000000004" /><path d="M 312 332 Q 316 324 320 332 T 328 332" fill="none" stroke="#fcd34d" stroke-width="4" opacity="0.2" /><rect x="392" y="92.5" width="5" height="25" fill="#fcd34d" opacity="0.31" /><rect x="408.6666666666667" y="80" width="5" height="35" fill="#fcd34d" opacity="0.248" /><rect x="423.25" y="96.66666666666667" width="5" height="27.500000000000004" fill="#fcd34d" opacity="0.279" /><rect x="512" y="134" width="4" height="48" fill="#fcd34d" opacity="0.22" /><rect x="490" y="156" width="48" height="4" fill="#fcd34d" opacity="0.22" /><circle cx="611" cy="211" r="23" fill="#fcd34d" opacity="0.13" /><polygon points="708,242 730,264 708,286 686,264" fill="#fcd34d" opacity="0.24" /><rect x="144" y="296" width="42" height="42" fill="none" stroke="#fcd34d" stroke-width="3" opacity="0.15" /><line x1="144" y1="317" x2="186" y2="317" stroke="#fcd34d" stroke-width="2" opacity="0.15" /><line x1="165" y1="296" x2="165" y2="338" stroke="#fcd34d" stroke-width="2" opacity="0.15" />
+  <circle cx="680" cy="90" r="120" fill="#fcd34d" opacity="0.12" />
+  <circle cx="120" cy="360" r="90" fill="#fcd34d" opacity="0.08" />
+  <g filter="url(#glow)">
+    <text x="56" y="250" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="88" font-weight="900" letter-spacing="-4">SS</text>
+  </g>
+  <text x="56" y="310" fill="#fcd34d" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700">Shell sort</text>
+  <g opacity="0.9"><circle cx="700" cy="360" r="28" fill="#fcd34d" opacity="0.85" /></g>
+</svg>
