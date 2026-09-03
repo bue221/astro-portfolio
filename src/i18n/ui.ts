@@ -149,7 +149,8 @@ export const ui = {
 
     // Available for work
     'available.title': 'Available for work',
-    'available.description': 'Open to new projects, freelance work or full-time roles. Let\'s build something great together.',
+    'available.description':
+      "Open to new projects, freelance work or full-time roles. Let's build something great together.",
     'available.cta': 'Get in touch',
 
     // Quote
@@ -365,12 +366,14 @@ export const ui = {
     'terminal.skillsDesc': 'Mi stack tecnológico',
     'terminal.contactDesc': 'Contacto y redes sociales',
     'terminal.clearDesc': 'Limpiar el terminal',
-    'terminal.notFound': 'Comando "{cmd}" no encontrado. Escribe "help" para opciones.',
+    'terminal.notFound':
+      'Comando "{cmd}" no encontrado. Escribe "help" para opciones.',
     'terminal.suggest': 'Comandos sugeridos',
 
     // Available for work
     'available.title': 'Disponible para trabajar',
-    'available.description': 'Abierto a proyectos nuevos, trabajo freelance o roles full-time. Construyamos algo genial juntos.',
+    'available.description':
+      'Abierto a proyectos nuevos, trabajo freelance o roles full-time. Construyamos algo genial juntos.',
     'available.cta': 'Contáctame',
 
     // Quote
@@ -588,12 +591,14 @@ export const ui = {
     'terminal.skillsDesc': 'Meu stack tecnológico',
     'terminal.contactDesc': 'Contato e redes sociais',
     'terminal.clearDesc': 'Limpar o terminal',
-    'terminal.notFound': 'Comando "{cmd}" não encontrado. Digite "help" para opções.',
+    'terminal.notFound':
+      'Comando "{cmd}" não encontrado. Digite "help" para opções.',
     'terminal.suggest': 'Comandos sugeridos',
 
     // Available for work
     'available.title': 'Disponível para trabalhar',
-    'available.description': 'Aberto a novos projetos, trabalho freelance ou cargos full-time. Vamos construir algo incrível juntos.',
+    'available.description':
+      'Aberto a novos projetos, trabalho freelance ou cargos full-time. Vamos construir algo incrível juntos.',
     'available.cta': 'Entre em contato',
 
     // Quote

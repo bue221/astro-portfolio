@@ -72,7 +72,10 @@ function buildRegistry(labels: TerminalLabels): Record<string, CommandDef> {
   }
 }
 
-function labelsFor(cmd: (typeof COMMAND_ORDER)[number], labels: TerminalLabels) {
+function labelsFor(
+  cmd: (typeof COMMAND_ORDER)[number],
+  labels: TerminalLabels,
+) {
   const map = {
     help: labels.helpDesc,
     whoami: labels.whoamiDesc,
@@ -174,9 +177,15 @@ export function TerminalCard({ labels }: { labels: TerminalLabels }) {
       const def = registry[cmd]
 
       if (def) {
-        def.run().forEach((line) =>
-          newLines.push({ kind: 'output', text: line.content, href: line.href }),
-        )
+        def
+          .run()
+          .forEach((line) =>
+            newLines.push({
+              kind: 'output',
+              text: line.content,
+              href: line.href,
+            }),
+          )
       } else {
         newLines.push({
           kind: 'error',
@@ -206,9 +215,17 @@ export function TerminalCard({ labels }: { labels: TerminalLabels }) {
 
     if (e.key === 'Enter') {
       e.preventDefault()
-      if (showSuggestions && suggestions[highlight] && !registry[input.trim().toLowerCase()]) {
+      if (
+        showSuggestions &&
+        suggestions[highlight] &&
+        !registry[input.trim().toLowerCase()]
+      ) {
         runCommand(suggestions[highlight].name)
-      } else if (showSuggestions && suggestions[highlight] && input.trim() === '') {
+      } else if (
+        showSuggestions &&
+        suggestions[highlight] &&
+        input.trim() === ''
+      ) {
         runCommand(suggestions[highlight].name)
       } else {
         runCommand(input)
@@ -278,7 +295,7 @@ export function TerminalCard({ labels }: { labels: TerminalLabels }) {
           <div
             key={i}
             className={cn(
-              'whitespace-pre-wrap break-words',
+              'break-words whitespace-pre-wrap',
               line.kind === 'input' && 'text-primary font-semibold',
               line.kind === 'error' && 'text-destructive',
               line.kind === 'output' && 'text-foreground/80',

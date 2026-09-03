@@ -20,9 +20,5 @@ const t = useTranslations(lang)
     </div>
     <Pulse />
   </div>
-  <NowLive
-    client:load
-    nowLabel={t('now.title')}
-    role={t('now.description')}
-  />
+  <NowLive client:load nowLabel={t('now.title')} role={t('now.description')} />
 </Card>

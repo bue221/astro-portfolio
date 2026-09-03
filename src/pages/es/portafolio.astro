@@ -3,7 +3,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 import TopLayout from '../../layouts/TopLayout.astro'
 import BottomLayout from '../../layouts/BottomLayout.astro'
 import { PortfolioFilter } from '../../components/PortfolioFilter'
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils'
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from '../../i18n/utils'
 import { collectProjectTags, getProjects } from '../../lib/projects'
 import { fade } from 'astro:transitions'
 

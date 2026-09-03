@@ -36,7 +36,13 @@ function timeAgo(isoDate: string): string {
   return `${Math.floor(days / 30)}mo ago`
 }
 
-export function NowLive({ nowLabel, role }: { nowLabel: string; role: string }) {
+export function NowLive({
+  nowLabel,
+  role,
+}: {
+  nowLabel: string
+  role: string
+}) {
   const [stats, setStats] = useState<GitHubStats | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -74,7 +80,7 @@ export function NowLive({ nowLabel, role }: { nowLabel: string; role: string }) 
           </div>
         ) : stats?.lastRepo ? (
           <div className="flex flex-col gap-1">
-            <span className="text-muted-foreground text-[10px] uppercase tracking-wider">
+            <span className="text-muted-foreground text-[10px] tracking-wider uppercase">
               Latest push
             </span>
             <a

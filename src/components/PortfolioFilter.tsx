@@ -43,7 +43,10 @@ export function PortfolioFilter({ projects, tags, labels, meta }: Props) {
     <div className="flex w-full flex-col gap-6">
       {/* Mobile: native select */}
       <div className="sm:hidden">
-        <label htmlFor="tag-select" className="text-muted-foreground mb-1.5 block text-xs font-medium uppercase tracking-wider">
+        <label
+          htmlFor="tag-select"
+          className="text-muted-foreground mb-1.5 block text-xs font-medium tracking-wider uppercase"
+        >
           {labels.all}
         </label>
         <select
@@ -90,9 +93,7 @@ export function PortfolioFilter({ projects, tags, labels, meta }: Props) {
 
       <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {isPending ? (
-          Array.from({ length: 6 }).map((_, i) => (
-            <ProjectSkeleton key={i} />
-          ))
+          Array.from({ length: 6 }).map((_, i) => <ProjectSkeleton key={i} />)
         ) : filtered.length === 0 ? (
           <p className="text-muted-foreground col-span-full py-16 text-center">
             {labels.empty}
@@ -114,17 +115,23 @@ export function PortfolioFilter({ projects, tags, labels, meta }: Props) {
 
 function ProjectSkeleton() {
   return (
-    <div className="bg-card flex h-full flex-col overflow-hidden rounded-2xl border shadow-lg" aria-hidden="true">
-      <div className="h-48 w-full animate-pulse bg-muted" />
+    <div
+      className="bg-card flex h-full flex-col overflow-hidden rounded-2xl border shadow-lg"
+      aria-hidden="true"
+    >
+      <div className="bg-muted h-48 w-full animate-pulse" />
       <div className="flex flex-1 flex-col gap-3 px-5 py-4">
         <div className="flex flex-col gap-2">
-          <div className="h-5 w-3/5 animate-pulse rounded-md bg-muted" />
-          <div className="h-3.5 w-full animate-pulse rounded-md bg-muted" />
-          <div className="h-3.5 w-4/5 animate-pulse rounded-md bg-muted" />
+          <div className="bg-muted h-5 w-3/5 animate-pulse rounded-md" />
+          <div className="bg-muted h-3.5 w-full animate-pulse rounded-md" />
+          <div className="bg-muted h-3.5 w-4/5 animate-pulse rounded-md" />
         </div>
         <div className="mt-auto flex flex-wrap gap-1.5">
           {Array.from({ length: 3 }).map((_, i) => (
-            <div key={i} className="h-5 w-14 animate-pulse rounded-full bg-muted" />
+            <div
+              key={i}
+              className="bg-muted h-5 w-14 animate-pulse rounded-full"
+            />
           ))}
         </div>
       </div>
@@ -168,11 +175,7 @@ function ProjectFilterCard({
   detailHref: string
 }) {
   return (
-    <a
-      href={detailHref}
-      className="block h-full"
-      aria-label={project.name}
-    >
+    <a href={detailHref} className="block h-full" aria-label={project.name}>
       <article className="group bg-card text-card-foreground hover:border-primary flex h-full flex-col overflow-hidden rounded-2xl border shadow-lg transition duration-200">
         {project.imagePath ? (
           <img
