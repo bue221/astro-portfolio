@@ -177,15 +177,13 @@ export function TerminalCard({ labels }: { labels: TerminalLabels }) {
       const def = registry[cmd]
 
       if (def) {
-        def
-          .run()
-          .forEach((line) =>
-            newLines.push({
-              kind: 'output',
-              text: line.content,
-              href: line.href,
-            }),
-          )
+        def.run().forEach((line) =>
+          newLines.push({
+            kind: 'output',
+            text: line.content,
+            href: line.href,
+          }),
+        )
       } else {
         newLines.push({
           kind: 'error',
