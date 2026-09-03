@@ -31,24 +31,47 @@ export function PortfolioFilter({ projects, tags, labels }: Props) {
 
   return (
     <div className="flex w-full flex-col gap-6">
+      {/* Mobile: native select */}
+      <div className="sm:hidden">
+        <label htmlFor="tag-select" className="text-muted-foreground mb-1.5 block text-xs font-medium uppercase tracking-wider">
+          {labels.all}
+        </label>
+        <select
+          id="tag-select"
+          value={activeTag}
+          onChange={(e) => selectTag(e.target.value)}
+          className="bg-background border-border text-foreground focus:ring-primary w-full rounded-xl border px-3 py-2.5 text-sm font-medium shadow-sm focus:ring-2 focus:outline-none"
+        >
+          <option value="all">{labels.all}</option>
+          {tags.map((tag) => (
+            <option key={tag} value={tag}>
+              {tag}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Desktop: scrollable chip row */}
       <div
-        className="flex flex-wrap items-center gap-2"
+        className="hidden sm:flex"
         role="toolbar"
         aria-label="Project filters"
       >
-        <FilterChip
-          active={activeTag === 'all'}
-          onClick={() => selectTag('all')}
-          label={labels.all}
-        />
-        {tags.map((tag) => (
+        <div className="scrollbar-hide flex flex-wrap gap-2">
           <FilterChip
-            key={tag}
-            active={activeTag === tag}
-            onClick={() => selectTag(tag)}
-            label={tag}
+            active={activeTag === 'all'}
+            onClick={() => selectTag('all')}
+            label={labels.all}
           />
-        ))}
+          {tags.map((tag) => (
+            <FilterChip
+              key={tag}
+              active={activeTag === tag}
+              onClick={() => selectTag(tag)}
+              label={tag}
+            />
+          ))}
+        </div>
       </div>
 
       <p className="text-muted-foreground text-sm" aria-live="polite">
@@ -58,7 +81,7 @@ export function PortfolioFilter({ projects, tags, labels }: Props) {
       <div
         className={cn(
           'grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3',
-          isPending && 'opacity-60',
+          isPending && 'opacity-60 transition-opacity',
         )}
       >
         {filtered.length === 0 ? (
