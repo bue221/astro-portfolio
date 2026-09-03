@@ -90,6 +90,10 @@ export const ui = {
     'portfolio.filter.empty': 'No projects match this filter.',
     'portfolio.filter.results': '{count} projects',
     'portfolio.repo': 'Repository available',
+    'portfolio.live': 'View live site',
+    'portfolio.repository': 'View source code',
+    'portfolio.noLinks': 'No links available yet.',
+    'portfolio.backToAll': 'Back to all projects',
 
     // Work Page
     'work.title': 'Work',
@@ -125,6 +129,28 @@ export const ui = {
     'ai.tools.skills': 'Reusable skills that encode how I want agents to work.',
     'ai.tools.context':
       'Context engineering so answers stay grounded in the codebase.',
+
+    // Terminal Card
+    'terminal.cardTitle': 'bue221 — portfolio.sh',
+    'terminal.placeholder': 'type a command…',
+    'terminal.greeting': '👋  Welcome to the interactive terminal!',
+    'terminal.helpHint': '  Type "help" to see available commands.',
+    'terminal.helpIntro': 'Available commands:',
+    'terminal.helpDesc': 'Show this help message',
+    'terminal.whoamiDesc': 'About me',
+    'terminal.whoamiLocation': 'Bogotá, Colombia 🇨🇴',
+    'terminal.whoamiRole': 'Full Stack Developer @ Mercado Libre',
+    'terminal.whoamiHobby': 'Guitar · Ukulele · Tattoo · Soccer',
+    'terminal.skillsDesc': 'My tech stack',
+    'terminal.contactDesc': 'Contact & socials',
+    'terminal.clearDesc': 'Clear the terminal',
+    'terminal.notFound': 'Command "{cmd}" not found. Type "help" for options.',
+    'terminal.suggest': 'Suggested commands',
+
+    // Available for work
+    'available.title': 'Available for work',
+    'available.description': 'Open to new projects, freelance work or full-time roles. Let\'s build something great together.',
+    'available.cta': 'Get in touch',
 
     // Quote
     'quote.text': 'Anything one man can imagine, other men can make real.',
@@ -284,6 +310,10 @@ export const ui = {
     'portfolio.filter.empty': 'Ningún proyecto coincide con este filtro.',
     'portfolio.filter.results': '{count} proyectos',
     'portfolio.repo': 'Repositorio disponible',
+    'portfolio.live': 'Ver sitio en vivo',
+    'portfolio.repository': 'Ver código fuente',
+    'portfolio.noLinks': 'Sin enlaces disponibles aún.',
+    'portfolio.backToAll': 'Volver a todos los proyectos',
 
     // Work Page
     'work.title': 'Trabajo',
@@ -320,6 +350,28 @@ export const ui = {
       'Skills reutilizables que definen cómo quiero que trabajen los agentes.',
     'ai.tools.context':
       'Ingeniería de contexto para respuestas ancladas al código.',
+
+    // Terminal Card
+    'terminal.cardTitle': 'bue221 — portfolio.sh',
+    'terminal.placeholder': 'escribe un comando…',
+    'terminal.greeting': '👋  ¡Bienvenido al terminal interactivo!',
+    'terminal.helpHint': '  Escribe "help" para ver los comandos disponibles.',
+    'terminal.helpIntro': 'Comandos disponibles:',
+    'terminal.helpDesc': 'Mostrar este mensaje de ayuda',
+    'terminal.whoamiDesc': 'Sobre mí',
+    'terminal.whoamiLocation': 'Bogotá, Colombia 🇨🇴',
+    'terminal.whoamiRole': 'Full Stack Developer @ Mercado Libre',
+    'terminal.whoamiHobby': 'Guitarra · Ukulele · Tatuajes · Fútbol',
+    'terminal.skillsDesc': 'Mi stack tecnológico',
+    'terminal.contactDesc': 'Contacto y redes sociales',
+    'terminal.clearDesc': 'Limpiar el terminal',
+    'terminal.notFound': 'Comando "{cmd}" no encontrado. Escribe "help" para opciones.',
+    'terminal.suggest': 'Comandos sugeridos',
+
+    // Available for work
+    'available.title': 'Disponible para trabajar',
+    'available.description': 'Abierto a proyectos nuevos, trabajo freelance o roles full-time. Construyamos algo genial juntos.',
+    'available.cta': 'Contáctame',
 
     // Quote
     'quote.text':
@@ -480,6 +532,10 @@ export const ui = {
     'portfolio.filter.empty': 'Nenhum projeto corresponde a este filtro.',
     'portfolio.filter.results': '{count} projetos',
     'portfolio.repo': 'Repositório disponível',
+    'portfolio.live': 'Ver site ao vivo',
+    'portfolio.repository': 'Ver código fonte',
+    'portfolio.noLinks': 'Sem links disponíveis ainda.',
+    'portfolio.backToAll': 'Voltar a todos os projetos',
 
     // Work Page
     'work.title': 'Trabalho',
@@ -517,6 +573,28 @@ export const ui = {
       'Skills reutilizáveis que definem como quero que os agentes trabalhem.',
     'ai.tools.context':
       'Engenharia de contexto para respostas ancoradas no código.',
+
+    // Terminal Card
+    'terminal.cardTitle': 'bue221 — portfolio.sh',
+    'terminal.placeholder': 'digite um comando…',
+    'terminal.greeting': '👋  Bem-vindo ao terminal interativo!',
+    'terminal.helpHint': '  Digite "help" para ver os comandos disponíveis.',
+    'terminal.helpIntro': 'Comandos disponíveis:',
+    'terminal.helpDesc': 'Mostrar esta mensagem de ajuda',
+    'terminal.whoamiDesc': 'Sobre mim',
+    'terminal.whoamiLocation': 'Bogotá, Colômbia 🇨🇴',
+    'terminal.whoamiRole': 'Desenvolvedor Full Stack @ Mercado Livre',
+    'terminal.whoamiHobby': 'Violão · Ukulele · Tatuagem · Futebol',
+    'terminal.skillsDesc': 'Meu stack tecnológico',
+    'terminal.contactDesc': 'Contato e redes sociais',
+    'terminal.clearDesc': 'Limpar o terminal',
+    'terminal.notFound': 'Comando "{cmd}" não encontrado. Digite "help" para opções.',
+    'terminal.suggest': 'Comandos sugeridos',
+
+    // Available for work
+    'available.title': 'Disponível para trabalhar',
+    'available.description': 'Aberto a novos projetos, trabalho freelance ou cargos full-time. Vamos construir algo incrível juntos.',
+    'available.cta': 'Entre em contato',
 
     // Quote
     'quote.text':
@@ -615,4 +693,25 @@ export const ui = {
   },
 } as const
 
+/** The canonical translation shape — derived from the default (English) locale. */
 export type Translations = (typeof ui)[typeof defaultLang]
+
+/**
+ * Type-level assertion: every non-default locale must implement ALL keys that
+ * the default locale exposes. TypeScript will surface a compile error at this
+ * line if any key is missing or mis-spelled in `es` or `pt`.
+ *
+ * We use a mapped type trick: `Record<keyof Translations, string>` and then
+ * check assignability without widening the `ui` object.
+ */
+type AssertCompleteLocale<T extends Record<keyof Translations, string>> = T
+
+// These type aliases will cause a TS error if any locale is missing a key:
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+type _CheckEs = AssertCompleteLocale<(typeof ui)['es']>
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+type _CheckPt = AssertCompleteLocale<(typeof ui)['pt']>
+
+/** Strongly-typed translation key. Use this instead of plain `string` when
+ *  building helper utilities that accept translation keys. */
+export type TranslationKey = keyof Translations

@@ -8,15 +8,25 @@ type Labels = {
   empty: string
   results: string
   repo: string
+  live: string
+  repository: string
+  noLinks: string
+  backToAll: string
+}
+
+type Meta = {
+  lang: string
+  portfolioPath: string
 }
 
 type Props = {
   projects: ProjectItem[]
   tags: string[]
   labels: Labels
+  meta: Meta
 }
 
-export function PortfolioFilter({ projects, tags, labels }: Props) {
+export function PortfolioFilter({ projects, tags, labels, meta }: Props) {
   const [activeTag, setActiveTag] = useState<string>('all')
   const [isPending, startTransition] = useTransition()
 
@@ -78,13 +88,12 @@ export function PortfolioFilter({ projects, tags, labels }: Props) {
         {labels.results.replace('{count}', String(filtered.length))}
       </p>
 
-      <div
-        className={cn(
-          'grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3',
-          isPending && 'opacity-60 transition-opacity',
-        )}
-      >
-        {filtered.length === 0 ? (
+      <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {isPending ? (
+          Array.from({ length: 6 }).map((_, i) => (
+            <ProjectSkeleton key={i} />
+          ))
+        ) : filtered.length === 0 ? (
           <p className="text-muted-foreground col-span-full py-16 text-center">
             {labels.empty}
           </p>
@@ -94,9 +103,30 @@ export function PortfolioFilter({ projects, tags, labels }: Props) {
               key={project.id}
               project={project}
               repoLabel={labels.repo}
+              detailHref={`${meta.portfolioPath}/${project.id}`}
             />
           ))
         )}
+      </div>
+    </div>
+  )
+}
+
+function ProjectSkeleton() {
+  return (
+    <div className="bg-card flex h-full flex-col overflow-hidden rounded-2xl border shadow-lg" aria-hidden="true">
+      <div className="h-48 w-full animate-pulse bg-muted" />
+      <div className="flex flex-1 flex-col gap-3 px-5 py-4">
+        <div className="flex flex-col gap-2">
+          <div className="h-5 w-3/5 animate-pulse rounded-md bg-muted" />
+          <div className="h-3.5 w-full animate-pulse rounded-md bg-muted" />
+          <div className="h-3.5 w-4/5 animate-pulse rounded-md bg-muted" />
+        </div>
+        <div className="mt-auto flex flex-wrap gap-1.5">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div key={i} className="h-5 w-14 animate-pulse rounded-full bg-muted" />
+          ))}
+        </div>
       </div>
     </div>
   )
@@ -131,69 +161,64 @@ function FilterChip({
 function ProjectFilterCard({
   project,
   repoLabel,
+  detailHref,
 }: {
   project: ProjectItem
   repoLabel: string
+  detailHref: string
 }) {
-  const card = (
-    <article className="group bg-card text-card-foreground hover:border-primary flex h-full flex-col overflow-hidden rounded-2xl border shadow-lg transition duration-200">
-      {project.imagePath ? (
-        <img
-          src={project.imagePath}
-          alt={project.imageAlt}
-          className="h-48 w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-          loading="lazy"
-        />
-      ) : (
-        <div className="via-background flex h-48 w-full items-center justify-center bg-linear-to-br from-orange-500/20 to-orange-700/10">
-          <span className="text-primary/70 text-3xl font-black tracking-tight">
-            {project.name.slice(0, 2).toUpperCase()}
-          </span>
-        </div>
-      )}
-      <div className="flex flex-1 flex-col gap-3 px-5 py-4">
-        <div>
-          <h3 className="text-lg font-medium">{project.name}</h3>
-          {project.description ? (
-            <p className="text-muted-foreground mt-0.5 line-clamp-2 text-sm">
-              {project.description}
-            </p>
+  return (
+    <a
+      href={detailHref}
+      className="block h-full"
+      aria-label={project.name}
+    >
+      <article className="group bg-card text-card-foreground hover:border-primary flex h-full flex-col overflow-hidden rounded-2xl border shadow-lg transition duration-200">
+        {project.imagePath ? (
+          <img
+            src={project.imagePath}
+            alt={project.imageAlt}
+            className="h-48 w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            loading="lazy"
+            width="400"
+            height="192"
+          />
+        ) : (
+          <div className="via-background flex h-48 w-full items-center justify-center bg-linear-to-br from-orange-500/20 to-orange-700/10">
+            <span className="text-primary/70 text-3xl font-black tracking-tight">
+              {project.name.slice(0, 2).toUpperCase()}
+            </span>
+          </div>
+        )}
+        <div className="flex flex-1 flex-col gap-3 px-5 py-4">
+          <div>
+            <h3 className="text-lg font-medium">{project.name}</h3>
+            {project.description ? (
+              <p className="text-muted-foreground mt-0.5 line-clamp-2 text-sm">
+                {project.description}
+              </p>
+            ) : null}
+          </div>
+          {project.tags.length > 0 ? (
+            <div className="mt-auto flex flex-wrap gap-1.5">
+              {project.tags.map((tag, index) => (
+                <Badge
+                  key={`${project.id}-${tag}-${index}`}
+                  variant="secondary"
+                  className="font-medium"
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          ) : null}
+          {project.repository ? (
+            <span className="text-muted-foreground text-xs underline-offset-2 group-hover:underline">
+              {repoLabel}
+            </span>
           ) : null}
         </div>
-        {project.tags.length > 0 ? (
-          <div className="mt-auto flex flex-wrap gap-1.5">
-            {project.tags.map((tag, index) => (
-              <Badge
-                key={`${project.id}-${tag}-${index}`}
-                variant="secondary"
-                className="font-medium"
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        ) : null}
-        {project.repository ? (
-          <span className="text-muted-foreground text-xs underline-offset-2 group-hover:underline">
-            {repoLabel}
-          </span>
-        ) : null}
-      </div>
-    </article>
+      </article>
+    </a>
   )
-
-  if (project.website) {
-    return (
-      <a
-        href={project.website}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block h-full"
-      >
-        {card}
-      </a>
-    )
-  }
-
-  return <div className="h-full">{card}</div>
 }

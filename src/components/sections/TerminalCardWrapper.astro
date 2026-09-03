@@ -1,0 +1,33 @@
+---
+import { Card as ShadcnCard } from '../ui/card'
+import { TerminalCard } from './TerminalCard'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<ShadcnCard
+  className="card-animate transfor-y-[-40%] group relative col-span-1 h-auto w-full self-start overflow-hidden p-0 shadow-lg md:col-span-2"
+>
+  <TerminalCard
+    client:load
+    labels={{
+      placeholder: t('terminal.placeholder'),
+      greeting: t('terminal.greeting'),
+      helpHint: t('terminal.helpHint'),
+      helpIntro: t('terminal.helpIntro'),
+      helpDesc: t('terminal.helpDesc'),
+      whoamiDesc: t('terminal.whoamiDesc'),
+      whoamiLocation: t('terminal.whoamiLocation'),
+      whoamiRole: t('terminal.whoamiRole'),
+      whoamiHobby: t('terminal.whoamiHobby'),
+      skillsDesc: t('terminal.skillsDesc'),
+      contactDesc: t('terminal.contactDesc'),
+      clearDesc: t('terminal.clearDesc'),
+      notFound: t('terminal.notFound'),
+      cardTitle: t('terminal.cardTitle'),
+      suggest: t('terminal.suggest'),
+    }}
+  />
+</ShadcnCard>

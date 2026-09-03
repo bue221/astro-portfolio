@@ -3,12 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 import TopLayout from '../../layouts/TopLayout.astro'
 import BottomLayout from '../../layouts/BottomLayout.astro'
 import { PortfolioFilter } from '../../components/PortfolioFilter'
-import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils'
 import { collectProjectTags, getProjects } from '../../lib/projects'
 import { fade } from 'astro:transitions'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
+const translatePath = useTranslatedPath(lang)
 const projects = await getProjects()
 const tags = collectProjectTags(projects)
 ---
@@ -41,6 +42,14 @@ const tags = collectProjectTags(projects)
           empty: t('portfolio.filter.empty'),
           results: t('portfolio.filter.results'),
           repo: t('portfolio.repo'),
+          live: t('portfolio.live'),
+          repository: t('portfolio.repository'),
+          noLinks: t('portfolio.noLinks'),
+          backToAll: t('portfolio.backToAll'),
+        }}
+        meta={{
+          lang,
+          portfolioPath: translatePath('/portfolio'),
         }}
       />
     </BottomLayout>

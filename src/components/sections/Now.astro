@@ -1,6 +1,7 @@
 ---
 import Card from '../Card.astro'
 import Pulse from '../Pulse.astro'
+import { NowLive } from './NowLive'
 import { getLangFromUrl, useTranslations } from '../../i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
@@ -19,5 +20,9 @@ const t = useTranslations(lang)
     </div>
     <Pulse />
   </div>
-  <p class="text-xs">{t('now.description')}</p>
+  <NowLive
+    client:load
+    nowLabel={t('now.title')}
+    role={t('now.description')}
+  />
 </Card>

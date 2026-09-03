@@ -1,0 +1,36 @@
+---
+import Card from '../Card.astro'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+import { LINKS } from '../../lib/constants'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
+  <a
+    href={LINKS.mail}
+    class="group flex h-full flex-col justify-between gap-3"
+    aria-label={t('available.cta')}
+  >
+    <div class="flex items-start justify-between">
+      <p class="text-sm font-semibold">{t('available.title')}</p>
+      <!-- Pulsing availability dot -->
+      <span class="relative flex h-3 w-3 shrink-0 mt-0.5">
+        <span
+          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"
+        ></span>
+        <span class="relative inline-flex h-3 w-3 rounded-full bg-green-500"
+        ></span>
+      </span>
+    </div>
+    <p class="text-muted-foreground text-xs">
+      {t('available.description')}
+    </p>
+    <span
+      class="text-primary group-hover:text-primary/80 inline-flex items-center gap-1 text-xs font-medium transition-colors"
+    >
+      {t('available.cta')} →
+    </span>
+  </a>
+</Card>

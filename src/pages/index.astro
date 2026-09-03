@@ -11,6 +11,8 @@ import ExperienceCard from '../components/sections/ExperienceCard.astro'
 import TattooCard from '../components/sections/TattooCard.astro'
 import StudyCard from '../components/sections/StudyCard.astro'
 import AiToolkitCard from '../components/sections/AiToolkitCard.astro'
+import AvailableCard from '../components/sections/AvailableCard.astro'
+import TerminalCardWrapper from '../components/sections/TerminalCardWrapper.astro'
 import {
   getLangFromUrl,
   useTranslations,
@@ -29,8 +31,19 @@ const translatePath = useTranslatedPath(lang)
   let animationRunning = false
   let animationTimeout: ReturnType<typeof setTimeout> | null = null
 
+  // Respect prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
   // Wait for ViewTransitions to complete before animating
   function initAnimations() {
+    // Skip animations for users who prefer reduced motion
+    if (prefersReducedMotion) {
+      document.querySelectorAll('.card-animate').forEach((el) => {
+        (el as HTMLElement).style.opacity = '1'
+      })
+      return
+    }
+
     // Prevent multiple simultaneous animations
     if (animationRunning) return
 
@@ -90,7 +103,7 @@ const translatePath = useTranslatedPath(lang)
   >
   </div>
   <main
-    class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-2 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:grid-rows-8 lg:gap-4"
+    class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-2 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:grid-flow-dense lg:grid-rows-8 lg:gap-4"
   >
     <IntroCard />
     <AboutMe />
@@ -106,6 +119,7 @@ const translatePath = useTranslatedPath(lang)
     <ContactsCard />
     <ExperienceCard />
     <AiToolkitCard />
+    <TerminalCardWrapper />
     <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
       <div class="flex h-full flex-col justify-between">
         <blockquote class="mt-6 border-l-2 pl-6 italic">
@@ -114,6 +128,7 @@ const translatePath = useTranslatedPath(lang)
         <p class="mt-2 text-xs">{t('quote.author')}</p>
       </div>
     </Card>
+    <AvailableCard />
     <TattooCard />
     <StudyCard />
   </main>

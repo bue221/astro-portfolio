@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import TopLayout from '../../layouts/TopLayout.astro'
+import BottomLayout from '../../layouts/BottomLayout.astro'
+import { Badge } from '../../components/ui/badge'
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils'
+import { getProjects } from '../../lib/projects'
+import { ExternalLink, Github, ArrowLeft } from 'lucide-react'
+import { fade } from 'astro:transitions'
+
+export async function getStaticPaths() {
+  const projects = await getProjects()
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }))
+}
+
+const { project } = Astro.props
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const translatePath = useTranslatedPath(lang)
+
+const ogImageUrl = new URL(project.imagePath || '/View1.png', Astro.site)
+---
+
+<BaseLayout
+  title={`${project.name} — ${t('portfolio.title')}`}
+  description={project.description}
+  ogImage={ogImageUrl}
+>
+  <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate={fade()}>
+    <TopLayout>
+      <a
+        href={translatePath('/portfolio')}
+        class="text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1.5 text-sm transition-colors"
+      >
+        <ArrowLeft className="h-4 w-4" />
+        {t('portfolio.heading')}
+      </a>
+      <h1 class="mt-2 scroll-m-20 text-4xl font-bold tracking-tight">
+        {project.name}
+      </h1>
+      {project.description && (
+        <p class="text-muted-foreground mt-3 max-w-2xl text-base">
+          {project.description}
+        </p>
+      )}
+    </TopLayout>
+
+    <BottomLayout size="xl">
+      <div class="grid gap-8 lg:grid-cols-3">
+        <!-- Main content -->
+        <div class="lg:col-span-2 flex flex-col gap-6">
+          <!-- Cover image -->
+          {project.imagePath ? (
+            <div class="overflow-hidden rounded-2xl border shadow-lg">
+              <img
+                src={project.imagePath}
+                alt={project.imageAlt}
+                class="h-64 w-full object-cover sm:h-80"
+                loading="eager"
+                width="800"
+                height="400"
+              />
+            </div>
+          ) : (
+            <div class="via-background flex h-64 w-full items-center justify-center rounded-2xl border bg-linear-to-br from-orange-500/20 to-orange-700/10 shadow-lg sm:h-80">
+              <span class="text-primary/70 text-6xl font-black tracking-tight">
+                {project.name.slice(0, 2).toUpperCase()}
+              </span>
+            </div>
+          )}
+
+          <!-- Tags section -->
+          {project.tags.length > 0 && (
+            <div class="flex flex-col gap-2">
+              <h2 class="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Tech Stack</h2>
+              <div class="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <Badge variant="secondary" className="text-sm px-3 py-1">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="flex flex-col gap-4">
+          <div class="bg-card rounded-2xl border p-5 shadow-sm flex flex-col gap-4">
+            <h2 class="text-base font-semibold">Links</h2>
+
+            {project.website && (
+              <a
+                href={project.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:bg-accent flex items-center gap-2.5 rounded-xl border px-4 py-3 text-sm font-medium transition-colors"
+              >
+                <ExternalLink className="h-4 w-4 text-primary shrink-0" />
+                {t('portfolio.live')}
+              </a>
+            )}
+
+            {project.repository && (
+              <a
+                href={project.repository}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:bg-accent flex items-center gap-2.5 rounded-xl border px-4 py-3 text-sm font-medium transition-colors"
+              >
+                <Github className="h-4 w-4 text-primary shrink-0" />
+                {t('portfolio.repository')}
+              </a>
+            )}
+
+            {!project.website && !project.repository && (
+              <p class="text-muted-foreground text-sm">{t('portfolio.noLinks')}</p>
+            )}
+          </div>
+
+          <a
+            href={translatePath('/portfolio')}
+            class="hover:bg-accent flex items-center gap-2 rounded-xl border px-4 py-3 text-sm font-medium transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            {t('portfolio.backToAll')}
+          </a>
+        </aside>
+      </div>
+    </BottomLayout>
+  </main>
+</BaseLayout>
