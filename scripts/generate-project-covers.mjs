@@ -18,14 +18,10 @@ const projects = [
   'Shell sort',
   'casa-fest',
   'Minecraft clone',
-  'empleados angular',
-  'Vue Gym todolist',
   'Crud nextjs mongodb',
   'Netflix clone',
   'Triki game',
   'Dog api',
-  'React-admin',
-  'Portfolio',
   'Intellectus my firts website',
 ]
 

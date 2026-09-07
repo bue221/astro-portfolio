@@ -127,22 +127,6 @@ const RAW_PROJECTS: CatalogEntry[] = [
     tags: ['Three.js', 'Game', 'Clone'],
   },
   {
-    id: 'empleados-angular',
-    name: 'empleados angular',
-    description: 'Employee management CRUD built with Angular.',
-    website: 'https://angular-empleados.vercel.app/',
-    repository: 'https://github.com/bue221/angularEmpleados',
-    tags: ['Angular', 'CRUD'],
-  },
-  {
-    id: 'vue-gym-todolist',
-    name: 'Vue Gym todolist',
-    description: 'Gym workout todo list built with Vue.',
-    website: 'https://bue221.github.io/vue-todoGym/',
-    repository: 'https://github.com/bue221/vue-todoGym',
-    tags: ['Vue', 'Productivity'],
-  },
-  {
     id: 'crud-nextjs-mongodb',
     name: 'Crud nextjs mongodb',
     description: 'Full-stack CRUD app with Next.js and MongoDB.',
@@ -174,23 +158,6 @@ const RAW_PROJECTS: CatalogEntry[] = [
     website: 'https://bue221.github.io/Dog-api/index.html',
     repository: 'https://github.com/bue221/Dog-api',
     tags: ['API', 'JavaScript'],
-  },
-  {
-    id: 'react-admin',
-    name: 'React-admin',
-    description: 'Admin dashboard built with React Admin.',
-    website: 'https://bue221.github.io/first-steps-ReactAdmin/#/posts',
-    repository: 'https://github.com/bue221/first-steps-ReactAdmin',
-    tags: ['React', 'Admin', 'Dashboard'],
-  },
-  {
-    id: 'portfolio-astro',
-    name: 'Portfolio',
-    description:
-      'Personal portfolio built with Astro, React islands and Tailwind.',
-    website: 'https://portafolio.bue221.xyz/',
-    repository: 'https://github.com/bue221/astro-portfolio',
-    tags: ['Astro', 'Frontend'],
   },
   {
     id: 'intellectus',
