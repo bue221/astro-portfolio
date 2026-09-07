@@ -6,6 +6,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const outDir = join(__dirname, '../public/projects')
 
 const projects = [
+  'ScanLine Master',
   'Laponttes',
   'Coway Game',
   'Shell sort',

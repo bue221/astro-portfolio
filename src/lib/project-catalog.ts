@@ -25,6 +25,15 @@ type CatalogEntry = Omit<ProjectItem, 'id' | 'imagePath' | 'imageAlt'> & {
 
 const RAW_PROJECTS: CatalogEntry[] = [
   {
+    id: 'scanline-master',
+    name: 'ScanLine Master',
+    description:
+      'Educational SPA that teaches polygon scan-line fill with a step-by-step simulator, free-draw lab and KaTeX fundamentals.',
+    website: 'https://scanline-master.vercel.app',
+    repository: 'https://github.com/bue221/scanline-master',
+    tags: ['React', 'TypeScript', 'Canvas', 'Algorithms'],
+  },
+  {
     id: 'laponttes',
     name: 'Laponttes',
     description:
