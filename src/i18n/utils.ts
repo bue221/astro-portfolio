@@ -22,15 +22,41 @@ export function useTranslations(lang: keyof typeof ui) {
 
 export type { TranslationKey }
 
+function localeRoutes(lang: string) {
+  return routes[lang as keyof typeof routes]
+}
+
+function translateFirstSegment(segment: string, lang: string) {
+  const table = localeRoutes(lang)
+  if (lang !== defaultLang && table?.[segment]) {
+    return table[segment]
+  }
+  return segment
+}
+
+function canonicalFirstSegment(segment: string, lang: keyof typeof ui) {
+  const table = localeRoutes(lang)
+  if (lang !== defaultLang && table) {
+    const key = Object.keys(table).find(
+      (routeKey) => table[routeKey] === segment,
+    )
+    if (key) return key
+  }
+  return segment
+}
+
 export function useTranslatedPath(lang: keyof typeof ui) {
   return function translatePath(path: string, l: string = lang) {
-    const pathName = path.replaceAll('/', '')
-    const hasTranslation =
-      defaultLang !== l &&
-      routes &&
-      routes[l] !== undefined &&
-      routes[l][pathName] !== undefined
-    const translatedPath = hasTranslation ? '/' + routes[l][pathName] : path
+    const segments = path.split('/').filter(Boolean)
+
+    if (segments.length === 0) {
+      return !showDefaultLang && l === defaultLang ? '/' : `/${l}/`
+    }
+
+    const translatedPath = `/${[
+      translateFirstSegment(segments[0], l),
+      ...segments.slice(1),
+    ].join('/')}`
 
     return !showDefaultLang && l === defaultLang
       ? translatedPath
@@ -86,45 +112,20 @@ export function useTranslatedExperience(lang: keyof typeof ui) {
 
 export function getRouteFromUrl(url: URL): string | undefined {
   const pathname = new URL(url).pathname
-  const parts = pathname?.split('/').filter(Boolean)
+  const parts = pathname.split('/').filter(Boolean)
   const currentLang = getLangFromUrl(url)
 
-  // If we're on the home page, return empty string
   if (parts.length === 0 || (parts.length === 1 && parts[0] === currentLang)) {
     return ''
   }
 
-  // Remove the language prefix if present
   const pathParts = parts[0] === currentLang ? parts.slice(1) : parts
-  const path = pathParts[pathParts.length - 1]
-
-  if (!path || path === '') {
+  if (pathParts.length === 0) {
     return ''
   }
 
-  // If we're on default lang, check if path has a translation
-  if (defaultLang === currentLang && routes) {
-    const route = Object.values(routes)[0]
-    if (route && route[path] !== undefined) {
-      return path
-    }
-    return path
-  }
-
-  // If we're on a translated lang, check if path is a translated route
-  if (routes && routes[currentLang]) {
-    const getKeyByValue = (
-      obj: Record<string, string>,
-      value: string,
-    ): string | undefined => {
-      return Object.keys(obj).find((key) => obj[key] === value)
-    }
-
-    const reversedKey = getKeyByValue(routes[currentLang], path)
-    if (reversedKey !== undefined) {
-      return reversedKey
-    }
-  }
-
-  return path
+  return [
+    canonicalFirstSegment(pathParts[0], currentLang),
+    ...pathParts.slice(1),
+  ].join('/')
 }
