@@ -8,8 +8,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "node scripts/generate-project-covers.mjs && astro build",
-    "dev": "node scripts/generate-project-covers.mjs && astro dev",
+    "build": "astro build",
+    "dev": "astro dev",
     "covers": "node scripts/generate-project-covers.mjs",
     "format": "prettier -w . --cache",
     "preview": "astro preview",

@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -7,6 +7,7 @@ const outDir = join(__dirname, '../public/projects')
 
 const projects = [
   'Laponttes',
+  'Coway Game',
   'Shell sort',
   'Vue mapbox',
   'casa-fest',
@@ -136,11 +137,24 @@ function buildSvg(name) {
 
 mkdirSync(outDir, { recursive: true })
 
+const force = process.argv.includes('--force')
+let generated = 0
+let skipped = 0
+
 for (const name of projects) {
   const slug = slugify(name)
-  const svg = buildSvg(name)
-  writeFileSync(join(outDir, `${slug}.svg`), svg, 'utf8')
+  const dest = join(outDir, `${slug}.svg`)
+
+  if (!force && existsSync(dest)) {
+    skipped += 1
+    continue
+  }
+
+  writeFileSync(dest, buildSvg(name), 'utf8')
+  generated += 1
   console.log(`generated ${slug}.svg`)
 }
 
-console.log(`Done: ${projects.length} covers in public/projects/`)
+console.log(
+  `Done: ${generated} generated, ${skipped} skipped (${projects.length} covers in public/projects/)`,
+)
