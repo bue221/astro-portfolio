@@ -34,6 +34,41 @@ const RAW_PROJECTS: CatalogEntry[] = [
     tags: ['React', 'TypeScript', 'Canvas', 'Algorithms'],
   },
   {
+    id: 'qr-code-generator',
+    name: 'QR Code Generator',
+    description:
+      'Local-first Next.js app that generates customizable QR codes in the browser, with logo, colors and PNG/SVG download.',
+    website: 'https://qr-code-generator.bue221.xyz/',
+    repository: 'https://github.com/bue221/qr-code-generator',
+    tags: ['Next.js', 'TypeScript', 'React'],
+  },
+  {
+    id: 'redsensurb',
+    name: 'RedSensUrb',
+    description:
+      'Distributed urban-sensor MVP: Java nodes send UDP telemetry to a Spring coordinator with REST, SQLite and 2PC replicas, plus a React client.',
+    repository: 'https://github.com/bue221/RedSensUrb',
+    tags: ['Java', 'React', 'Full Stack'],
+  },
+  {
+    id: 'videojuego-universidad',
+    name: 'Corre corre que te atrapo',
+    description:
+      'Unity 3D prototype where collecting stars increases brightness and makes the pursuer detect you from farther away.',
+    website:
+      'https://play.unity.com/en/games/d99eb09f-b519-46aa-9cdb-ced91cf7afb0/corre-corre-que-te-atrapo',
+    repository: 'https://github.com/bue221/videojuego_universidad',
+    tags: ['Unity', 'Game', 'C#'],
+  },
+  {
+    id: 'obtener-antecedentes-policia',
+    name: 'Antecedentes Policía',
+    description:
+      'Python/Selenium automation that queries Colombia Police judicial records and exports the certificate as PDF.',
+    repository: 'https://github.com/bue221/obtener-antecedentes-policia',
+    tags: ['Python', 'Selenium', 'Automation'],
+  },
+  {
     id: 'laponttes',
     name: 'Laponttes',
     description:
@@ -59,14 +94,6 @@ const RAW_PROJECTS: CatalogEntry[] = [
     tags: ['Algorithms', 'JavaScript'],
   },
   {
-    id: 'vue-mapbox',
-    name: 'Vue mapbox',
-    description: 'Interactive maps experience built with Vue and Mapbox.',
-    website: 'https://fluffy-sawine-3798e9.netlify.app/',
-    repository: 'https://github.com/bue221/vuejs-mapbox-course',
-    tags: ['Vue', 'Maps', 'Frontend'],
-  },
-  {
     id: 'casa-fest',
     name: 'casa-fest',
     description: 'Event landing and frontend experience for Casa Fest.',
@@ -81,13 +108,6 @@ const RAW_PROJECTS: CatalogEntry[] = [
     website: 'https://minecraft-clone-three.netlify.app/',
     repository: 'https://github.com/bue221/minecraft-clone',
     tags: ['Three.js', 'Game', 'Clone'],
-  },
-  {
-    id: 'game-of-life',
-    name: 'Game of life',
-    description: "Conway's Game of Life simulation on HTML canvas.",
-    repository: 'https://github.com/bue221/gameOfLyfe',
-    tags: ['Algorithms', 'Canvas', 'JavaScript'],
   },
   {
     id: 'rave-clud',
@@ -112,12 +132,6 @@ const RAW_PROJECTS: CatalogEntry[] = [
     website: 'https://portfolio-web-one.vercel.app/',
     repository: 'https://github.com/bue221/Portfolio-website',
     tags: ['Landing', 'HTML/CSS'],
-  },
-  {
-    id: 'angular-images-ngrx',
-    name: 'Angular images with ngrx',
-    description: 'Image gallery with NgRx state management in Angular.',
-    tags: ['Angular', 'NgRx', 'State'],
   },
   {
     id: 'landing-page',
@@ -158,22 +172,6 @@ const RAW_PROJECTS: CatalogEntry[] = [
     tags: ['Frontend', 'Challenge'],
   },
   {
-    id: 'linkedin-clone',
-    name: 'LinkedIn Clone',
-    description: 'Social network UI clone inspired by LinkedIn.',
-    website: 'https://linkedin-clone-47103.web.app/home',
-    repository: 'https://github.com/bue221/LinkedIn-clone',
-    tags: ['React', 'Clone', 'Social'],
-  },
-  {
-    id: 'covid-19',
-    name: 'covid-19',
-    description: 'COVID-19 data dashboard with API integration.',
-    website: 'https://bue221.github.io/covid-19/index.html',
-    repository: 'https://github.com/bue221/covid-19',
-    tags: ['API', 'Data Viz', 'React'],
-  },
-  {
     id: 'netflix-clone',
     name: 'Netflix clone',
     description:
@@ -199,14 +197,6 @@ const RAW_PROJECTS: CatalogEntry[] = [
     tags: ['API', 'JavaScript'],
   },
   {
-    id: 'app-prueba',
-    name: 'App prueba',
-    description: 'Experimental frontend app for UI practice.',
-    website: 'https://bue221.github.io/Prueba/',
-    repository: 'https://github.com/bue221/Prueba',
-    tags: ['Frontend'],
-  },
-  {
     id: 'react-admin',
     name: 'React-admin',
     description: 'Admin dashboard built with React Admin.',
@@ -229,14 +219,6 @@ const RAW_PROJECTS: CatalogEntry[] = [
     website: 'https://bue221.github.io/calculadora/',
     repository: 'https://github.com/bue221/calculadora',
     tags: ['JavaScript', 'UI'],
-  },
-  {
-    id: 'youtube-clone',
-    name: 'Youtube clone',
-    description: 'Video platform UI clone inspired by YouTube.',
-    website: 'https://youtube-clone-prod.vercel.app/',
-    repository: 'https://github.com/bue221/youtube-clone',
-    tags: ['React', 'Clone', 'UI'],
   },
   {
     id: 'react-firebase-todo',

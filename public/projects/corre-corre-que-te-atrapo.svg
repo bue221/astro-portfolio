@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Corre corre que te atrapo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" />
+  <circle cx="691" cy="311" r="9" fill="#c4b5fd" opacity="0.22999999999999998" /><polygon points="148,76 156,84 148,92 140,84" fill="#c4b5fd" opacity="0.13999999999999999" /><rect x="220" y="112" width="50" height="50" fill="none" stroke="#c4b5fd" stroke-width="3" opacity="0.25" /><line x1="220" y1="137" x2="270" y2="137" stroke="#c4b5fd" stroke-width="2" opacity="0.25" /><line x1="245" y1="112" x2="245" y2="162" stroke="#c4b5fd" stroke-width="2" opacity="0.25" /><path d="M 318 190 Q 330 166 342 190 T 366 190" fill="none" stroke="#c4b5fd" stroke-width="4" opacity="0.16" /><rect x="416" y="231.5" width="5" height="23" fill="#c4b5fd" opacity="0.27" /><rect x="431.3333333333333" y="220" width="5" height="32.199999999999996" fill="#c4b5fd" opacity="0.21600000000000003" /><rect x="444.75" y="235.33333333333334" width="5" height="25.3" fill="#c4b5fd" opacity="0.24300000000000002" /><rect x="534" y="274" width="4" height="44" fill="#c4b5fd" opacity="0.18" /><rect x="514" y="294" width="44" height="4" fill="#c4b5fd" opacity="0.18" /><circle cx="633" cy="69" r="21" fill="#c4b5fd" opacity="0.29000000000000004" /><polygon points="90,102 110,122 90,142 70,122" fill="#c4b5fd" opacity="0.2" />
+  <circle cx="680" cy="90" r="120" fill="#c4b5fd" opacity="0.12" />
+  <circle cx="120" cy="360" r="90" fill="#c4b5fd" opacity="0.08" />
+  <g filter="url(#glow)">
+    <text x="56" y="250" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="88" font-weight="900" letter-spacing="-4">CC</text>
+  </g>
+  <text x="56" y="310" fill="#c4b5fd" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700">Corre corre que te atrapo</text>
+  <g opacity="0.9"><polygon points="700,332 728,360 700,388 672,360" fill="#c4b5fd" opacity="0.85" /></g>
+</svg>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="QR Code Generator">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" />
+  <rect x="632" y="92" width="46" height="46" fill="none" stroke="#93c5fd" stroke-width="3" opacity="0.27" /><line x1="632" y1="115" x2="678" y2="115" stroke="#93c5fd" stroke-width="2" opacity="0.27" /><line x1="655" y1="92" x2="655" y2="138" stroke="#93c5fd" stroke-width="2" opacity="0.27" /><path d="M 90 168 Q 101 146 112 168 T 134 168" fill="none" stroke="#93c5fd" stroke-width="4" opacity="0.18" /><rect x="188" y="210.5" width="5" height="21" fill="#93c5fd" opacity="0.29000000000000004" /><rect x="202" y="200" width="5" height="29.4" fill="#93c5fd" opacity="0.23200000000000004" /><rect x="214.25" y="214" width="5" height="23.1" fill="#93c5fd" opacity="0.26100000000000007" /><rect x="304" y="254" width="4" height="40" fill="#93c5fd" opacity="0.2" /><rect x="286" y="272" width="40" height="4" fill="#93c5fd" opacity="0.2" /><circle cx="403" cy="327" r="19" fill="#93c5fd" opacity="0.31" /><polygon points="500,82 518,100 500,118 482,100" fill="#93c5fd" opacity="0.22" /><rect x="580" y="136" width="34" height="34" fill="none" stroke="#93c5fd" stroke-width="3" opacity="0.13" /><line x1="580" y1="153" x2="614" y2="153" stroke="#93c5fd" stroke-width="2" opacity="0.13" /><line x1="597" y1="136" x2="597" y2="170" stroke="#93c5fd" stroke-width="2" opacity="0.13" /><path d="M 678 206 Q 686 190 694 206 T 710 206" fill="none" stroke="#93c5fd" stroke-width="4" opacity="0.24" />
+  <circle cx="680" cy="90" r="120" fill="#93c5fd" opacity="0.12" />
+  <circle cx="120" cy="360" r="90" fill="#93c5fd" opacity="0.08" />
+  <g filter="url(#glow)">
+    <text x="56" y="250" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="88" font-weight="900" letter-spacing="-4">QC</text>
+  </g>
+  <text x="56" y="310" fill="#93c5fd" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700">QR Code Generator</text>
+  <g opacity="0.9"><circle cx="700" cy="360" r="28" fill="#93c5fd" opacity="0.85" /></g>
+</svg>
