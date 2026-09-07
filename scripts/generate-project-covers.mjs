@@ -7,6 +7,7 @@ const outDir = join(__dirname, '../public/projects')
 
 const projects = [
   'ScanLine Master',
+  'Wardrobe',
   'QR Code Generator',
   'RedSensUrb',
   'Corre corre que te atrapo',

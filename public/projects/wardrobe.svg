@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Wardrobe">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#431407" />
+      <stop offset="100%" stop-color="#c2410c" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" />
+  <path d="M 672 104 Q 678 92 684 104 T 696 104" fill="none" stroke="#fdba74" stroke-width="4" opacity="0.16" /><rect x="130" y="151.5" width="5" height="11" fill="#fdba74" opacity="0.27" /><rect x="137.33333333333334" y="146" width="5" height="15.399999999999999" fill="#fdba74" opacity="0.21600000000000003" /><rect x="143.75" y="153.33333333333334" width="5" height="12.100000000000001" fill="#fdba74" opacity="0.24300000000000002" /><rect x="236" y="200" width="4" height="20" fill="#fdba74" opacity="0.18" /><rect x="228" y="208" width="20" height="4" fill="#fdba74" opacity="0.18" /><circle cx="335" cy="263" r="9" fill="#fdba74" opacity="0.29000000000000004" /><polygon points="432,308 440,316 432,324 424,316" fill="#fdba74" opacity="0.2" /><rect x="504" y="64" width="50" height="50" fill="none" stroke="#fdba74" stroke-width="3" opacity="0.31" /><line x1="504" y1="89" x2="554" y2="89" stroke="#fdba74" stroke-width="2" opacity="0.31" /><line x1="529" y1="64" x2="529" y2="114" stroke="#fdba74" stroke-width="2" opacity="0.31" /><path d="M 602 142 Q 614 118 626 142 T 650 142" fill="none" stroke="#fdba74" stroke-width="4" opacity="0.22" /><rect x="60" y="183.5" width="5" height="23" fill="#fdba74" opacity="0.13" /><rect x="75.33333333333333" y="172" width="5" height="32.199999999999996" fill="#fdba74" opacity="0.10400000000000001" /><rect x="88.75" y="187.33333333333334" width="5" height="25.3" fill="#fdba74" opacity="0.117" />
+  <circle cx="680" cy="90" r="120" fill="#fdba74" opacity="0.12" />
+  <circle cx="120" cy="360" r="90" fill="#fdba74" opacity="0.08" />
+  <g filter="url(#glow)">
+    <text x="56" y="250" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="88" font-weight="900" letter-spacing="-4">WA</text>
+  </g>
+  <text x="56" y="310" fill="#fdba74" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700">Wardrobe</text>
+  <g opacity="0.9"><rect x="672" y="332" width="56" height="56" fill="none" stroke="#fdba74" stroke-width="3" opacity="0.85" /><line x1="672" y1="360" x2="728" y2="360" stroke="#fdba74" stroke-width="2" opacity="0.85" /><line x1="700" y1="332" x2="700" y2="388" stroke="#fdba74" stroke-width="2" opacity="0.85" /></g>
+</svg>

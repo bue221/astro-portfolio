@@ -34,6 +34,15 @@ const RAW_PROJECTS: CatalogEntry[] = [
     tags: ['React', 'TypeScript', 'Canvas', 'Algorithms'],
   },
   {
+    id: 'wardrobe-app',
+    name: 'Wardrobe',
+    description:
+      'Mobile-first PWA for a local wardrobe and outfits on-device, with IndexedDB storage and optional on-device AI via WebLLM.',
+    website: 'https://wardrobe-app-woad.vercel.app',
+    repository: 'https://github.com/bue221/wardrobe-app',
+    tags: ['React', 'TypeScript', 'PWA'],
+  },
+  {
     id: 'qr-code-generator',
     name: 'QR Code Generator',
     description:
