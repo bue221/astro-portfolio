@@ -19,6 +19,30 @@ const lang = getLangFromUrl(Astro.url)
   <head>
     <HeadSEO title={title} description={description} ogImage={ogImage} />
     <ClientRouter />
+    <script is:inline>
+      ;(function () {
+        function applyTheme(root) {
+          const target = root || document.documentElement
+          let theme = 'system'
+          try {
+            theme = localStorage.getItem('theme') || 'system'
+          } catch (error) {
+            console.warn('[theme] Unable to read stored preference', error)
+          }
+          const isDark =
+            theme === 'dark' ||
+            (theme === 'system' &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches)
+          target.classList.toggle('dark', isDark)
+        }
+
+        applyTheme()
+        document.addEventListener('astro:before-swap', (event) => {
+          applyTheme(event.newDocument.documentElement)
+        })
+        document.addEventListener('astro:after-swap', () => applyTheme())
+      })()
+    </script>
   </head>
   <body class="min-h-screen font-sans antialiased">
     <canvas

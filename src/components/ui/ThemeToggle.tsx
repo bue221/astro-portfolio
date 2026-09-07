@@ -9,50 +9,41 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 
+type Theme = 'light' | 'dark' | 'system'
+
+function readStoredTheme(): Theme {
+  try {
+    const saved = localStorage.getItem('theme')
+    if (saved === 'light' || saved === 'dark' || saved === 'system') {
+      return saved
+    }
+  } catch (error) {
+    console.warn('[theme] Unable to read stored preference', error)
+  }
+  return 'system'
+}
+
+function applyThemeClass(theme: Theme) {
+  const isDark =
+    theme === 'dark' ||
+    (theme === 'system' &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
+  document.documentElement.classList.toggle('dark', isDark)
+}
+
 export function ModeToggle() {
-  const [theme, setThemeState] = React.useState<'light' | 'dark' | 'system'>(
-    'light',
-  )
-
   React.useEffect(() => {
-    // Initialize theme from localStorage or system preference
-    const savedTheme = localStorage.getItem('theme') as
-      | 'light'
-      | 'dark'
-      | 'system'
-      | null
-    const initialTheme = savedTheme || 'system'
-    setThemeState(initialTheme)
-
-    // Apply initial theme
-    const isDark =
-      initialTheme === 'dark' ||
-      (initialTheme === 'system' &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
+    applyThemeClass(readStoredTheme())
   }, [])
 
-  React.useEffect(() => {
-    // Skip if theme hasn't been initialized yet
-    if (theme === 'light' && !localStorage.getItem('theme')) return
-
-    const isDark =
-      theme === 'dark' ||
-      (theme === 'system' &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
-  }, [theme])
-
-  const onChangeTheme = (newTheme: 'light' | 'dark' | 'system') => {
-    // Use ViewTransition API for smoother theme changes
+  const onChangeTheme = (newTheme: Theme) => {
     const applyTheme = () => {
-      setThemeState(newTheme)
-      localStorage.setItem('theme', newTheme)
-      const isDark =
-        newTheme === 'dark' ||
-        (newTheme === 'system' &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-      document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
+      try {
+        localStorage.setItem('theme', newTheme)
+      } catch (error) {
+        console.warn('[theme] Unable to persist preference', error)
+      }
+      applyThemeClass(newTheme)
     }
 
     if (document.startViewTransition) {

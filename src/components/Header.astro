@@ -21,20 +21,7 @@ Object.keys(languages).forEach((l) => {
 })
 ---
 
-<script is:inline>
-  // Apply theme immediately on page load (before React components mount)
-  // This prevents flash of wrong theme
-  ;(function () {
-    const theme = localStorage.getItem('theme') || 'system'
-    const isDark =
-      theme === 'dark' ||
-      (theme === 'system' &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
-  })()
-</script>
-
-<header
+<header>
   class="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur"
 >
   <div
