@@ -19,6 +19,14 @@ export async function getProjects(): Promise<ProjectItem[]> {
   return LOCAL_PROJECTS
 }
 
+export async function getProjectStaticPaths() {
+  const projects = await getProjects()
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }))
+}
+
 export function collectProjectTags(projects: ProjectItem[]) {
   return uniqueTags(projects.flatMap((project) => project.tags)).sort((a, b) =>
     a.localeCompare(b),

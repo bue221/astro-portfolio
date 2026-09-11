@@ -1,6 +1,10 @@
 ---
-// Re-export the same page for the Spanish locale
-export { getStaticPaths } from '../../portfolio/[slug].astro'
-import Page from '../../portfolio/[slug].astro'
-export default Page
+import ProjectDetailPage from '../../../components/ProjectDetailPage.astro'
+import { getProjectStaticPaths } from '../../../lib/projects'
+
+export const getStaticPaths = getProjectStaticPaths
+
+const { project } = Astro.props
 ---
+
+<ProjectDetailPage project={project} />
