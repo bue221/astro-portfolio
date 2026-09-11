@@ -28,10 +28,7 @@ const ogImageUrl = new URL(project.imagePath || '/View1.png', Astro.site)
   description={project.description}
   ogImage={ogImageUrl}
 >
-  <div
-    class="flex min-h-[80vh] flex-auto flex-col"
-    transition:animate="fade"
-  >
+  <div class="flex min-h-[80vh] flex-auto flex-col" transition:animate="fade">
     <TopLayout>
       <a
         href={translatePath('/portfolio')}
