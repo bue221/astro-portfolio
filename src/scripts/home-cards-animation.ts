@@ -72,11 +72,10 @@ export function initHomeCardAnimations() {
     ],
   ]
 
-  timeline(sequence as TimelineDefinition)
-    .finished.finally(() => {
-      window.clearTimeout(safetyTimer)
-      finish()
-    })
+  timeline(sequence as TimelineDefinition).finished.finally(() => {
+    window.clearTimeout(safetyTimer)
+    finish()
+  })
 }
 
 export function setupHomeCardAnimations() {
