@@ -59,6 +59,11 @@
   }
 }
 
+/* Start hidden so entrance animation does not flash then jump */
+.card-animate {
+  opacity: 0;
+}
+
 /* Respect user preference for reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -68,6 +73,10 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .card-animate {
+    opacity: 1;
   }
 
   /* Keep pulsing availability indicator visible but static */

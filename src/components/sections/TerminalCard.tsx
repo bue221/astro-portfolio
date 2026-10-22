@@ -125,7 +125,8 @@ export function TerminalCard({ labels }: { labels: TerminalLabels }) {
   const inputRef = useRef<HTMLInputElement>(null)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const blurTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const skipScrollOnMount = useRef(true)
+  // Only pin transcript after the user runs a command — never on mount/hydration.
+  const stickToBottom = useRef(false)
 
   const registry = useMemo(() => buildRegistry(labels), [labels])
 
@@ -150,18 +151,14 @@ export function TerminalCard({ labels }: { labels: TerminalLabels }) {
     setHighlight(0)
   }, [input, focused])
 
-  // Keep the terminal transcript pinned to the latest line without scrolling the page.
-  // scrollIntoView was moving the whole viewport on mount and interrupting card animations.
+  // Keep transcript pinned inside the terminal only (never scroll the page).
   useEffect(() => {
-    if (skipScrollOnMount.current) {
-      skipScrollOnMount.current = false
-      return
-    }
+    if (!stickToBottom.current) return
 
     const container = scrollContainerRef.current
     if (!container) return
 
-    container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' })
+    container.scrollTop = container.scrollHeight
   }, [history])
 
   useEffect(() => {
@@ -175,6 +172,7 @@ export function TerminalCard({ labels }: { labels: TerminalLabels }) {
       const cmd = raw.trim().toLowerCase()
       if (!cmd) return
 
+      stickToBottom.current = true
       const newLines: HistoryLine[] = [{ kind: 'input', text: `$ ${raw}` }]
 
       if (cmd === 'clear') {

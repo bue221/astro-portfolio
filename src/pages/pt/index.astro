@@ -23,64 +23,9 @@ const translatePath = useTranslatedPath(lang)
 ---
 
 <script>
-  import { spring, stagger, timeline, type TimelineDefinition } from 'motion'
-  import { loaderAnimation } from '../../lib/constants'
+  import { setupHomeCardAnimations } from '../../scripts/home-cards-animation'
 
-  let animationRunning = false
-  let animationTimeout: ReturnType<typeof setTimeout> | null = null
-
-  // Wait for ViewTransitions to complete before animating
-  function initAnimations() {
-    // Prevent multiple simultaneous animations
-    if (animationRunning) return
-
-    const cards = document.querySelectorAll('.card-animate')
-    if (cards.length === 0) return
-
-    // Clear any pending animation
-    if (animationTimeout) {
-      clearTimeout(animationTimeout)
-      animationTimeout = null
-    }
-
-    animationRunning = true
-
-    const sequence = [
-      loaderAnimation,
-      [
-        cards,
-        { y: ['40%', '0%'], opacity: [0, 1] },
-        {
-          at: '-0.1',
-          duration: 0.4,
-          delay: stagger(0.3),
-          easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
-        },
-      ],
-    ]
-
-    timeline(sequence as TimelineDefinition).finished.then(() => {
-      animationRunning = false
-    })
-  }
-
-  // Handle ViewTransitions
-  document.addEventListener('astro:after-swap', () => {
-    // Wait for ViewTransition to complete and DOM to be ready
-    animationTimeout = setTimeout(() => {
-      initAnimations()
-    }, 150)
-  })
-
-  // Initial load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(initAnimations, 100)
-    })
-  } else {
-    // DOM already loaded
-    setTimeout(initAnimations, 100)
-  }
+  setupHomeCardAnimations()
 </script>
 
 <BaseLayout title={t('home.title')} description={t('home.description')}>
