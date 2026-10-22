@@ -123,8 +123,9 @@ export function TerminalCard({ labels }: { labels: TerminalLabels }) {
   const [focused, setFocused] = useState(false)
   const [highlight, setHighlight] = useState(0)
   const inputRef = useRef<HTMLInputElement>(null)
-  const bottomRef = useRef<HTMLDivElement>(null)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
   const blurTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const skipScrollOnMount = useRef(true)
 
   const registry = useMemo(() => buildRegistry(labels), [labels])
 
@@ -149,8 +150,18 @@ export function TerminalCard({ labels }: { labels: TerminalLabels }) {
     setHighlight(0)
   }, [input, focused])
 
+  // Keep the terminal transcript pinned to the latest line without scrolling the page.
+  // scrollIntoView was moving the whole viewport on mount and interrupting card animations.
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (skipScrollOnMount.current) {
+      skipScrollOnMount.current = false
+      return
+    }
+
+    const container = scrollContainerRef.current
+    if (!container) return
+
+    container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' })
   }, [history])
 
   useEffect(() => {
@@ -288,7 +299,10 @@ export function TerminalCard({ labels }: { labels: TerminalLabels }) {
         </span>
       </div>
 
-      <div className="max-h-36 overflow-y-auto p-4 font-mono text-xs leading-relaxed">
+      <div
+        ref={scrollContainerRef}
+        className="max-h-36 overflow-y-auto p-4 font-mono text-xs leading-relaxed"
+      >
         {history.map((line, i) => (
           <div
             key={i}
@@ -314,7 +328,6 @@ export function TerminalCard({ labels }: { labels: TerminalLabels }) {
             )}
           </div>
         ))}
-        <div ref={bottomRef} />
       </div>
 
       {showSuggestions ? (
