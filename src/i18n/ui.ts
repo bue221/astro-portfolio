@@ -37,7 +37,7 @@ export const ui = {
     // Intro Card
     'intro.welcome': 'welcome',
     'intro.title':
-      "Hi, I'm <b>Andrés Camilo Plaza</b>, a software developer, systems engineer and tattoo artist with strong focus on the user experience, animations and micro interactions. I love to create beautiful and functional interfaces, I am passionate about technology and I am always looking for new challenges.",
+      "Hi, I'm <b>Andrés Camilo Plaza</b>, a Full Stack + AI developer with 4+ years of experience. Strong frontend craft in React/Next.js and TypeScript, plus backend work in Python and Go. I build AI agent platforms, product UIs and polished interfaces — and I'm also a tattoo artist always looking for the next challenge.",
     'intro.sr.github': 'GitHub Profile',
     'intro.sr.linkedin': 'Linkedin Profile',
     'intro.sr.email': 'Email contact',
@@ -45,15 +45,15 @@ export const ui = {
     // About Me
     'about.title': 'About me',
     'about.description':
-      "Hi, I'm Andrés, a fullstack software developer from Colombia 🇨🇴.",
-    'about.tools': 'My primary tools of choice includes:',
+      "Hi, I'm Andrés, a Full Stack + AI developer from Colombia 🇨🇴 with 4+ years building product UIs and AI-powered systems.",
+    'about.tools': 'My preferred stack includes:',
     'about.hobbies':
       "Beyond coding, I'm passionate about tattoo, soccer and traveling. An unusual hobby of mine is play classical music in the guitar or ukulele.",
 
     // Now Card
     'now.title': 'Now',
     'now.whatsThat': "what's that ?",
-    'now.description': 'Software Engineer at Mercado Libre',
+    'now.description': 'Software Engineer AI at Mercado Libre',
 
     // Experience Card
     'experience.title': 'Experience',
@@ -98,7 +98,7 @@ export const ui = {
     // Work Page
     'work.title': 'Work',
     'work.description':
-      'Professional experience of Andrés Plaza across product, AI and frontend teams.',
+      'Professional experience of Andrés Plaza as Full Stack + AI engineer across product and platform teams.',
 
     // 404 Page
     '404.title': '404 - Not Found',
@@ -108,9 +108,9 @@ export const ui = {
     '404.goHome': 'Go back home',
 
     // Home Page
-    'home.title': 'Andrés Plaza - Full Stack Developer',
+    'home.title': 'Andrés Plaza - Full Stack + AI Developer',
     'home.description':
-      'Andrés Plaza (Bue221) — Full Stack Developer from Colombia. Portfolio, AI-assisted engineering with Cursor, Claude Code, Codex and MCP, work experience and projects.',
+      'Andrés Plaza (Bue221) — Full Stack + AI developer from Colombia. React/Next.js, Python, Go, LangChain and AI agent platforms. Portfolio, work experience and projects.',
     'home.portfolio': 'Portfolio & Projects',
 
     // AI toolkit
@@ -139,7 +139,7 @@ export const ui = {
     'terminal.helpDesc': 'Show this help message',
     'terminal.whoamiDesc': 'About me',
     'terminal.whoamiLocation': 'Bogotá, Colombia 🇨🇴',
-    'terminal.whoamiRole': 'Full Stack Developer @ Mercado Libre',
+    'terminal.whoamiRole': 'Software Engineer AI @ Mercado Libre',
     'terminal.whoamiHobby': 'Guitar · Ukulele · Tattoo · Soccer',
     'terminal.skillsDesc': 'My tech stack',
     'terminal.contactDesc': 'Contact & socials',
@@ -168,62 +168,64 @@ export const ui = {
 
     // Experience - Mercado Libre
     'experience.mercadolibre.company': 'Mercado Libre',
-    'experience.mercadolibre.position': 'Software Engineer',
+    'experience.mercadolibre.position': 'Software Engineer AI',
     'experience.mercadolibre.location': 'Bogotá D C, Colombia',
     'experience.mercadolibre.tasks.0':
-      'Development and maintenance of scalable web applications using modern technologies',
+      'Built an evals platform that labels and classifies 10,000+ daily conversations across 10 AI agents used by People, customer support and sellers',
     'experience.mercadolibre.tasks.1':
-      'Collaboration with cross-functional teams to deliver high-quality products',
+      'Implemented DataDog observability dashboards that cut response time for tag-generation outages and uncategorized conversations',
     'experience.mercadolibre.tasks.2':
-      'Implementation of best practices and clean code principles',
+      'Built reusable Web Components shared across micro frontends in 3 apps at once',
+    'experience.mercadolibre.tasks.3':
+      'Developed the roles/permissions backoffice and conversation explorer modules with SDD/BDD, using AI agents and skills in the delivery flow',
 
     // Experience - Straico
     'experience.straico.company': 'Straico',
-    'experience.straico.position': 'Software Engineer',
-    'experience.straico.location': 'Bogotá D C, Colombia',
+    'experience.straico.position': 'Frontend Tech Lead',
+    'experience.straico.location': 'Freelance · Bogotá, Colombia',
     'experience.straico.tasks.0':
-      'Integration of AI services and APIs using React and Tailwind CSS',
+      'Led technically and mentored 3 junior developers, defining architecture and engineering practices',
     'experience.straico.tasks.1':
-      'Design and implementation of MongoDB database schemas and queries',
+      'Optimized the realtime chat frontend (re-renders and memoization), eliminating high browser CPU usage with the tab open',
     'experience.straico.tasks.2':
-      'Development of user interfaces with focus on performance and accessibility',
+      'Unified multiple AI models through OpenRouter and integrated image generation and text-to-speech',
+    'experience.straico.tasks.3':
+      'Optimized MongoDB queries with indexes',
 
     // Experience - Spot2
     'experience.spot2.company': 'Spot2',
-    'experience.spot2.position': 'Software Engineer',
+    'experience.spot2.position': 'Senior Frontend Developer & AI Specialist',
     'experience.spot2.location': 'Mexico City, Mexico',
     'experience.spot2.tasks.0':
-      'Full-stack development of the Spot2 platform using React, Redux, and Material UI',
+      'Built an AI chatbot with Python and LangChain that increased lead capture by 110%',
     'experience.spot2.tasks.1':
-      'Implementation of interactive maps and location services using Google Maps API',
+      'Cut map-view re-render errors by 40–50% and duplicate requests by 90%',
     'experience.spot2.tasks.2':
-      'Development of internal management platform with React and Redux for state management',
+      'Designed a HOC-per-filter architecture and migrated React state to Zustand, improving team delivery flow',
     'experience.spot2.tasks.3':
-      'Quality assurance, testing, and debugging of production applications',
+      'Shipped AWS microservices with GitHub Actions CI/CD (Lambda, SQS, SNS) and mentored the AI team on LangChain, LangGraph, LangSmith and Pytest',
 
     // Experience - Imaginamos
     'experience.imaginamos.company': 'Imaginamos',
     'experience.imaginamos.position': 'Frontend Developer',
     'experience.imaginamos.location': 'Bogotá D C, Colombia',
     'experience.imaginamos.tasks.0':
-      'Development of responsive web applications using React, Redux, and Material UI',
+      'Built the Brilla CMS end to end for client ETB',
     'experience.imaginamos.tasks.1':
-      'Implementation of features for ETB telecommunications project',
+      'Implemented ETB commercial flows, including complex forms, and the Yustii interface',
     'experience.imaginamos.tasks.2':
-      'Collaboration with design and backend teams to ensure seamless user experience',
+      'Delivered React, Next.js and Angular features in TypeScript across product surfaces',
 
     // Experience - INETUM
     'experience.inetum.company': 'INETUM',
     'experience.inetum.position': 'Frontend Developer',
     'experience.inetum.location': 'Bogotá D C, Colombia',
     'experience.inetum.tasks.0':
-      'Quality assurance support, bug tracking, and code review processes',
+      'Developed features for Claro projects with React and Angular under SCRUM',
     'experience.inetum.tasks.1':
-      'Agile development using SCRUM methodology in cross-functional teams',
+      'Implemented Redux Toolkit for state management and supported QA and debugging',
     'experience.inetum.tasks.2':
-      'Development of Claro projects using React and Angular frameworks',
-    'experience.inetum.tasks.3':
-      'Implementation of Redux Toolkit for state management, improving development efficiency',
+      'Collaborated in cross-functional agile delivery for telecom product work',
 
     // Experience - SIG
     'experience.sig.company': 'S I G',
@@ -258,7 +260,7 @@ export const ui = {
     // Intro Card
     'intro.welcome': 'bienvenido',
     'intro.title':
-      'Hola, soy <b>Andrés Camilo Plaza</b>, desarrollador de software, ingeniero de sistemas y artista del tatuaje con un fuerte enfoque en la experiencia del usuario, animaciones y micro interacciones. Me encanta crear interfaces hermosas y funcionales, soy apasionado por la tecnología y siempre estoy buscando nuevos desafíos.',
+      'Hola, soy <b>Andrés Camilo Plaza</b>, desarrollador Full Stack + IA con más de 4 años de experiencia. Dominio sólido de React/Next.js y TypeScript, más backend en Python y Go. Construyo plataformas de agentes de IA, UIs de producto e interfaces pulidas — y también soy artista del tatuaje siempre buscando nuevos desafíos.',
     'intro.sr.github': 'Perfil de GitHub',
     'intro.sr.linkedin': 'Perfil de Linkedin',
     'intro.sr.email': 'Contacto por correo',
@@ -266,15 +268,15 @@ export const ui = {
     // About Me
     'about.title': 'Acerca de mí',
     'about.description':
-      'Hola, soy Andrés, un desarrollador de software fullstack de Colombia 🇨🇴.',
-    'about.tools': 'Mis herramientas principales incluyen:',
+      'Hola, soy Andrés, desarrollador Full Stack + IA de Colombia 🇨🇴 con más de 4 años construyendo UIs de producto y sistemas impulsados por IA.',
+    'about.tools': 'Mi stack preferido incluye:',
     'about.hobbies':
       'Más allá de la programación, soy apasionado por los tatuajes, el fútbol y los viajes. Un hobby inusual mío es tocar música clásica en la guitarra o el ukelele.',
 
     // Now Card
     'now.title': 'Ahora',
     'now.whatsThat': '¿qué es eso?',
-    'now.description': 'Ingeniero de Software en Mercado Libre',
+    'now.description': 'Ingeniero de Software IA en Mercado Libre',
 
     // Experience Card
     'experience.title': 'Experiencia',
@@ -319,7 +321,7 @@ export const ui = {
     // Work Page
     'work.title': 'Trabajo',
     'work.description':
-      'Experiencia profesional de Andrés Plaza en producto, IA y frontend.',
+      'Experiencia profesional de Andrés Plaza como ingeniero Full Stack + IA en equipos de producto y plataformas.',
 
     // 404 Page
     '404.title': '404 - No encontrado',
@@ -329,9 +331,9 @@ export const ui = {
     '404.goHome': 'Volver al inicio',
 
     // Home Page
-    'home.title': 'Andrés Plaza - Desarrollador Full Stack',
+    'home.title': 'Andrés Plaza - Desarrollador Full Stack + IA',
     'home.description':
-      'Andrés Plaza (Bue221) — Desarrollador Full Stack de Colombia. Portafolio, ingeniería asistida por IA con Cursor, Claude Code, Codex y MCP, experiencia y proyectos.',
+      'Andrés Plaza (Bue221) — Desarrollador Full Stack + IA de Colombia. React/Next.js, Python, Go, LangChain y plataformas de agentes de IA. Portafolio, experiencia y proyectos.',
     'home.portfolio': 'Portafolio y Proyectos',
 
     // AI toolkit
@@ -361,7 +363,7 @@ export const ui = {
     'terminal.helpDesc': 'Mostrar este mensaje de ayuda',
     'terminal.whoamiDesc': 'Sobre mí',
     'terminal.whoamiLocation': 'Bogotá, Colombia 🇨🇴',
-    'terminal.whoamiRole': 'Full Stack Developer @ Mercado Libre',
+    'terminal.whoamiRole': 'Ingeniero de Software IA @ Mercado Libre',
     'terminal.whoamiHobby': 'Guitarra · Ukulele · Tatuajes · Fútbol',
     'terminal.skillsDesc': 'Mi stack tecnológico',
     'terminal.contactDesc': 'Contacto y redes sociales',
@@ -392,62 +394,64 @@ export const ui = {
 
     // Experience - Mercado Libre
     'experience.mercadolibre.company': 'Mercado Libre',
-    'experience.mercadolibre.position': 'Ingeniero de Software',
+    'experience.mercadolibre.position': 'Ingeniero de Software IA',
     'experience.mercadolibre.location': 'Bogotá D C, Colombia',
     'experience.mercadolibre.tasks.0':
-      'Desarrollo y mantenimiento de aplicaciones web escalables usando tecnologías modernas',
+      'Desarrollé la plataforma de evals que etiqueta y clasifica más de 10.000 conversaciones diarias de 10 agentes de IA usados por People, atención al cliente y vendedores',
     'experience.mercadolibre.tasks.1':
-      'Colaboración con equipos multidisciplinarios para entregar productos de alta calidad',
+      'Implementé tableros de observabilidad en DataDog que reducen el tiempo de respuesta ante caídas en la generación de tags y conversaciones sin clasificar',
     'experience.mercadolibre.tasks.2':
-      'Implementación de mejores prácticas y principios de código limpio',
+      'Construí Web Components reutilizados en los micro frontends de 3 aplicaciones de forma simultánea',
+    'experience.mercadolibre.tasks.3':
+      'Desarrollé el backoffice de roles y permisos y módulos del conversation explorer con SDD y BDD, incorporando agentes y skills de IA en el flujo de desarrollo',
 
     // Experience - Straico
     'experience.straico.company': 'Straico',
-    'experience.straico.position': 'Ingeniero de Software',
-    'experience.straico.location': 'Bogotá D C, Colombia',
+    'experience.straico.position': 'Líder Técnico Frontend',
+    'experience.straico.location': 'Freelance · Bogotá, Colombia',
     'experience.straico.tasks.0':
-      'Integración de servicios de IA y APIs usando React y Tailwind CSS',
+      'Lideré técnicamente y mentoreé a 3 desarrolladores junior, definiendo arquitectura y buenas prácticas',
     'experience.straico.tasks.1':
-      'Diseño e implementación de esquemas y consultas de base de datos MongoDB',
+      'Optimicé el frontend del chat en tiempo real (re-renders y memoización), eliminando el alto consumo de CPU del navegador con la pestaña abierta',
     'experience.straico.tasks.2':
-      'Desarrollo de interfaces de usuario con enfoque en rendimiento y accesibilidad',
+      'Unifiqué múltiples modelos de IA mediante OpenRouter e integré generación de imágenes y texto a voz',
+    'experience.straico.tasks.3':
+      'Optimicé las consultas de la base de datos MongoDB mediante índices',
 
     // Experience - Spot2
     'experience.spot2.company': 'Spot2',
-    'experience.spot2.position': 'Ingeniero de Software',
+    'experience.spot2.position': 'Senior Frontend Developer & AI Specialist',
     'experience.spot2.location': 'Ciudad de México, México',
     'experience.spot2.tasks.0':
-      'Desarrollo full-stack de la plataforma Spot2 usando React, Redux y Material UI',
+      'Desarrollé un chatbot con IA (Python, LangChain) que aumentó la captación de leads en 110%',
     'experience.spot2.tasks.1':
-      'Implementación de mapas interactivos y servicios de ubicación usando Google Maps API',
+      'Reduje entre 40% y 50% los errores de re-renderizado de la vista de mapa y en 90% las requests duplicadas',
     'experience.spot2.tasks.2':
-      'Desarrollo de plataforma interna de gestión con React y Redux para manejo de estado',
+      'Diseñé una arquitectura de HOC por filtro y migré el estado de React state a Zustand, mejorando el flujo de desarrollo del equipo',
     'experience.spot2.tasks.3':
-      'Aseguramiento de calidad, pruebas y depuración de aplicaciones en producción',
+      'Construí microservicios con CI/CD en GitHub Actions y despliegues en AWS (Lambda, SQS, SNS); mentoreé al equipo de IA en LangChain, LangGraph, LangSmith y Pytest',
 
     // Experience - Imaginamos
     'experience.imaginamos.company': 'Imaginamos',
     'experience.imaginamos.position': 'Desarrollador Frontend',
     'experience.imaginamos.location': 'Bogotá D C, Colombia',
     'experience.imaginamos.tasks.0':
-      'Desarrollo de aplicaciones web responsivas usando React, Redux y Material UI',
+      'Desarrollé de principio a fin el CMS de Brilla para el cliente ETB',
     'experience.imaginamos.tasks.1':
-      'Implementación de funcionalidades para proyecto de telecomunicaciones ETB',
+      'Implementé flujos comerciales de ETB, incluyendo formularios complejos, y la interfaz de Yustii',
     'experience.imaginamos.tasks.2':
-      'Colaboración con equipos de diseño y backend para garantizar experiencia de usuario fluida',
+      'Entregué funcionalidades en React, Next.js y Angular con TypeScript en distintas superficies de producto',
 
     // Experience - INETUM
     'experience.inetum.company': 'INETUM',
     'experience.inetum.position': 'Desarrollador Frontend',
     'experience.inetum.location': 'Bogotá D C, Colombia',
     'experience.inetum.tasks.0':
-      'Soporte en aseguramiento de calidad, seguimiento de bugs y procesos de revisión de código',
+      'Desarrollé funcionalidades para proyectos de Claro con React y Angular bajo SCRUM',
     'experience.inetum.tasks.1':
-      'Desarrollo ágil usando metodología SCRUM en equipos multidisciplinarios',
+      'Implementé Redux Toolkit para la gestión de estado y apoyé QA y debugging',
     'experience.inetum.tasks.2':
-      'Desarrollo de proyectos Claro usando frameworks React y Angular',
-    'experience.inetum.tasks.3':
-      'Implementación de Redux Toolkit para manejo de estado, mejorando la eficiencia en desarrollo',
+      'Colaboré en entregas ágiles multidisciplinares para producto telecom',
 
     // Experience - SIG
     'experience.sig.company': 'S I G',
@@ -482,7 +486,7 @@ export const ui = {
     // Intro Card
     'intro.welcome': 'bem-vindo',
     'intro.title':
-      'Olá, sou <b>Andrés Camilo Plaza</b>, desenvolvedor de software, engenheiro de sistemas e artista de tatuagem com forte foco na experiência do usuário, animações e micro interações. Adoro criar interfaces bonitas e funcionais, sou apaixonado por tecnologia e sempre estou em busca de novos desafios.',
+      'Olá, sou <b>Andrés Camilo Plaza</b>, desenvolvedor Full Stack + IA com mais de 4 anos de experiência. Domínio sólido de React/Next.js e TypeScript, além de backend em Python e Go. Construo plataformas de agentes de IA, UIs de produto e interfaces polidas — e também sou artista de tatuagem sempre em busca de novos desafios.',
     'intro.sr.github': 'Perfil do GitHub',
     'intro.sr.linkedin': 'Perfil do Linkedin',
     'intro.sr.email': 'Contato por e-mail',
@@ -490,15 +494,15 @@ export const ui = {
     // About Me
     'about.title': 'Sobre mim',
     'about.description':
-      'Olá, sou Andrés, desenvolvedor de software fullstack da Colômbia 🇨🇴.',
-    'about.tools': 'Minhas principais ferramentas incluem:',
+      'Olá, sou Andrés, desenvolvedor Full Stack + IA da Colômbia 🇨🇴 com mais de 4 anos construindo UIs de produto e sistemas com IA.',
+    'about.tools': 'Meu stack preferido inclui:',
     'about.hobbies':
       'Além da programação, sou apaixonado por tatuagens, futebol e viagens. Um hobby incomum meu é tocar música clássica no violão ou ukulele.',
 
     // Now Card
     'now.title': 'Agora',
     'now.whatsThat': 'o que é isso?',
-    'now.description': 'Engenheiro de Software no Mercado Livre',
+    'now.description': 'Engenheiro de Software IA no Mercado Livre',
 
     // Experience Card
     'experience.title': 'Experiência',
@@ -543,7 +547,7 @@ export const ui = {
     // Work Page
     'work.title': 'Trabalho',
     'work.description':
-      'Experiência profissional de Andrés Plaza em produto, IA e frontend.',
+      'Experiência profissional de Andrés Plaza como engenheiro Full Stack + IA em times de produto e plataformas.',
 
     // 404 Page
     '404.title': '404 - Não encontrado',
@@ -554,9 +558,9 @@ export const ui = {
     '404.goHome': 'Voltar ao início',
 
     // Home Page
-    'home.title': 'Andrés Plaza - Desenvolvedor Full Stack',
+    'home.title': 'Andrés Plaza - Desenvolvedor Full Stack + IA',
     'home.description':
-      'Andrés Plaza (Bue221) — Desenvolvedor Full Stack da Colômbia. Portfólio, engenharia assistida por IA com Cursor, Claude Code, Codex e MCP, experiência e projetos.',
+      'Andrés Plaza (Bue221) — Desenvolvedor Full Stack + IA da Colômbia. React/Next.js, Python, Go, LangChain e plataformas de agentes de IA. Portfólio, experiência e projetos.',
     'home.portfolio': 'Portfólio e Projetos',
 
     // AI toolkit
@@ -586,7 +590,7 @@ export const ui = {
     'terminal.helpDesc': 'Mostrar esta mensagem de ajuda',
     'terminal.whoamiDesc': 'Sobre mim',
     'terminal.whoamiLocation': 'Bogotá, Colômbia 🇨🇴',
-    'terminal.whoamiRole': 'Desenvolvedor Full Stack @ Mercado Livre',
+    'terminal.whoamiRole': 'Engenheiro de Software IA @ Mercado Livre',
     'terminal.whoamiHobby': 'Violão · Ukulele · Tatuagem · Futebol',
     'terminal.skillsDesc': 'Meu stack tecnológico',
     'terminal.contactDesc': 'Contato e redes sociais',
@@ -617,62 +621,64 @@ export const ui = {
 
     // Experience - Mercado Libre
     'experience.mercadolibre.company': 'Mercado Livre',
-    'experience.mercadolibre.position': 'Engenheiro de Software',
+    'experience.mercadolibre.position': 'Engenheiro de Software IA',
     'experience.mercadolibre.location': 'Bogotá D C, Colômbia',
     'experience.mercadolibre.tasks.0':
-      'Desenvolvimento e manutenção de aplicações web escaláveis usando tecnologias modernas',
+      'Desenvolvi a plataforma de evals que rotula e classifica mais de 10.000 conversas diárias de 10 agentes de IA usados por People, atendimento e vendedores',
     'experience.mercadolibre.tasks.1':
-      'Colaboração com equipes multidisciplinares para entregar produtos de alta qualidade',
+      'Implementei dashboards de observabilidade no DataDog que reduzem o tempo de resposta a falhas na geração de tags e conversas sem classificação',
     'experience.mercadolibre.tasks.2':
-      'Implementação de melhores práticas e princípios de código limpo',
+      'Construí Web Components reutilizados nos micro frontends de 3 aplicações ao mesmo tempo',
+    'experience.mercadolibre.tasks.3':
+      'Desenvolvi o backoffice de papéis e permissões e módulos do conversation explorer com SDD/BDD, incorporando agentes e skills de IA no fluxo de entrega',
 
     // Experience - Straico
     'experience.straico.company': 'Straico',
-    'experience.straico.position': 'Engenheiro de Software',
-    'experience.straico.location': 'Bogotá D C, Colômbia',
+    'experience.straico.position': 'Líder Técnico Frontend',
+    'experience.straico.location': 'Freelance · Bogotá, Colômbia',
     'experience.straico.tasks.0':
-      'Integração de serviços de IA e APIs usando React e Tailwind CSS',
+      'Liderança técnica e mentoria de 3 desenvolvedores júnior, definindo arquitetura e boas práticas',
     'experience.straico.tasks.1':
-      'Design e implementação de esquemas e consultas de banco de dados MongoDB',
+      'Otimizei o frontend do chat em tempo real (re-renders e memoização), eliminando o alto consumo de CPU do navegador com a aba aberta',
     'experience.straico.tasks.2':
-      'Desenvolvimento de interfaces de usuário com foco em performance e acessibilidade',
+      'Unifiquei múltiplos modelos de IA via OpenRouter e integrei geração de imagens e texto para fala',
+    'experience.straico.tasks.3':
+      'Otimizei consultas MongoDB com índices',
 
     // Experience - Spot2
     'experience.spot2.company': 'Spot2',
-    'experience.spot2.position': 'Engenheiro de Software',
+    'experience.spot2.position': 'Senior Frontend Developer & AI Specialist',
     'experience.spot2.location': 'Cidade do México, México',
     'experience.spot2.tasks.0':
-      'Desenvolvimento full-stack da plataforma Spot2 usando React, Redux e Material UI',
+      'Desenvolvi um chatbot com IA (Python, LangChain) que aumentou a captação de leads em 110%',
     'experience.spot2.tasks.1':
-      'Implementação de mapas interativos e serviços de localização usando Google Maps API',
+      'Reduzi entre 40% e 50% os erros de re-render da vista de mapa e em 90% as requests duplicadas',
     'experience.spot2.tasks.2':
-      'Desenvolvimento de plataforma interna de gestão com React e Redux para gerenciamento de estado',
+      'Desenhei uma arquitetura de HOC por filtro e migrei o estado de React state para Zustand, melhorando o fluxo de desenvolvimento do time',
     'experience.spot2.tasks.3':
-      'Garantia de qualidade, testes e depuração de aplicações em produção',
+      'Construí microserviços com CI/CD no GitHub Actions e deploys na AWS (Lambda, SQS, SNS); mentoreei o time de IA em LangChain, LangGraph, LangSmith e Pytest',
 
     // Experience - Imaginamos
     'experience.imaginamos.company': 'Imaginamos',
     'experience.imaginamos.position': 'Desenvolvedor Frontend',
     'experience.imaginamos.location': 'Bogotá D C, Colômbia',
     'experience.imaginamos.tasks.0':
-      'Desenvolvimento de aplicações web responsivas usando React, Redux e Material UI',
+      'Desenvolvi do início ao fim o CMS da Brilla para o cliente ETB',
     'experience.imaginamos.tasks.1':
-      'Implementação de funcionalidades para projeto de telecomunicações ETB',
+      'Implementei fluxos comerciais da ETB, incluindo formulários complexos, e a interface da Yustii',
     'experience.imaginamos.tasks.2':
-      'Colaboração com equipes de design e backend para garantir experiência de usuário fluida',
+      'Entreguei funcionalidades em React, Next.js e Angular com TypeScript em diferentes superfícies de produto',
 
     // Experience - INETUM
     'experience.inetum.company': 'INETUM',
     'experience.inetum.position': 'Desenvolvedor Frontend',
     'experience.inetum.location': 'Bogotá D C, Colômbia',
     'experience.inetum.tasks.0':
-      'Suporte em garantia de qualidade, rastreamento de bugs e processos de revisão de código',
+      'Desenvolvi funcionalidades para projetos da Claro com React e Angular sob SCRUM',
     'experience.inetum.tasks.1':
-      'Desenvolvimento ágil usando metodologia SCRUM em equipes multidisciplinares',
+      'Implementei Redux Toolkit para gerenciamento de estado e apoiei QA e debugging',
     'experience.inetum.tasks.2':
-      'Desenvolvimento de projetos Claro usando frameworks React e Angular',
-    'experience.inetum.tasks.3':
-      'Implementação de Redux Toolkit para gerenciamento de estado, melhorando a eficiência em desenvolvimento',
+      'Colaborei em entregas ágeis multidisciplinares para produto telecom',
 
     // Experience - SIG
     'experience.sig.company': 'S I G',

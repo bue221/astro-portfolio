@@ -19,7 +19,7 @@ export const LINKS = {
 export const SITE: Site = {
   TITLE: 'Andrés Plaza | Bue221',
   DESCRIPTION:
-    'Full Stack Developer from Colombia building product UIs, AI-augmented workflows, and polished web experiences.',
+    'Full Stack + AI developer from Colombia — React/Next.js, Python, Go, and AI agent platforms.',
   AUTHOR: 'Andrés Camilo Plaza',
 }
 
@@ -50,16 +50,16 @@ export const SEARCH: Page = {
 // Study Page
 export const STUDIES = [
   {
-    title: 'Computer Science',
+    title: 'Systems Engineering',
     institution: 'Universidad Central',
     link: 'https://www.ucentral.edu.co/',
-    date: '2019 - 2027',
+    date: '2020 - 2027',
   },
   {
-    title: '...',
+    title: 'Continuous learning',
     institution: 'Platzi',
     link: 'https://platzi.com/',
-    date: '2018 - 2022',
+    date: 'Ongoing',
   },
   {
     title: '...',
@@ -90,13 +90,13 @@ export const EXPERIENCE = [
   },
   {
     id: 'straico',
-    start: '2023',
+    start: '2025',
     link: 'https://straico.com/',
-    end: '2026',
+    end: '2025',
   },
   {
     id: 'spot2',
-    start: '2021',
+    start: '2022',
     link: 'https://spot2.mx/',
     end: '2025',
   },
@@ -104,7 +104,7 @@ export const EXPERIENCE = [
     id: 'imaginamos',
     start: '2021',
     link: 'https://imaginamos.com/',
-    end: '2021',
+    end: '2022',
   },
   {
     id: 'inetum',

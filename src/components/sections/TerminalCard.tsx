@@ -38,11 +38,11 @@ function buildRegistry(labels: TerminalLabels): Record<string, CommandDef> {
     skills: {
       description: labels.skillsDesc,
       run: () => [
-        { type: 'text', content: '⚛️   React · Next.js · Astro · Vue' },
-        { type: 'text', content: '🟦  TypeScript · JavaScript · Python' },
-        { type: 'text', content: '🎨  Tailwind CSS · Framer Motion' },
-        { type: 'text', content: '🗄️   Node.js · MongoDB · PostgreSQL' },
-        { type: 'text', content: '🤖  AI: Cursor · Claude · Codex · MCP' },
+        { type: 'text', content: '⚛️   React · Next.js · TypeScript · Vue' },
+        { type: 'text', content: '🐍  Python · Go · Node.js' },
+        { type: 'text', content: '🤖  Claude · Gemini · OpenAI · LangChain' },
+        { type: 'text', content: '☁️   AWS · Docker · DataDog · GitHub Actions' },
+        { type: 'text', content: '🗄️   MongoDB · PostgreSQL · Redis' },
       ],
     },
     contact: {
