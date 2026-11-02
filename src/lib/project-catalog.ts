@@ -25,6 +25,14 @@ type CatalogEntry = Omit<ProjectItem, 'id' | 'imagePath' | 'imageAlt'> & {
 
 const RAW_PROJECTS: CatalogEntry[] = [
   {
+    id: 'operia',
+    name: 'Operia',
+    description:
+      'Business OS for invoicing, inventory, purchases, cash register and team ops in one system — less spreadsheets, more day-to-day control.',
+    website: 'https://operia.bue221.xyz/',
+    tags: ['Next.js', 'TypeScript', 'Full Stack', 'Business'],
+  },
+  {
     id: 'scanline-master',
     name: 'ScanLine Master',
     description:
