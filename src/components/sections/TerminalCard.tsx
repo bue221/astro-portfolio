@@ -41,7 +41,10 @@ function buildRegistry(labels: TerminalLabels): Record<string, CommandDef> {
         { type: 'text', content: '⚛️   React · Next.js · TypeScript · Vue' },
         { type: 'text', content: '🐍  Python · Go · Node.js' },
         { type: 'text', content: '🤖  Claude · Gemini · OpenAI · LangChain' },
-        { type: 'text', content: '☁️   AWS · Docker · DataDog · GitHub Actions' },
+        {
+          type: 'text',
+          content: '☁️   AWS · Docker · DataDog · GitHub Actions',
+        },
         { type: 'text', content: '🗄️   MongoDB · PostgreSQL · Redis' },
       ],
     },

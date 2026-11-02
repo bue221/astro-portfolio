@@ -189,8 +189,7 @@ export const ui = {
       'Optimized the realtime chat frontend (re-renders and memoization), eliminating high browser CPU usage with the tab open',
     'experience.straico.tasks.2':
       'Unified multiple AI models through OpenRouter and integrated image generation and text-to-speech',
-    'experience.straico.tasks.3':
-      'Optimized MongoDB queries with indexes',
+    'experience.straico.tasks.3': 'Optimized MongoDB queries with indexes',
 
     // Experience - Spot2
     'experience.spot2.company': 'Spot2',
@@ -642,8 +641,7 @@ export const ui = {
       'Otimizei o frontend do chat em tempo real (re-renders e memoização), eliminando o alto consumo de CPU do navegador com a aba aberta',
     'experience.straico.tasks.2':
       'Unifiquei múltiplos modelos de IA via OpenRouter e integrei geração de imagens e texto para fala',
-    'experience.straico.tasks.3':
-      'Otimizei consultas MongoDB com índices',
+    'experience.straico.tasks.3': 'Otimizei consultas MongoDB com índices',
 
     // Experience - Spot2
     'experience.spot2.company': 'Spot2',
