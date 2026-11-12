@@ -366,7 +366,8 @@ export const ui = {
     'terminal.helpDesc': 'Mostrar este mensaje de ayuda',
     'terminal.whoamiDesc': 'Sobre mí',
     'terminal.whoamiLocation': 'Bogotá, Colombia 🇨🇴',
-    'terminal.whoamiRole': 'Desarrollador Full Stack + IA · Disponible para trabajar',
+    'terminal.whoamiRole':
+      'Desarrollador Full Stack + IA · Disponible para trabajar',
     'terminal.whoamiHobby': 'Guitarra · Ukulele · Tatuajes · Fútbol',
     'terminal.skillsDesc': 'Mi stack tecnológico',
     'terminal.contactDesc': 'Contacto y redes sociales',
@@ -595,7 +596,8 @@ export const ui = {
     'terminal.helpDesc': 'Mostrar esta mensagem de ajuda',
     'terminal.whoamiDesc': 'Sobre mim',
     'terminal.whoamiLocation': 'Bogotá, Colômbia 🇨🇴',
-    'terminal.whoamiRole': 'Desenvolvedor Full Stack + IA · Disponível para trabalhar',
+    'terminal.whoamiRole':
+      'Desenvolvedor Full Stack + IA · Disponível para trabalhar',
     'terminal.whoamiHobby': 'Violão · Ukulele · Tatuagem · Futebol',
     'terminal.skillsDesc': 'Meu stack tecnológico',
     'terminal.contactDesc': 'Contato e redes sociais',
