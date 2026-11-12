@@ -48,12 +48,12 @@ export const ui = {
       "Hi, I'm Andrés, a Full Stack + AI developer from Colombia 🇨🇴 with 4+ years building product UIs and AI-powered systems.",
     'about.tools': 'My preferred stack includes:',
     'about.hobbies':
-      "Beyond coding, I'm passionate about tattoo, soccer and traveling. An unusual hobby of mine is play classical music in the guitar or ukulele.",
+      "Beyond coding, I'm passionate about tattoo, soccer and traveling. An unusual hobby of mine is playing classical music on the guitar or ukulele.",
 
     // Now Card
     'now.title': 'Now',
     'now.whatsThat': "what's that ?",
-    'now.description': 'Software Engineer AI at Mercado Libre',
+    'now.description': 'Available for work',
 
     // Experience Card
     'experience.title': 'Experience',
@@ -92,6 +92,8 @@ export const ui = {
     'portfolio.repo': 'Repository available',
     'portfolio.live': 'View live site',
     'portfolio.repository': 'View source code',
+    'portfolio.demo': 'View demo',
+    'portfolio.results': 'Results',
     'portfolio.noLinks': 'No links available yet.',
     'portfolio.backToAll': 'Back to all projects',
 
@@ -139,7 +141,7 @@ export const ui = {
     'terminal.helpDesc': 'Show this help message',
     'terminal.whoamiDesc': 'About me',
     'terminal.whoamiLocation': 'Bogotá, Colombia 🇨🇴',
-    'terminal.whoamiRole': 'Software Engineer AI @ Mercado Libre',
+    'terminal.whoamiRole': 'Full Stack + AI Developer · Available for work',
     'terminal.whoamiHobby': 'Guitar · Ukulele · Tattoo · Soccer',
     'terminal.skillsDesc': 'My tech stack',
     'terminal.contactDesc': 'Contact & socials',
@@ -275,7 +277,7 @@ export const ui = {
     // Now Card
     'now.title': 'Ahora',
     'now.whatsThat': '¿qué es eso?',
-    'now.description': 'Ingeniero de Software IA en Mercado Libre',
+    'now.description': 'Disponible para trabajar',
 
     // Experience Card
     'experience.title': 'Experiencia',
@@ -314,6 +316,8 @@ export const ui = {
     'portfolio.repo': 'Repositorio disponible',
     'portfolio.live': 'Ver sitio en vivo',
     'portfolio.repository': 'Ver código fuente',
+    'portfolio.demo': 'Ver demo',
+    'portfolio.results': 'Resultados',
     'portfolio.noLinks': 'Sin enlaces disponibles aún.',
     'portfolio.backToAll': 'Volver a todos los proyectos',
 
@@ -362,7 +366,7 @@ export const ui = {
     'terminal.helpDesc': 'Mostrar este mensaje de ayuda',
     'terminal.whoamiDesc': 'Sobre mí',
     'terminal.whoamiLocation': 'Bogotá, Colombia 🇨🇴',
-    'terminal.whoamiRole': 'Ingeniero de Software IA @ Mercado Libre',
+    'terminal.whoamiRole': 'Desarrollador Full Stack + IA · Disponible para trabajar',
     'terminal.whoamiHobby': 'Guitarra · Ukulele · Tatuajes · Fútbol',
     'terminal.skillsDesc': 'Mi stack tecnológico',
     'terminal.contactDesc': 'Contacto y redes sociales',
@@ -501,7 +505,7 @@ export const ui = {
     // Now Card
     'now.title': 'Agora',
     'now.whatsThat': 'o que é isso?',
-    'now.description': 'Engenheiro de Software IA no Mercado Livre',
+    'now.description': 'Disponível para trabalhar',
 
     // Experience Card
     'experience.title': 'Experiência',
@@ -540,6 +544,8 @@ export const ui = {
     'portfolio.repo': 'Repositório disponível',
     'portfolio.live': 'Ver site ao vivo',
     'portfolio.repository': 'Ver código fonte',
+    'portfolio.demo': 'Ver demo',
+    'portfolio.results': 'Resultados',
     'portfolio.noLinks': 'Sem links disponíveis ainda.',
     'portfolio.backToAll': 'Voltar a todos os projetos',
 
@@ -589,7 +595,7 @@ export const ui = {
     'terminal.helpDesc': 'Mostrar esta mensagem de ajuda',
     'terminal.whoamiDesc': 'Sobre mim',
     'terminal.whoamiLocation': 'Bogotá, Colômbia 🇨🇴',
-    'terminal.whoamiRole': 'Engenheiro de Software IA @ Mercado Livre',
+    'terminal.whoamiRole': 'Desenvolvedor Full Stack + IA · Disponível para trabalhar',
     'terminal.whoamiHobby': 'Violão · Ukulele · Tatuagem · Futebol',
     'terminal.skillsDesc': 'Meu stack tecnológico',
     'terminal.contactDesc': 'Contato e redes sociais',

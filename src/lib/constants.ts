@@ -84,9 +84,9 @@ export const STUDIES = [
 export const EXPERIENCE = [
   {
     id: 'mercadolibre',
-    start: '2025',
+    start: 'Jul 2025',
     link: 'https://www.mercadolibre.com.co/',
-    end: 'Current',
+    end: 'Sep 2026',
   },
   {
     id: 'straico',

@@ -10,6 +10,8 @@ type Labels = {
   repo: string
   live: string
   repository: string
+  demo: string
+  resultsHeading: string
   noLinks: string
   backToAll: string
 }
@@ -104,6 +106,8 @@ export function PortfolioFilter({ projects, tags, labels, meta }: Props) {
               key={project.id}
               project={project}
               repoLabel={labels.repo}
+              demoLabel={labels.demo}
+              resultsLabel={labels.resultsHeading}
               detailHref={`${meta.portfolioPath}/${project.id}`}
             />
           ))
@@ -168,10 +172,14 @@ function FilterChip({
 function ProjectFilterCard({
   project,
   repoLabel,
+  demoLabel,
+  resultsLabel,
   detailHref,
 }: {
   project: ProjectItem
   repoLabel: string
+  demoLabel: string
+  resultsLabel: string
   detailHref: string
 }) {
   return (
@@ -202,6 +210,18 @@ function ProjectFilterCard({
               </p>
             ) : null}
           </div>
+          {project.results?.length ? (
+            <div>
+              <p className="text-muted-foreground text-[10px] font-semibold tracking-wider uppercase">
+                {resultsLabel}
+              </p>
+              <ul className="mt-1 flex list-disc flex-col gap-0.5 pl-4 text-xs">
+                {project.results.map((result) => (
+                  <li key={result}>{result}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
           {project.tags.length > 0 ? (
             <div className="mt-auto flex flex-wrap gap-1.5">
               {project.tags.map((tag, index) => (
@@ -215,10 +235,17 @@ function ProjectFilterCard({
               ))}
             </div>
           ) : null}
-          {project.repository ? (
-            <span className="text-muted-foreground text-xs underline-offset-2 group-hover:underline">
-              {repoLabel}
-            </span>
+          {project.demo || project.repository ? (
+            <div className="flex flex-wrap gap-x-3 text-xs">
+              {project.demo ? (
+                <span className="text-primary font-medium">▶ {demoLabel}</span>
+              ) : null}
+              {project.repository ? (
+                <span className="text-muted-foreground underline-offset-2 group-hover:underline">
+                  {repoLabel}
+                </span>
+              ) : null}
+            </div>
           ) : null}
         </div>
       </article>

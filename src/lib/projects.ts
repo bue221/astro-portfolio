@@ -1,11 +1,18 @@
 import { LOCAL_PROJECTS, getProjectCoverPath } from './project-catalog'
 
+export type ProjectDemo = {
+  kind: 'video' | 'link'
+  url: string
+}
+
 export type ProjectItem = {
   id: string
   name: string
   description: string
   website?: string
   repository?: string
+  demo?: ProjectDemo
+  results?: string[]
   imagePath?: string
   imageAlt: string
   tags: string[]

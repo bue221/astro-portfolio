@@ -9,7 +9,7 @@ import {
   useTranslatedPath,
 } from '../i18n/utils'
 import type { ProjectItem } from '../lib/projects'
-import { ExternalLink, Github, ArrowLeft } from 'lucide-react'
+import { ExternalLink, Github, ArrowLeft, PlayCircle } from 'lucide-react'
 
 interface Props {
   project: ProjectItem
@@ -53,7 +53,19 @@ const ogImageUrl = new URL(project.imagePath || '/View1.png', Astro.site)
       <div class="grid gap-8 lg:grid-cols-3">
         <div class="flex flex-col gap-6 lg:col-span-2">
           {
-            project.imagePath ? (
+            project.demo?.kind === 'video' ? (
+              <div class="overflow-hidden rounded-2xl border shadow-lg">
+                <video
+                  src={project.demo.url}
+                  poster={project.imagePath}
+                  controls
+                  playsinline
+                  preload="metadata"
+                  class="h-64 w-full bg-black object-contain sm:h-80"
+                  aria-label={`${project.name} demo`}
+                />
+              </div>
+            ) : project.imagePath ? (
               <div class="overflow-hidden rounded-2xl border shadow-lg">
                 <img
                   src={project.imagePath}
@@ -69,6 +81,21 @@ const ogImageUrl = new URL(project.imagePath || '/View1.png', Astro.site)
                 <span class="text-primary/70 text-6xl font-black tracking-tight">
                   {project.name.slice(0, 2).toUpperCase()}
                 </span>
+              </div>
+            )
+          }
+
+          {
+            project.results && project.results.length > 0 && (
+              <div class="flex flex-col gap-2">
+                <h2 class="text-muted-foreground text-sm font-semibold tracking-wider uppercase">
+                  {t('portfolio.results')}
+                </h2>
+                <ul class="flex list-disc flex-col gap-1.5 pl-5 text-base">
+                  {project.results.map((result) => (
+                    <li>{result}</li>
+                  ))}
+                </ul>
               </div>
             )
           }
@@ -96,6 +123,20 @@ const ogImageUrl = new URL(project.imagePath || '/View1.png', Astro.site)
             class="bg-card flex flex-col gap-4 rounded-2xl border p-5 shadow-sm"
           >
             <h2 class="text-base font-semibold">Links</h2>
+
+            {
+              project.demo && (
+                <a
+                  href={project.demo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:bg-accent flex items-center gap-2.5 rounded-xl border px-4 py-3 text-sm font-medium transition-colors"
+                >
+                  <PlayCircle className="h-4 w-4 text-primary shrink-0" />
+                  {t('portfolio.demo')}
+                </a>
+              )
+            }
 
             {
               project.website && (
@@ -126,7 +167,7 @@ const ogImageUrl = new URL(project.imagePath || '/View1.png', Astro.site)
             }
 
             {
-              !project.website && !project.repository && (
+              !project.website && !project.repository && !project.demo && (
                 <p class="text-muted-foreground text-sm">
                   {t('portfolio.noLinks')}
                 </p>

@@ -25,6 +25,40 @@ type CatalogEntry = Omit<ProjectItem, 'id' | 'imagePath' | 'imageAlt'> & {
 
 const RAW_PROJECTS: CatalogEntry[] = [
   {
+    id: 'swarm-chatbot-real-state',
+    name: 'Swarm Chatbot Real Estate',
+    description:
+      'OpenAI Swarm multi-agent chatbot for Spot2 real-estate advising: a triage agent hands off to profiling, FAQ and visit-scheduling specialists.',
+    repository: 'https://github.com/bue221/swarm-chatbot-real-state',
+    demo: {
+      kind: 'link',
+      url: 'https://colab.research.google.com/drive/1tOnU-nwp2vjdY166NdD8ID_y6YJFDkO9?usp=sharing',
+    },
+    results: [
+      'Triage orchestrator routing to 3 specialist agents via Swarm handoffs',
+      'Visit-scheduling agent with 5 calendar tools (availability, slots, booking)',
+      'Customer profiles and requirements persisted in SQLite between turns',
+    ],
+    tags: ['Python', 'AI', 'OpenAI'],
+  },
+  {
+    id: 'redsensurb',
+    name: 'RedSensUrb',
+    description:
+      'Distributed urban-sensor MVP: Java nodes send UDP telemetry to a Spring coordinator with REST, SQLite and 2PC replicas, plus a React client.',
+    repository: 'https://github.com/bue221/RedSensUrb',
+    demo: {
+      kind: 'video',
+      url: '/projects/redsensurb-demo.mp4',
+    },
+    results: [
+      '3 simulated sensor nodes streaming temperature, humidity and CO₂ over UDP',
+      'Critical alerts committed via 2PC across 2 RMI replicas, with rollback on failure',
+      'Live React dashboard refreshing every 2s; full stack up with one make demo',
+    ],
+    tags: ['Java', 'React', 'Full Stack'],
+  },
+  {
     id: 'operia',
     name: 'Operia',
     description:
@@ -51,14 +85,6 @@ const RAW_PROJECTS: CatalogEntry[] = [
     tags: ['React', 'TypeScript', 'PWA'],
   },
   {
-    id: 'swarm-chatbot-real-state',
-    name: 'Swarm Chatbot Real Estate',
-    description:
-      'OpenAI Swarm multi-agent chatbot for Spot2 real-estate advising: triage, profiling, FAQs, cancellations and visit scheduling.',
-    repository: 'https://github.com/bue221/swarm-chatbot-real-state',
-    tags: ['Python', 'AI', 'OpenAI'],
-  },
-  {
     id: 'qr-code-generator',
     name: 'QR Code Generator',
     description:
@@ -66,14 +92,6 @@ const RAW_PROJECTS: CatalogEntry[] = [
     website: 'https://qr-code-generator.bue221.xyz/',
     repository: 'https://github.com/bue221/qr-code-generator',
     tags: ['Next.js', 'TypeScript', 'React'],
-  },
-  {
-    id: 'redsensurb',
-    name: 'RedSensUrb',
-    description:
-      'Distributed urban-sensor MVP: Java nodes send UDP telemetry to a Spring coordinator with REST, SQLite and 2PC replicas, plus a React client.',
-    repository: 'https://github.com/bue221/RedSensUrb',
-    tags: ['Java', 'React', 'Full Stack'],
   },
   {
     id: 'videojuego-universidad',
